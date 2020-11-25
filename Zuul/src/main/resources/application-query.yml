@@ -1,0 +1,6 @@
+spring:
+ cloud:
+    gateway:
+      routes:
+        - id: payment-service
+          uri: 'lb://payment'
