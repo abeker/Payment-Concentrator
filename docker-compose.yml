@@ -10,9 +10,9 @@ services:
     hostname: eureka-server
     ports:
       - "8761:8761"
-    networks:
-            static-network:
-              ipv4_address: 172.20.0.2
+    # networks:
+    #         static-network:
+    #           ipv4_address: 172.20.0.2
   
   dbpostgresql:
     image: postgres 
@@ -26,28 +26,8 @@ services:
       - eureka-server
     links:
       - "eureka-server:eureka-server"
-    networks:
-            - static-network
-
-  zuul:
-    image: zuul
-    container_name: zuul
-    build: 
-      context: ./Zuul
-      dockerfile: Dockerfile
-    ports:
-      - "8060:8060"
-    depends_on: 
-      - eureka-server
-    environment: 
-      REGISTRY_HOST: eureka-server
-      REGISTRY_PORT: 8761
-      SPRING_CLOUD_GATEWAY_ROUTES[0]_ID: payment-service
-      SPRING_CLOUD_GATEWAY_ROUTES[0]_URI: http://payment-service:8081
-    links:
-      - "eureka-server:eureka-server"
-    networks:
-        - static-network
+    # networks:
+    #         - static-network
 
   payment-service:
     image: payment-service
@@ -67,14 +47,34 @@ services:
     links:
       - "eureka-server:eureka-server"
       - "dbpostgresql:dbpostgresql"
-    networks: 
-      - static-network
+    # networks: 
+    #   - static-network
 
-networks:
-    static-network:
-        ipam:
-            config:
-                - subnet: 172.20.0.0/16
+  zuul:
+    image: zuul
+    container_name: zuul
+    build: 
+      context: ./Zuul
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on: 
+      - eureka-server
+    environment: 
+      REGISTRY_HOST: eureka-server
+      REGISTRY_PORT: 8761
+      # SPRING_CLOUD_GATEWAY_ROUTES[0]_ID: payment-service
+      # SPRING_CLOUD_GATEWAY_ROUTES[0]_URI: http://payment-service:8081
+    links:
+      - "eureka-server:eureka-server"
+    # networks:
+    #     - static-network
+
+# networks:
+#     static-network:
+#         ipam:
+#             config:
+#                 - subnet: 172.20.0.0/16
     # networks:
     #   static-network:
 
