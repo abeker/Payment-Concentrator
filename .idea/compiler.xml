@@ -2,16 +2,21 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="book-service" />
         <module name="Eureka" />
+        <module name="authentication-service" />
         <module name="Zuul" />
         <module name="payment-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="authentication-service" target="1.8" />
+      <module name="book-service" target="1.8" />
       <module name="Eureka" target="1.8" />
       <module name="Payment-Microservices" target="1.5" />
       <module name="payment-service" target="1.8" />
@@ -22,6 +27,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Eureka" options="-parameters" />
       <module name="Zuul" options="-parameters" />
+      <module name="authentication-service" options="-parameters" />
+      <module name="book-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />
     </option>
   </component>
