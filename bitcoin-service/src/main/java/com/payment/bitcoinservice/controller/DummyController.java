@@ -12,7 +12,7 @@ public class DummyController {
 
     @GetMapping()
     public ResponseEntity<?> hello(){
-        return new ResponseEntity<String>(, HttpStatus.OK);
+        return new ResponseEntity<String>("Hello from Bitcoin", HttpStatus.OK);
     }
 
 }
