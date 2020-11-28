@@ -7,19 +7,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bank-service" />
         <module name="book-service" />
-        <module name="Eureka" />
-        <module name="authentication-service" />
         <module name="Zuul" />
         <module name="payment-service" />
+        <module name="Eureka" />
+        <module name="authentication-service" />
+        <module name="bitcoin-service" />
+        <module name="paypal-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="authentication-service" target="1.8" />
+      <module name="bank-service" target="1.8" />
+      <module name="bitcoin-service" target="1.8" />
       <module name="book-service" target="1.8" />
       <module name="Eureka" target="1.8" />
       <module name="Payment-Microservices" target="1.5" />
       <module name="payment-service" target="1.8" />
+      <module name="paypal-service" target="1.8" />
       <module name="Zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -28,8 +34,11 @@
       <module name="Eureka" options="-parameters" />
       <module name="Zuul" options="-parameters" />
       <module name="authentication-service" options="-parameters" />
+      <module name="bank-service" options="-parameters" />
+      <module name="bitcoin-service" options="-parameters" />
       <module name="book-service" options="-parameters" />
       <module name="payment-service" options="-parameters" />
+      <module name="paypal-service" options="-parameters" />
     </option>
   </component>
 </project>

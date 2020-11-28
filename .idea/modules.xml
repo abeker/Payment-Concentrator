@@ -6,8 +6,11 @@
       <module fileurl="file://$PROJECT_DIR$/Payment-Microservices.iml" filepath="$PROJECT_DIR$/Payment-Microservices.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zuul/Zuul.iml" filepath="$PROJECT_DIR$/Zuul/Zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/authentication-service/authentication-service.iml" filepath="$PROJECT_DIR$/authentication-service/authentication-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bank-service/bank-service.iml" filepath="$PROJECT_DIR$/bank-service/bank-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bitcoin-service/bitcoin-service.iml" filepath="$PROJECT_DIR$/bitcoin-service/bitcoin-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/book-service/book-service.iml" filepath="$PROJECT_DIR$/book-service/book-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment-service/payment-service.iml" filepath="$PROJECT_DIR$/payment-service/payment-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/paypal-service/paypal-service.iml" filepath="$PROJECT_DIR$/paypal-service/paypal-service.iml" />
     </modules>
   </component>
 </project>
