@@ -1,0 +1,8 @@
+.Image {
+    width: 200px;
+    height: 200px;
+    border-radius: 20%;
+    margin-left: 14%;
+    margin-top: 10%;
+    cursor: pointer;
+}
