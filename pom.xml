@@ -10,9 +10,9 @@
 	<version>1.0-SNAPSHOT</version>
 
 	<modules>
-		<module>authentication-service</module>
-		<module>payment-service</module>
-		<module>book-service</module>
+		<module>bank-service</module>
+		<module>bitcoin-service</module>
+		<module>paypal-service</module>
 		<module>Eureka</module>
 		<module>Zuul</module>
 	</modules>
