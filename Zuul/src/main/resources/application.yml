@@ -1,0 +1,12 @@
+zuul:
+  prefix: /api
+  routes:
+    bank-service:
+      path: /bank/**
+      serviceId: bank
+    bitcoin-service:
+      path: /bitcoin/**
+      serviceId: bitcoin
+    paypal-service:
+      path: /paypal/**
+      serviceId: paypal
