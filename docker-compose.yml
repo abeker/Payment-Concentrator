@@ -26,6 +26,9 @@ services:
       - eureka-server
     links:
       - "eureka-server:eureka-server"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     # networks:
     #         - static-network
 
@@ -68,8 +71,8 @@ services:
     links:
       - "eureka-server:eureka-server"
       - "dbpostgresql:dbpostgresql"
-    # networks:
-    #   - static-network
+          # networks:
+          #   - static-network
 
   bitcoin-service:
     image: bitcoin-service
@@ -111,7 +114,8 @@ services:
       - "eureka-server:eureka-server"
     # networks:
     #     - static-network
-
+volumes: 
+  postgresdata:
 # networks:
 #     static-network:
 #         ipam:
@@ -119,29 +123,3 @@ services:
 #                 - subnet: 172.20.0.0/16
     # networks:
     #   static-network:
-
-  # app:
-  #   container_name: payment-service
-  #   image: payment-service
-  #   build:
-  #     context: ./payment-service
-  #   depends_on:
-  #     - dbpostgresql
-  #   environment:
-  #     DB_PATH: jdbc:postgresql://dbpostgresql:5432/
-  #   networks: 
-  #     - static-network
-
-
-  # dbpostgresql:
-  #   image: postgres
-  #   ports:
-  #     - "5432:5432"
-  #   environment:
-  #     - POSTGRES_PASSWORD=password
-  #     - POSTGRES_USER=postgres
-  #     - POSTGRES_DB=mydb
-  #   networks: 
-  #     - static-network
-# networks: 
-#     static-network:
