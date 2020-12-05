@@ -4,6 +4,7 @@ import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.shared.Applications;
 import com.netflix.eureka.EurekaServerContextHolder;
 import com.netflix.eureka.registry.PeerAwareInstanceRegistry;
+import com.sep.Eureka.service.definition.IPaymentTypeService;
 import org.springframework.cloud.netflix.eureka.server.event.*;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -18,6 +19,12 @@ import org.springframework.stereotype.Component;
 @SuppressWarnings({"JavaDoc", "unused"})
 @Component
 public class EurekaStateChangeListener {
+
+    private final IPaymentTypeService _paymentTypeService;
+
+    public EurekaStateChangeListener(IPaymentTypeService paymentTypeService) {
+        _paymentTypeService = paymentTypeService;
+    }
 
     /**
      * EurekaInstanceCanceledEvent service offline event
@@ -36,6 +43,11 @@ public class EurekaStateChangeListener {
     @EventListener
     public void listen(EurekaInstanceRegisteredEvent event) {
         InstanceInfo instanceInfo = event.getInstanceInfo();
+        if(!instanceInfo.getAppName().equals("EUREKA-SERVICEREGISTRY")) {
+            if(!instanceInfo.getAppName().equals("ZUUL")) {
+                _paymentTypeService.addPaymentType(instanceInfo.getAppName());
+            }
+        }
         System.out.println("NEW SERVICE REGISTERED: " + instanceInfo.getAppName());
         Applications applications = getAllApplicationsOnEureka();
         printAllServices(applications);
