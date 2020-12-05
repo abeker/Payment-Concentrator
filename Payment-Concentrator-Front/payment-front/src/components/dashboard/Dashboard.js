@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Aux from '../../hoc/Auxiliary';
 import Image from '../images/Image';
-import Spinner from '../UI/Spinner/Spinner';
 
 const Dashboard = (props) => {
     const [error, setError] = useState(null);
@@ -19,6 +18,7 @@ const Dashboard = (props) => {
         fetch(url).then(response => {
             return response.text();     
         }).then(responseData => {
+            console.log(responseData);
             alert(responseData);
         }).catch(error => {
             setError('Something get wrong!');
