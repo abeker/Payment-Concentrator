@@ -37,7 +37,8 @@ public class EurekaStateChangeListener {
     public void listen(EurekaInstanceRegisteredEvent event) {
         InstanceInfo instanceInfo = event.getInstanceInfo();
         System.out.println("NEW SERVICE REGISTERED: " + instanceInfo.getAppName());
-        printAllServices();
+        Applications applications = getAllApplicationsOnEureka();
+        printAllServices(applications);
     }
 
     /**
@@ -67,12 +68,15 @@ public class EurekaStateChangeListener {
 //        System.out.println("Eureka Server Startup");
     }
 
-    private void printAllServices() {
-        PeerAwareInstanceRegistry registry = EurekaServerContextHolder.getInstance().getServerContext().getRegistry();
-        Applications applications = registry.getApplications();
+    private void printAllServices(Applications applications) {
         System.out.println("REGISTERED SERVICES: ");
         applications.getRegisteredApplications().forEach((registeredApplication) -> registeredApplication.getInstances().forEach((instance) -> {
             System.out.println("\t" + instance.getAppName() + " (" + instance.getInstanceId() + ")");
         }));
+    }
+
+    private Applications getAllApplicationsOnEureka() {
+        PeerAwareInstanceRegistry registry = EurekaServerContextHolder.getInstance().getServerContext().getRegistry();
+        return registry.getApplications();
     }
 }
