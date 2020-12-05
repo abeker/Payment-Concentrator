@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Aux from '../../hoc/Auxiliary';
 import Image from '../images/Image';
-import Spinner from '../UI/Spinner/Spinner';
 
 const Dashboard = (props) => {
     const [error, setError] = useState(null);
@@ -9,16 +8,17 @@ const Dashboard = (props) => {
     const imageClickHandler = (type) => {
         let url = '';
         if(type === 'VISA') {
-            url = 'http://localhost:8080/bank/visa';
+            url = 'http://localhost:8080/api/bank/pay';
         } else if(type === 'PAYPAL') {
-            url = 'http://localhost:8080/paypal/paypal';
+            url = 'http://localhost:8080/api/paypal/pay';
         } else if(type === 'BITCOIN') {
-            url = 'http://localhost:8080/bitcocin/bitcoin';
+            url = 'http://localhost:8080/api/bitcoin/pay';
         }
 
         fetch(url).then(response => {
             return response.text();     
         }).then(responseData => {
+            console.log(responseData);
             alert(responseData);
         }).catch(error => {
             setError('Something get wrong!');
