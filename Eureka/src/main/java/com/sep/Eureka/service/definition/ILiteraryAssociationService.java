@@ -4,8 +4,8 @@ import com.sep.Eureka.dto.request.PaymentTypes;
 
 public interface ILiteraryAssociationService {
 
-//    LiteraryAssociation addLiteraryAssociation(String literaryAssociationId, String paymentType);
+    void add(String luId, PaymentTypes paymentTypes);
+    void delete(String literaryAssociationId);
     boolean hasPaymentType(String literaryAssociationId, String paymentType);
-
-    void addLiteraryAssociation(String luId, PaymentTypes paymentTypes);
+    void deleteMapping(String literaryAssociationId, String paymentTypeName);
 }

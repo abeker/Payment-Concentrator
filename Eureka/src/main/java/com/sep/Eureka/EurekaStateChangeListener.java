@@ -34,6 +34,7 @@ public class EurekaStateChangeListener {
     public void listen(EurekaInstanceCanceledEvent event) {
 //        System.out.println(event.getServerId() + "\t" + event.getAppName() + " -service offline");
         System.out.println("REMOVED SERVICE: " + event.getAppName());
+        _paymentTypeService.delete(event.getAppName());
     }
 
     /**
@@ -45,7 +46,7 @@ public class EurekaStateChangeListener {
         InstanceInfo instanceInfo = event.getInstanceInfo();
         if(!instanceInfo.getAppName().equals("EUREKA-SERVICEREGISTRY")) {
             if(!instanceInfo.getAppName().equals("ZUUL")) {
-                _paymentTypeService.addPaymentType(instanceInfo.getAppName());
+                _paymentTypeService.add(instanceInfo.getAppName());
             }
         }
         System.out.println("NEW SERVICE REGISTERED: " + instanceInfo.getAppName());

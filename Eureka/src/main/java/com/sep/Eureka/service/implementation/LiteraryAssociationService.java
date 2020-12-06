@@ -22,24 +22,42 @@ public class LiteraryAssociationService implements ILiteraryAssociationService {
         _paymentTypeRepository = paymentTypeRepository1;
     }
 
-
     @Override
-    public boolean hasPaymentType(String literaryAssociationId, String paymentType) {
-        LiteraryAssociation literaryAssociation = _literaryAssociationRepository.findByLuId(literaryAssociationId);
-        if(literaryAssociation != null) {
-            return literaryAssociation.getPaymentType().contains(_paymentTypeRepository.findByPaymentType(paymentType));
+    public boolean hasPaymentType(String literaryAssociationId, String paymentTypeName) {
+        LiteraryAssociation literaryAssociation = findByLuId(literaryAssociationId);
+        PaymentType paymentType = findByPaymentType(paymentTypeName);
+        if(literaryAssociation != null && paymentType != null) {
+            return literaryAssociation.getPaymentType().contains(paymentType);
         }
         return false;
     }
 
     @Override
-    public void addLiteraryAssociation(String luId, PaymentTypes paymentTypes) {
-        LiteraryAssociation literaryAssociation = _literaryAssociationRepository.findByLuId(luId);
+    public void add(String luId, PaymentTypes paymentTypes) {
+        LiteraryAssociation literaryAssociation = findByLuId(luId);
         if(literaryAssociation == null) {
             saveNewLiteraryAssociation(luId, paymentTypes);
             return;
         }
         updateExistingPaymentTypesOfLiteraryAssociation(literaryAssociation, paymentTypes);
+    }
+
+    @Override
+    public void delete(String literaryAssociationId) {
+        LiteraryAssociation literaryAssociation = findByLuId(literaryAssociationId);
+        if(literaryAssociation != null) {
+            literaryAssociation.setDeleted(true);
+            _literaryAssociationRepository.save(literaryAssociation);
+        }
+    }
+
+    @Override
+    public void deleteMapping(String literaryAssociationId, String paymentTypeName) {
+        LiteraryAssociation literaryAssociation = findByLuId(literaryAssociationId);
+        PaymentType paymentType = findByPaymentType(paymentTypeName);
+        if(literaryAssociation != null && paymentType != null) {
+            literaryAssociation.getPaymentType().remove(paymentType);
+        }
     }
 
     private void updateExistingPaymentTypesOfLiteraryAssociation(LiteraryAssociation literaryAssociation, PaymentTypes paymentTypes) {
@@ -48,7 +66,7 @@ public class LiteraryAssociationService implements ILiteraryAssociationService {
 
         Set<PaymentType> filteredPaymentTypes = new HashSet<>();
         for (PaymentType paymentType : paymentTypesFromParameter) {
-            if(!oldPaymentTypes.contains(paymentType)) {
+            if(!oldPaymentTypes.contains(paymentType) && !paymentType.isDeleted()) {
                 filteredPaymentTypes.add(paymentType);
             }
         }
@@ -68,11 +86,31 @@ public class LiteraryAssociationService implements ILiteraryAssociationService {
     private Set<PaymentType> getSetOfPaymentTypes(PaymentTypes paymentTypes) {
         Set<PaymentType> paymentTypesOfLiteraryAssociation = new HashSet<>();
         for (String paymentTypeName : paymentTypes.getPaymentTypeNames()) {
-            PaymentType paymentType = _paymentTypeRepository.findByPaymentType(paymentTypeName);
+            PaymentType paymentType = findByPaymentType(paymentTypeName);
             if(paymentType != null) {
                 paymentTypesOfLiteraryAssociation.add(paymentType);
             }
         }
         return paymentTypesOfLiteraryAssociation;
+    }
+
+    private PaymentType findByPaymentType(String paymentTypeName) {
+        PaymentType paymentType = _paymentTypeRepository.findByPaymentType(paymentTypeName);
+        if(paymentType != null) {
+            if(!paymentType.isDeleted()) {
+                return paymentType;
+            }
+        }
+        return null;
+    }
+
+    private LiteraryAssociation findByLuId(String luId) {
+        LiteraryAssociation literaryAssociation = _literaryAssociationRepository.findByLuId(luId);
+        if(literaryAssociation != null) {
+            if(!literaryAssociation.isDeleted()) {
+                return literaryAssociation;
+            }
+        }
+        return null;
     }
 }

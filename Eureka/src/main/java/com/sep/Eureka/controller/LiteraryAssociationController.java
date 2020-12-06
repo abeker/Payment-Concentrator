@@ -16,7 +16,17 @@ public class LiteraryAssociationController {
 
     @PostMapping("/{lu_id}")
     public void register(@PathVariable("lu_id") String luId, @RequestBody PaymentTypes paymentTypes) {
-        _literaryAssociationService.addLiteraryAssociation(luId, paymentTypes);
+        _literaryAssociationService.add(luId, paymentTypes);
+    }
+
+    @DeleteMapping("/{lu_id}")
+    public void delete(@PathVariable("lu_id") String luId) {
+        _literaryAssociationService.delete(luId);
+    }
+
+    @DeleteMapping("/{lu_id}/{payment_type}")
+    public void deleteMapping(@PathVariable("lu_id") String luId, @PathVariable("payment_type") String payment_type) {
+        _literaryAssociationService.deleteMapping(luId, payment_type);
     }
 
     @GetMapping("/{lu_id}/{payment_type}")
