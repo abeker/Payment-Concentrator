@@ -17,6 +17,8 @@ public class LiteraryAssociation extends BaseEntity {
 
     private String luId;         // literaryAssociation - id
 
+    private boolean deleted = false;
+
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<PaymentType> paymentType;
 
