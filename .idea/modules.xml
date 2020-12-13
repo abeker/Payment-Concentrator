@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/book-service/book-service.iml" filepath="$PROJECT_DIR$/book-service/book-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/payment-service/payment-service.iml" filepath="$PROJECT_DIR$/payment-service/payment-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/paypal-service/paypal-service.iml" filepath="$PROJECT_DIR$/paypal-service/paypal-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pcc-service/pcc-service.iml" filepath="$PROJECT_DIR$/pcc-service/pcc-service.iml" />
     </modules>
   </component>
 </project>
