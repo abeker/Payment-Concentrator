@@ -1,9 +1,15 @@
 zuul:
   prefix: /api
   routes:
-    bank-service:
-      path: /bank/**
-      serviceId: bank
+    pcc-service:
+      path: /pcc/**
+      serviceId: pcc
+    raiffeisen-service:
+      path: /raiffeisen/**
+      serviceId: raiffeisen
+    unicredit-service:
+      path: /unicredit/**
+      serviceId: unicredit
     bitcoin-service:
       path: /bitcoin/**
       serviceId: bitcoin

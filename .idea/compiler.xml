@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="unicredit-service" />
         <module name="bank-service" />
+        <module name="paypal-service" />
         <module name="book-service" />
         <module name="Zuul" />
         <module name="payment-service" />
-        <module name="pcc-service" />
         <module name="Eureka" />
+        <module name="raiffeisen-service" />
         <module name="authentication-service" />
         <module name="bitcoin-service" />
-        <module name="paypal-service" />
+        <module name="pcc-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
@@ -28,6 +30,8 @@
       <module name="payment-service" target="1.8" />
       <module name="paypal-service" target="1.8" />
       <module name="pcc-service" target="1.8" />
+      <module name="raiffeisen-service" target="1.8" />
+      <module name="unicredit-service" target="1.8" />
       <module name="Zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -42,6 +46,8 @@
       <module name="payment-service" options="-parameters" />
       <module name="paypal-service" options="-parameters" />
       <module name="pcc-service" options="-parameters" />
+      <module name="raiffeisen-service" options="-parameters" />
+      <module name="unicredit-service" options="-parameters" />
     </option>
   </component>
 </project>
