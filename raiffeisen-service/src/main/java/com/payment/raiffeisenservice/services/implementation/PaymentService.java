@@ -51,12 +51,6 @@ public class PaymentService implements IPaymentService {
         return _paymentRequestRepository.save(paymentRequest);
     }
 
-    private OrderCounter createOrderCounter() {
-        OrderCounter orderCounter = new OrderCounter();
-        orderCounter.setCurrentDateTime(LocalDateTime.now());
-        return _orderCounterRepository.save(orderCounter);
-    }
-
     private MerchantOrder createMerchantOrder(PaymentRequestDTO paymentRequestDTO) {
         MerchantOrder merchantOrder = new MerchantOrder();
         merchantOrder.setDateOpened(LocalDateTime.now());

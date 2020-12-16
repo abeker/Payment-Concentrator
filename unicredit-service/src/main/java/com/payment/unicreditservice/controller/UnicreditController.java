@@ -2,7 +2,9 @@ package com.payment.unicreditservice.controller;
 
 import com.payment.unicreditservice.dto.request.Payment_RequestDTO;
 import com.payment.unicreditservice.dto.request.CardHolderData;
+import com.payment.unicreditservice.dto.request.RequestPcc;
 import com.payment.unicreditservice.dto.response.PaymentResponse;
+import com.payment.unicreditservice.dto.response.ResponsePcc;
 import com.payment.unicreditservice.dto.response.TransactionResponse;
 import com.payment.unicreditservice.services.definition.IPaymentService;
 import com.payment.unicreditservice.services.definition.ITransactionService;
@@ -12,12 +14,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value="/")
-public class RaiffeisenController {
+public class UnicreditController {
 
     private final IPaymentService _paymentService;
     private final ITransactionService _transactionService;
 
-    public RaiffeisenController(IPaymentService paymentService, ITransactionService transactionService) {
+    public UnicreditController(IPaymentService paymentService, ITransactionService transactionService) {
         _paymentService = paymentService;
         _transactionService = transactionService;
     }
@@ -30,6 +32,11 @@ public class RaiffeisenController {
     @PostMapping("/pay")
     public ResponseEntity<?> pay(@RequestBody CardHolderData cardHolderData) throws IllegalAccessException, NoSuchFieldException {
         return new ResponseEntity<TransactionResponse>(_transactionService.pay(cardHolderData), HttpStatus.OK);
+    }
+
+    @PostMapping("/pay/pcc")
+    public ResponseEntity<?> payPcc(@RequestBody RequestPcc requestPcc) throws IllegalAccessException {
+        return new ResponseEntity<ResponsePcc>(_transactionService.payPcc(requestPcc), HttpStatus.OK);
     }
 
 }
