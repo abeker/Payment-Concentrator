@@ -48,16 +48,16 @@ public class AuthFilter extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-//        if(request.getHeader("Auth-Token") == null) {
-//            return null;
-//        }
+        if(request.getHeader("Auth-Token") == null) {
+            return null;
+        }
 
-//        boolean hasPaymentType = eurekaClient.hasPaymentType("1", "BITCOIN");
-//        PaymentTypes paymentTypes = new PaymentTypes();
-//        List<String> paymentTypeNames = new ArrayList<>();
-//        paymentTypeNames.add("BITCOIN");
-//        paymentTypes.setPaymentTypeNames(paymentTypeNames);
-//        eurekaClient.registerLiteraryAssociation("1", paymentTypes);
+        boolean hasPaymentType = eurekaClient.hasPaymentType("1", "BITCOIN");
+        PaymentTypes paymentTypes = new PaymentTypes();
+        List<String> paymentTypeNames = new ArrayList<>();
+        paymentTypeNames.add("BITCOIN");
+        paymentTypes.setPaymentTypeNames(paymentTypeNames);
+        eurekaClient.registerLiteraryAssociation("1", paymentTypes);
 
 //        String token = request.getHeader("Auth-Token");
 //        try {

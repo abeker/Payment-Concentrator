@@ -3,9 +3,10 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Zuul/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/bank-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/bitcoin-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/paypal-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/pcc-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/raiffeisen-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/unicredit-service/src/main/java" charset="UTF-8" />
   </component>
 </project>

@@ -12,6 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/payment-service/payment-service.iml" filepath="$PROJECT_DIR$/payment-service/payment-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/paypal-service/paypal-service.iml" filepath="$PROJECT_DIR$/paypal-service/paypal-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/pcc-service/pcc-service.iml" filepath="$PROJECT_DIR$/pcc-service/pcc-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/raiffeisen-service/raiffeisen-service.iml" filepath="$PROJECT_DIR$/raiffeisen-service/raiffeisen-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unicredit-service/unicredit-service.iml" filepath="$PROJECT_DIR$/unicredit-service/unicredit-service.iml" />
     </modules>
   </component>
 </project>
