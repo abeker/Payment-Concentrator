@@ -1,6 +1,6 @@
 package com.payment.unicreditservice.controller;
 
-import com.payment.unicreditservice.dto.request.Payment_RequestDTO;
+import com.payment.unicreditservice.dto.request.PaymentRequestDTO;
 import com.payment.unicreditservice.dto.request.CardHolderData;
 import com.payment.unicreditservice.dto.request.RequestPcc;
 import com.payment.unicreditservice.dto.response.PaymentResponse;
@@ -25,7 +25,7 @@ public class UnicreditController {
     }
 
     @PutMapping()
-    public ResponseEntity<?> checkPaymentRequest(@RequestBody Payment_RequestDTO paymentRequestDTO) throws IllegalAccessException {
+    public ResponseEntity<?> checkPaymentRequest(@RequestBody PaymentRequestDTO paymentRequestDTO) throws IllegalAccessException {
         return new ResponseEntity<PaymentResponse>(_paymentService.checkPaymentRequest(paymentRequestDTO), HttpStatus.OK);
     }
 

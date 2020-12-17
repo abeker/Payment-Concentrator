@@ -9,19 +9,23 @@ import com.payment.unicreditservice.feign.PccClient;
 import com.payment.unicreditservice.repository.*;
 import com.payment.unicreditservice.services.definition.ITransactionService;
 import com.payment.unicreditservice.util.enums.TransactionStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 import java.util.Optional;
-import java.util.concurrent.locks.ReentrantLock;
 
 @Service
 public class TransactionService implements ITransactionService {
+
+    private final Logger logger = LoggerFactory.getLogger(TransactionService.class);
+    @Value("${bank.name}")
+    private String bankName;
 
     private final PasswordEncoder _passwordEncoder;
     private final IPaymentRequestRepository _paymentRequestRepository;
@@ -43,21 +47,27 @@ public class TransactionService implements ITransactionService {
 
     @Override
     public TransactionResponse pay(CardHolderData cardHolderData) throws IllegalAccessException, NoSuchFieldException {
+        String cardholderName = cardHolderData.getCardHolderName();
+        logger.info("[{}] payment proccess [{}]", bankName, cardholderName);
         PaymentRequest paymentRequestOptional = getPaymentRequestFromPaymentId(cardHolderData.getPaymentId());
         PaymentRequest paymentRequest = Optional.ofNullable(paymentRequestOptional).orElseThrow(NoSuchElementException::new);
         Optional<Account> accountOptional = getAccountFromCardHolderData(cardHolderData);
 
         if(!accountOptional.isPresent()) {
+            logger.warn("[{}] account not found [{}]", bankName, cardholderName);
             if (!isBankEquals(cardHolderData, paymentRequest)) {
                 OrderCounter orderCounter = createNewOrderCounter();
+                logger.warn("[{}] cross bank transaction [{}],[acq-orderId={}]", bankName, cardholderName, orderCounter.getId());
                 RequestPcc requestPcc = createRequestPcc(orderCounter, cardHolderData, paymentRequest.getAmount());
                 ResponsePcc responsePcc = _pccClient.sendToPcc(requestPcc);
 
                 paymentRequest.setOrderCounter(orderCounter);
                 TransactionStatus transactionStatus = responsePcc != null ? TransactionStatus.SUCCESS : TransactionStatus.ERROR;
+                logger.warn("[{}] account not found [{}]", bankName, cardholderName);
                 createTransactionFromPcc(paymentRequest, transactionStatus);
             }
         } else if(!isCardHolderDataValid(accountOptional.get(), cardHolderData)) {
+            logger.warn("[{}] invalid cardholder data [{}]", bankName, cardholderName);
             throw new IllegalAccessException();
         } else {
             settlementInSameBank(accountOptional.get(), paymentRequest, paymentRequest.getAmount());
@@ -88,15 +98,18 @@ public class TransactionService implements ITransactionService {
 
     @Override
     public ResponsePcc payPcc(RequestPcc requestPcc) throws IllegalAccessException {
+        logger.info("[{}] payment pcc request [acq-orderId={}]", bankName, requestPcc.getAcquirerOrderId());
         CardHolderData cardHolderData = createCardHolderDataFromRequestPcc(requestPcc);
         Optional<Account> accountOptional = getAccountFromCardHolderData(cardHolderData);
         Account customer = accountOptional.orElseThrow(IllegalAccessError::new);
 
         if(!isCardHolderDataValid(customer, cardHolderData)) {
+            logger.warn("[{}] illegal cardholder data [acq-orderId={}]", bankName, requestPcc.getAcquirerOrderId());
             throw new IllegalAccessException();
         }
 
         OrderCounter orderCounter = settlementInOneBank(customer, requestPcc.getAmount());
+        logger.info("[{}] payment pcc successfull [acq-orderId={}]", bankName, requestPcc.getAcquirerOrderId());
         return mapOrderCounterToResponsePcc(orderCounter, requestPcc);
     }
 
@@ -115,8 +128,10 @@ public class TransactionService implements ITransactionService {
     // TODO mora biti thread safe
     private OrderCounter settlementInOneBank(Account customer, double amount) {
         if(customer.getCurrentAmount()-amount < 0) {
+            logger.warn("[{}] customer not have enough [name={}], [amount={}]", bankName, customer.getName(), amount);
             return null;
         } else {
+            logger.info("[{}] customer account reducing [name={}], [amount={}]", bankName, customer.getName(), amount);
             customer.setCurrentAmount(customer.getCurrentAmount() - amount);
             OrderCounter orderCounter = createNewOrderCounter();
             Optional<CustomerAccount> customerAccount = _customerAccountRepository.findById(customer.getId());
@@ -164,11 +179,15 @@ public class TransactionService implements ITransactionService {
 
     // TODO mora biti thread safe
     void settlementInSameBank(Account customer, PaymentRequest paymentRequest, double amount) throws NoSuchFieldException {
-        SellerAccount sellerAccount = paymentRequest.getMerchantOrder().getSellerAccount();
+        MerchantOrder merchantOrder = paymentRequest.getMerchantOrder();
+        SellerAccount sellerAccount = merchantOrder.getSellerAccount();
+        logger.info("[{}] one bank settlement [from={}], [to={}], [amount={}]", bankName, customer.getName(), sellerAccount.getName(), amount);
         if(customer.getCurrentAmount()-amount < 0) {
+            logger.warn("[{}] customer not have enough [name={}], [amount={}]", bankName, customer.getName(), amount);
             createTransaction(customer, paymentRequest, TransactionStatus.FAIL);
             throw new NoSuchFieldException();
         } else {
+            logger.info("[{}] customer account reducing [name={}], [amount={}]", bankName, customer.getName(), amount);
             customer.setCurrentAmount(customer.getCurrentAmount() - amount);
             sellerAccount.setCurrentAmount(sellerAccount.getCurrentAmount() + amount);
             _accountRepository.save(customer);
@@ -187,7 +206,6 @@ public class TransactionService implements ITransactionService {
         _transactionRepository.save(transaction);
     }
 
-    @SuppressWarnings("OptionalGetWithoutIsPresent")
     private Optional<Account> getAccountFromCardHolderData(CardHolderData cardHolderData) {
         return _accountRepository.findAll().stream()
                 .filter(acc -> LocalDate.now().isAfter(acc.getDateOpened()) &&

@@ -5,6 +5,9 @@ import com.payment.raiffeisenservice.dto.response.PaymentResponse;
 import com.payment.raiffeisenservice.entity.*;
 import com.payment.raiffeisenservice.repository.*;
 import com.payment.raiffeisenservice.services.definition.IPaymentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,29 +19,34 @@ import java.util.Optional;
 @Service
 public class PaymentService implements IPaymentService {
 
+    private final Logger logger = LoggerFactory.getLogger(PaymentService.class);
+    @Value("${bank.name}")
+    private String bankName;
+
     private final PasswordEncoder _passwordEncoder;
     private final ISellerAccountRepository _sellerAccountRepository;
     private final IMerchantOrderRepository _merchantOrderRepository;
     private final IPaymentRequestRepository _paymentRequestRepository;
     private final IUrlResponderRepository _urlResponderRepository;
-    private final IOrderCounterRepository _orderCounterRepository;
 
-    public PaymentService(PasswordEncoder passwordEncoder, ISellerAccountRepository sellerAccountRepository, IMerchantOrderRepository merchantOrderRepository, IPaymentRequestRepository paymentRequestRepository, IUrlResponderRepository urlResponderRepository, IOrderCounterRepository orderCounterRepository) {
+    public PaymentService(PasswordEncoder passwordEncoder, ISellerAccountRepository sellerAccountRepository, IMerchantOrderRepository merchantOrderRepository, IPaymentRequestRepository paymentRequestRepository, IUrlResponderRepository urlResponderRepository) {
         _passwordEncoder = passwordEncoder;
         _sellerAccountRepository = sellerAccountRepository;
         _merchantOrderRepository = merchantOrderRepository;
         _paymentRequestRepository = paymentRequestRepository;
         _urlResponderRepository = urlResponderRepository;
-        _orderCounterRepository = orderCounterRepository;
     }
 
     @Override
     public PaymentResponse checkPaymentRequest(PaymentRequestDTO paymentRequestDTO) throws IllegalAccessException {
+        logger.info("[{}] check payment request [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
         if(!isMerchantValid(paymentRequestDTO.getMerchantId(), paymentRequestDTO.getMerchantPassword()) ||
-            !isAmountValid(paymentRequestDTO.getAmount())) {
+                !isAmountValid(paymentRequestDTO.getAmount())) {
+            logger.warn("[{}] payment request invalid [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
             throw new IllegalAccessException();
         }
 
+        logger.info("[{}] payment request valid [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
         PaymentRequest storedPaymentRequest = createPaymentRequest(paymentRequestDTO);
         return mapPaymentRequestToPaymentResponse(storedPaymentRequest);
     }
@@ -48,6 +56,7 @@ public class PaymentService implements IPaymentService {
         PaymentRequest paymentRequest = new PaymentRequest();
         paymentRequest.setAmount(paymentRequestDTO.getAmount());
         paymentRequest.setMerchantOrder(savedMerchantOrder);
+        logger.info("[{}] create paymentId [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
         return _paymentRequestRepository.save(paymentRequest);
     }
 
@@ -56,6 +65,7 @@ public class PaymentService implements IPaymentService {
         merchantOrder.setDateOpened(LocalDateTime.now());
         Optional<SellerAccount> sellerAccount = getMerchantById(paymentRequestDTO.getMerchantId(), paymentRequestDTO.getMerchantPassword());
         sellerAccount.ifPresent(merchantOrder::setSellerAccount);
+        logger.info("[{}] create merchantOrder [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
         return _merchantOrderRepository.save(merchantOrder);
     }
 
