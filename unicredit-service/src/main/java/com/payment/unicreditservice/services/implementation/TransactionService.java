@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.concurrent.locks.ReentrantLock;
 
 @Service
 public class TransactionService implements ITransactionService {
@@ -125,18 +126,22 @@ public class TransactionService implements ITransactionService {
         return responsePcc;
     }
 
-    // TODO mora biti thread safe
+    ReentrantLock lockOneBank = new ReentrantLock();
     private OrderCounter settlementInOneBank(Account customer, double amount) {
         if(customer.getCurrentAmount()-amount < 0) {
             logger.warn("[{}] customer not have enough [name={}], [amount={}]", bankName, customer.getName(), amount);
             return null;
         } else {
-            logger.info("[{}] customer account reducing [name={}], [amount={}]", bankName, customer.getName(), amount);
-            customer.setCurrentAmount(customer.getCurrentAmount() - amount);
-            OrderCounter orderCounter = createNewOrderCounter();
-            Optional<CustomerAccount> customerAccount = _customerAccountRepository.findById(customer.getId());
-            _accountRepository.save(customerAccount.get());
-            return orderCounter;
+            lockOneBank.lock();
+            try {
+                logger.info("[{}] customer account reducing [name={}], [amount={}]", bankName, customer.getName(), amount);
+                customer.setCurrentAmount(customer.getCurrentAmount() - amount);
+                Optional<CustomerAccount> customerAccount = _customerAccountRepository.findById(customer.getId());
+                _accountRepository.save(customerAccount.get());
+            } finally {
+                lockOneBank.unlock();
+            }
+            return createNewOrderCounter();
         }
     }
 
@@ -177,7 +182,7 @@ public class TransactionService implements ITransactionService {
                 .build();
     }
 
-    // TODO mora biti thread safe
+    ReentrantLock lockSameBank = new ReentrantLock();
     void settlementInSameBank(Account customer, PaymentRequest paymentRequest, double amount) throws NoSuchFieldException {
         MerchantOrder merchantOrder = paymentRequest.getMerchantOrder();
         SellerAccount sellerAccount = merchantOrder.getSellerAccount();
@@ -187,12 +192,17 @@ public class TransactionService implements ITransactionService {
             createTransaction(customer, paymentRequest, TransactionStatus.FAIL);
             throw new NoSuchFieldException();
         } else {
-            logger.info("[{}] customer account reducing [name={}], [amount={}]", bankName, customer.getName(), amount);
-            customer.setCurrentAmount(customer.getCurrentAmount() - amount);
-            sellerAccount.setCurrentAmount(sellerAccount.getCurrentAmount() + amount);
-            _accountRepository.save(customer);
-            _accountRepository.save(sellerAccount);
-            createTransaction(customer, paymentRequest, TransactionStatus.SUCCESS);
+            lockSameBank.lock();
+            try {
+                logger.info("[{}] customer account reducing [name={}], [amount={}]", bankName, customer.getName(), amount);
+                customer.setCurrentAmount(customer.getCurrentAmount() - amount);
+                sellerAccount.setCurrentAmount(sellerAccount.getCurrentAmount() + amount);
+                _accountRepository.save(customer);
+                _accountRepository.save(sellerAccount);
+                createTransaction(customer, paymentRequest, TransactionStatus.SUCCESS);
+            } finally {
+                lockSameBank.unlock();
+            }
         }
     }
 
