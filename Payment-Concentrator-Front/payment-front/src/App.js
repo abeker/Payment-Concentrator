@@ -1,5 +1,3 @@
-import Dashboard from './components/dashboard/Dashboard';
-import Aux from './hoc/Auxiliary';
 import {BrowserRouter as Router, Switch,Route,useHistory} from 'react-router-dom';
 import routes from './routes';
 
