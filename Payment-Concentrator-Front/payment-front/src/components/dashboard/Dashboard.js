@@ -6,15 +6,20 @@ const Dashboard = (props) => {
     const [error, setError] = useState(null);
 
     const imageClickHandler = (type) => {
-        let url = '';
-        if(type === 'VISA') {
-            url = 'http://localhost:8080/api/bank/pay';
+        if(type === 'BANK') {
+            sendRequestBody('http://localhost:8080/api/unicredit', 'PUT', {
+                merchantId: "LMo0aUBivXliLs9rjBijU096ufdv56",
+                merchantPassword: "p62om0FvEhG70wzCjwrW6rsZCYSY9SikETjbpHNIrJ37Ul6odV4GgV025kFLP7Vwa79XJ8WTsAsDB2D3r9jW26G7a3zp78HbW9z",
+                amount: 4200
+            });
         } else if(type === 'PAYPAL') {
-            url = 'http://localhost:8080/api/paypal/pay';
+            props.history.push('/paypal');
         } else if(type === 'BITCOIN') {
-            url = 'http://localhost:8080/api/bitcoin/pay';
+            sendRequest('http://localhost:8080/api/bitcoin/pay');
         }
+    }
 
+    const sendRequest = (url) => {
         fetch(url).then(response => {
             return response.text();     
         }).then(responseData => {
@@ -25,10 +30,26 @@ const Dashboard = (props) => {
         });
     }
 
+    const sendRequestBody = (url, method, body) => {
+        fetch(url, {
+            method: method,
+            body: JSON.stringify(body),
+            headers: {'Content-Type': 'application/json'}
+        }).then(response => {
+            return response.json();
+        }).then(responseData => {
+            console.log(responseData);
+            props.history.push(responseData.paymentUrl+"/"+responseData.paymentId);
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+    
+
     return (
         <Aux>
             { error && alert(error) }
-            <Image type="VISA" clicked={ imageClickHandler.bind(this, "VISA") } />
+            <Image type="BANK" clicked={ imageClickHandler.bind(this, "BANK") } />
             <Image type="PAYPAL" clicked={ imageClickHandler.bind(this, "PAYPAL") } />
             <Image type="BITCOIN" clicked={ imageClickHandler.bind(this, "BITCOIN") } />
         </Aux>

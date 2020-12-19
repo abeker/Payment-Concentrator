@@ -19,5 +19,5 @@ insert into seller_account (error_url, failed_url, merchant_id, merchant_passwor
     ('http://localhost:3000/paulo/error', 'http://localhost:3000/paulo/fail', '$2y$12$Es82vRCm.4kj0n81m1UpZeUFtfl5XeFd263T3T/0FPfonaqI5qbQ2', '$2y$12$d6onc4NspbXRVVr7Cm6tOOHWuI7ePuQnIqNp3U0o6jPkNc81fMjge', 'http://localhost:3000/paulo/success', 'd5a76b76-11d2-4bd7-9771-7c4cecd71eec');
 
 insert into url_responder (id, date_closed, date_opened, payment_url) values
-    ('796a554d-e834-43c7-86c3-9ad016edb637', '2020-07-20', '2020-01-01', 'http://localhost:8081/payment_unicredit'),
-    ('e82081b4-eff2-467b-ad3a-1f8e85a2bdfa', null, '2020-07-20', 'http://localhost:3000/payment-unicredit');
+    ('796a554d-e834-43c7-86c3-9ad016edb637', '2020-07-20', '2020-01-01', '/payment_unicredit'),
+    ('e82081b4-eff2-467b-ad3a-1f8e85a2bdfa', null, '2020-07-20', '/payment-unicredit');

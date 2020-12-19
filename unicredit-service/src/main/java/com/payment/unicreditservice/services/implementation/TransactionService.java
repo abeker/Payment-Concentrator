@@ -66,6 +66,9 @@ public class TransactionService implements ITransactionService {
                 TransactionStatus transactionStatus = responsePcc != null ? TransactionStatus.SUCCESS : TransactionStatus.ERROR;
                 logger.warn("[{}] account not found [{}]", bankName, cardholderName);
                 createTransactionFromPcc(paymentRequest, transactionStatus);
+            } else {
+                logger.warn("[{}] invalid cardholder data [{}]", bankName, cardholderName);
+                throw new IllegalAccessException();
             }
         } else if(!isCardHolderDataValid(accountOptional.get(), cardHolderData)) {
             logger.warn("[{}] invalid cardholder data [{}]", bankName, cardholderName);
@@ -220,8 +223,10 @@ public class TransactionService implements ITransactionService {
         return _accountRepository.findAll().stream()
                 .filter(acc -> LocalDate.now().isAfter(acc.getDateOpened()) &&
                         acc.getDateClosed() == null &&
-                        _passwordEncoder.matches(cardHolderData.getAccountNumber(), acc.getAccountNumber()))
-
+                        _passwordEncoder.matches(cardHolderData.getAccountNumber(), acc.getAccountNumber()) &&
+                        acc.getName().equals(cardHolderData.getCardHolderName()) &&
+                        _customerAccountRepository.findById(acc.getId()).orElse(null).getValidThru().equals(cardHolderData.getValidThru()) &&
+                        _passwordEncoder.matches(cardHolderData.getSecurityCode(), _customerAccountRepository.findById(acc.getId()).orElse(null).getSecurityCode()))
                 .findFirst();
     }
 

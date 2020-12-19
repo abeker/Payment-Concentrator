@@ -9,8 +9,8 @@ const image = (props) => {
     let img = null;
     if(props.type === 'BITCOIN') {
         img = <img src={ bitcoin } className={ classes.Image } alt='BITCOIN' onClick={ props.clicked } />;
-    } else if(props.type === 'VISA') {
-        img = <img src={ visa } alt='VISA' className={ classes.Image } onClick={ props.clicked } />;
+    } else if(props.type === 'BANK') {
+        img = <img src={ visa } alt='BANK' className={ classes.Image } onClick={ props.clicked } />;
     } else if(props.type === 'PAYPAL') {
         img = <img src={ paypal } alt='PAYPAL' className={ classes.Image } onClick={ props.clicked } />;
     }
