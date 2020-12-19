@@ -54,27 +54,52 @@ public class TransactionService implements ITransactionService {
         PaymentRequest paymentRequest = Optional.ofNullable(paymentRequestOptional).orElseThrow(NoSuchElementException::new);
         Optional<Account> accountOptional = getAccountFromCardHolderData(cardHolderData);
 
-        if(!accountOptional.isPresent()) {
-            logger.warn("[{}] account not found [{}]", bankName, cardholderName);
-            if (!isBankEquals(cardHolderData, paymentRequest)) {
-                OrderCounter orderCounter = createNewOrderCounter();
-                logger.warn("[{}] cross bank transaction [{}],[acq-orderId={}]", bankName, cardholderName, orderCounter.getId());
-                RequestPcc requestPcc = createRequestPcc(orderCounter, cardHolderData, paymentRequest.getAmount());
-                ResponsePcc responsePcc = _pccClient.sendToPcc(requestPcc);
-
-                paymentRequest.setOrderCounter(orderCounter);
-                TransactionStatus transactionStatus = responsePcc != null ? TransactionStatus.SUCCESS : TransactionStatus.ERROR;
-                logger.warn("[{}] account not found [{}]", bankName, cardholderName);
-                createTransactionFromPcc(paymentRequest, transactionStatus);
-            }
-        } else if(!isCardHolderDataValid(accountOptional.get(), cardHolderData)) {
-            logger.warn("[{}] invalid cardholder data [{}]", bankName, cardholderName);
+        if(isPaymentRequestProcessed(paymentRequest)) {
+            logger.warn("[{}] request already processed [{}]", bankName, paymentRequest.getId());
             throw new IllegalAccessException();
         } else {
-            settlementInSameBank(accountOptional.get(), paymentRequest, paymentRequest.getAmount());
+            if (!accountOptional.isPresent()) {
+                logger.warn("[{}] account not found [{}]", bankName, cardholderName);
+                if (!isBankEquals(cardHolderData, paymentRequest)) {
+                    OrderCounter orderCounter = createNewOrderCounter();
+                    logger.warn("[{}] cross bank transaction [{}],[acq-orderId={}]", bankName, cardholderName, orderCounter.getId());
+                    RequestPcc requestPcc = createRequestPcc(orderCounter, cardHolderData, paymentRequest.getAmount());
+                    ResponsePcc responsePcc = _pccClient.sendToPcc(requestPcc);
+
+                    addMoneyOnMerchantAccount(responsePcc, cardHolderData, paymentRequest);
+                    paymentRequest.setOrderCounter(orderCounter);
+                    TransactionStatus transactionStatus = responsePcc != null ? TransactionStatus.SUCCESS : TransactionStatus.ERROR;
+                    logger.warn("[{}] account not found [{}]", bankName, cardholderName);
+                    createTransactionFromPcc(paymentRequest, transactionStatus);
+                }
+            } else if (!isCardHolderDataValid(accountOptional.get(), cardHolderData)) {
+                logger.warn("[{}] invalid cardholder data [{}]", bankName, cardholderName);
+                throw new IllegalAccessException();
+            } else {
+                settlementInSameBank(accountOptional.get(), paymentRequest, paymentRequest.getAmount());
+            }
         }
 
         return mapTransactionToTransactionResponse(paymentRequest);
+    }
+
+    private boolean isPaymentRequestProcessed(PaymentRequest paymentRequest) {
+        for (Transaction transaction : _transactionRepository.findAll()) {
+            if(transaction.getPaymentRequest().equals(paymentRequest)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void addMoneyOnMerchantAccount(ResponsePcc responsePcc, CardHolderData cardHolderData, PaymentRequest paymentRequest) {
+        MerchantOrder merchantOrder = paymentRequest.getMerchantOrder();
+        SellerAccount sellerAccount = merchantOrder.getSellerAccount();
+        Account merchantAccount = _accountRepository.findByAccountNumber(sellerAccount.getAccountNumber());
+        if(responsePcc != null &&
+                merchantAccount != null) {
+            merchantAccount.setCurrentAmount(merchantAccount.getCurrentAmount() + paymentRequest.getAmount());
+        }
     }
 
     private void createTransactionFromPcc(PaymentRequest paymentRequest, TransactionStatus transactionStatus) {
@@ -220,8 +245,10 @@ public class TransactionService implements ITransactionService {
         return _accountRepository.findAll().stream()
                 .filter(acc -> LocalDate.now().isAfter(acc.getDateOpened()) &&
                         acc.getDateClosed() == null &&
-                        _passwordEncoder.matches(cardHolderData.getAccountNumber(), acc.getAccountNumber()))
-
+                        _passwordEncoder.matches(cardHolderData.getAccountNumber(), acc.getAccountNumber()) &&
+                        acc.getName().equals(cardHolderData.getCardHolderName()) &&
+                        _customerAccountRepository.findById(acc.getId()).orElse(null).getValidThru().equals(cardHolderData.getValidThru()) &&
+                        _passwordEncoder.matches(cardHolderData.getSecurityCode(), _customerAccountRepository.findById(acc.getId()).orElse(null).getSecurityCode()))
                 .findFirst();
     }
 

@@ -19,5 +19,5 @@ insert into seller_account (error_url, failed_url, merchant_id, merchant_passwor
     ('http://localhost:3000/pedro/error', 'http://localhost:3000/pedro/fail', '$2y$12$3.UWQMp.wI3jtmks24uR5u/sKDkLZINEQemLYaalnLJkLDa4.yuNu', '$2y$12$JO7vVMmsXQaNa8Ft.fFXIux/mIkv52flO.g1947O5F3FSV1TwaHDG', 'http://localhost:3000/pedro/success', 'd5a76b76-11d2-4bd7-9771-7c4cecd71eec');
 
 insert into url_responder (id, date_closed, date_opened, payment_url) values
-    ('796a554d-e834-43c7-86c3-9ad016edb637', '2020-07-20', '2020-01-01', 'http://localhost:8081/payment_raiffeisen'),
-    ('e82081b4-eff2-467b-ad3a-1f8e85a2bdfa', null, '2020-07-20', 'http://localhost:3000/payment-raiffeisen');
+    ('796a554d-e834-43c7-86c3-9ad016edb637', '2020-07-20', '2020-01-01', '/payment_raiffeisen'),
+    ('e82081b4-eff2-467b-ad3a-1f8e85a2bdfa', null, '2020-07-20', '/payment-raiffeisen');
