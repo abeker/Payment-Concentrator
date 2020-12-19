@@ -7,7 +7,7 @@ const Dashboard = (props) => {
 
     const imageClickHandler = (type) => {
         if(type === 'BANK') {
-            sendRequestBody('http://localhost:8080/api/unicredit', 'PUT', {
+            sendRequestBody('https://localhost:8443/api/unicredit', 'PUT', {
                 merchantId: "LMo0aUBivXliLs9rjBijU096ufdv56",
                 merchantPassword: "p62om0FvEhG70wzCjwrW6rsZCYSY9SikETjbpHNIrJ37Ul6odV4GgV025kFLP7Vwa79XJ8WTsAsDB2D3r9jW26G7a3zp78HbW9z",
                 amount: 4200
@@ -15,7 +15,7 @@ const Dashboard = (props) => {
         } else if(type === 'PAYPAL') {
             props.history.push('/paypal');
         } else if(type === 'BITCOIN') {
-            sendRequest('http://localhost:8080/api/bitcoin/pay');
+            sendRequest('https://localhost:8443/api/bitcoin/pay');
         }
     }
 
