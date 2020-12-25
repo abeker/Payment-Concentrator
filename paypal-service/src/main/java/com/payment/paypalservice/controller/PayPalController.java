@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
 public class PayPalController {
 
@@ -28,13 +27,11 @@ public class PayPalController {
     public static final String SUCCESS_URL = "pay/success";
     public static final String CANCEL_URL = "pay/cancel";
 
-    @CrossOrigin(value = "*")
     @GetMapping("/pay")
     public String payWithPayPal(){
         return "Successfully paid with PayPal!";
     }
 
-    @CrossOrigin(value = "*", origins = "*")
     @PostMapping("/pay")
     public String payment(@RequestBody Order order) throws PayPalRESTException {
         Payment payment = payPalService.createPayment(order.getPrice(),order.getCurrency(),order.getMethod(),order.getIntent(),
