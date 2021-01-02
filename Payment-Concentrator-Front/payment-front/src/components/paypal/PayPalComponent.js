@@ -14,7 +14,7 @@ const PayPal = (props) => {
         e.preventDefault();
         console.log(price, currency,method, intent,desc);
         const json = JSON.stringify({ price,currency,method,intent,description: desc });
-        axios.post("http://localhost:8082/pay",json,{
+        axios.post("https://localhost:8443/api/paypal/pay",json,{
             headers: {
                 'Content-Type': 'application/json',
             }}).then(res => {

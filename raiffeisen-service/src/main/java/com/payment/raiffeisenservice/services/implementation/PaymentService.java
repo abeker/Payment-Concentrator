@@ -39,6 +39,7 @@ public class PaymentService implements IPaymentService {
 
     @Override
     public PaymentResponse checkPaymentRequest(PaymentRequestDTO paymentRequestDTO) throws IllegalAccessException {
+        System.out.println("MERCHANT ID: " + paymentRequestDTO.getMerchantId() + " /// "  + paymentRequestDTO.getMerchantPassword() + "   " + paymentRequestDTO.getAmount());
         logger.info("[{}] check payment request [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
         if(!isMerchantValid(paymentRequestDTO.getMerchantId(), paymentRequestDTO.getMerchantPassword()) ||
                 !isAmountValid(paymentRequestDTO.getAmount())) {
