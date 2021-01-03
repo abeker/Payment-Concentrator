@@ -1,0 +1,42 @@
+22-12-2020;18:17:44 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - relation "account" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - relation "customer_account" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - relation "merchant_order" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - relation "payment_request" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - relation "payment_request" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - relation "seller_account" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - relation "transaction" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - relation "transaction" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "account" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "address" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "customer_account" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "merchant_order" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "order_counter" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "payment_request" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "seller_account" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "transaction" does not exist, skipping
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+22-12-2020;18:17:48 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "url_responder" does not exist, skipping
+22-12-2020;18:17:50 WARN  c.n.c.s.URLConfigurationSource.<init>:121 - No URLs will be polled as dynamic configuration sources.
+22-12-2020;18:17:50 WARN  c.n.c.s.URLConfigurationSource.<init>:121 - No URLs will be polled as dynamic configuration sources.
+22-12-2020;18:17:52 WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger.logWarning:86 - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+22-12-2020;18:32:58 WARN  c.p.r.s.i.TransactionService.pay:63 - ["Raiffeisen Bank"] account not found [Wilfred Zaha]
+22-12-2020;18:32:58 WARN  c.p.r.s.i.TransactionService.pay:66 - ["Raiffeisen Bank"] cross bank transaction [Wilfred Zaha],[acq-orderId=1]
+22-12-2020;18:33:25 WARN  c.p.r.s.i.TransactionService.pay:73 - ["Raiffeisen Bank"] account not found [Wilfred Zaha]
+22-12-2020;18:36:30 WARN  c.n.d.DiscoveryClient.notify:1351 - Saw local status change event StatusChangeEvent [timestamp=1608658590275, current=DOWN, previous=UP]

@@ -1,4 +1,7 @@
+import Aux from "../../../hoc/Auxiliary";
 import BankForm from '../BankForm';
+import unicreditLogo from '../../../assets/images/unicredit1.png';
+import classes from './Unicredit.module.css';
 
 const Unicredit = (props) => {
     const onSendData = (event) => {
@@ -31,8 +34,15 @@ const Unicredit = (props) => {
     }
 
     return (
-        <BankForm 
-            onClick={ onSendData } />
+        <Aux classes="Unicredit">
+            <div style={{ marginLeft: "20%" }}>
+                <h2 className={ classes.H2 }>Unicredit Bank</h2>
+                <BankForm 
+                    onClick={ onSendData }
+                    cssClass="Unicredit"  />
+                <img src={ unicreditLogo } alt="Unicredit" className={ classes.Img }/>
+            </div>
+        </Aux>
     );
 }
 

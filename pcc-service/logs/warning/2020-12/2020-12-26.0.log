@@ -1,0 +1,7 @@
+26-12-2020;00:10:29 WARN  c.n.d.DiscoveryClient.notify:1351 - Saw local status change event StatusChangeEvent [timestamp=1608937829606, current=DOWN, previous=UP]
+26-12-2020;09:44:00 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+26-12-2020;09:44:01 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:230 - SQL Warning Code: 0, SQLState: 00000
+26-12-2020;09:44:01 WARN  o.h.e.j.s.SqlExceptionHelper.logWarning:231 - table "bank" does not exist, skipping
+26-12-2020;09:44:02 WARN  c.n.c.s.URLConfigurationSource.<init>:121 - No URLs will be polled as dynamic configuration sources.
+26-12-2020;09:44:02 WARN  c.n.c.s.URLConfigurationSource.<init>:121 - No URLs will be polled as dynamic configuration sources.
+26-12-2020;09:44:03 WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger.logWarning:86 - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.

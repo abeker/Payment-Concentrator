@@ -1,0 +1,331 @@
+2020-12-26 00:01:29.531 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 00:01:30.120 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 00:01:30.700 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 00:01:30.704 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 00:01:58.985 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 00:02:00.204 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:214 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 00:02:00.205 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:222 - ["Unicredit Bank"] customer account reducing [name=Wilfred Zaha], [amount=4200.0]
+2020-12-26 00:03:08.300 INFO  c.p.u.s.i.TransactionService.payPcc:127 - ["Unicredit Bank"] payment pcc request [acq-orderId=1]
+2020-12-26 00:03:09.501 INFO  c.p.u.s.i.TransactionService.payPcc:138 - ["Unicredit Bank"] payment pcc successfull [acq-orderId=1]
+2020-12-26 00:03:31.765 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 00:04:54.610 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 00:04:55.203 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 00:04:55.783 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 00:04:55.798 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 00:06:45.077 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 00:06:46.260 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:214 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 00:08:31.767 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 00:09:44.479 INFO  c.p.u.s.i.TransactionService.payPcc:127 - ["Unicredit Bank"] payment pcc request [acq-orderId=2]
+2020-12-26 00:09:45.726 INFO  c.p.u.s.i.TransactionService.payPcc:138 - ["Unicredit Bank"] payment pcc successfull [acq-orderId=2]
+2020-12-26 00:10:29.524 INFO  o.s.c.n.e.s.EurekaServiceRegistry.deregister:65 - Unregistering application UNICREDIT with eureka with status DOWN
+2020-12-26 00:10:29.527 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-26 00:10:29.644 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091 - registration status: 204
+2020-12-26 00:10:29.883 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 00:10:29.887 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform:526 - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-26 00:10:30.099 INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-26 00:10:30.100 INFO  c.z.h.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-12-26 00:10:30.130 INFO  c.z.h.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-12-26 00:10:30.131 INFO  c.n.d.DiscoveryClient.shutdown:932 - Shutting down DiscoveryClient ...
+2020-12-26 00:44:33.363 INFO  c.p.u.UnicreditServiceApplication.logStartupProfileInfo:655 - The following profiles are active: dev
+2020-12-26 00:44:34.182 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-26 00:44:34.340 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 145ms. Found 9 JPA repository interfaces.
+2020-12-26 00:44:34.680 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=145e74bb-8099-3284-aedd-1f94bb3ad17d
+2020-12-26 00:44:34.739 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.unicreditservice.feign.PccClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 00:44:34.785 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$25782edc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 00:44:34.829 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-12-26 00:44:34.951 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@d257579' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 00:44:34.957 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 00:44:35.315 INFO  o.s.b.w.e.t.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8091 (http)
+2020-12-26 00:44:35.324 INFO  o.a.c.h.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8091"]
+2020-12-26 00:44:35.325 INFO  o.a.c.c.StandardService.log:173 - Starting service [Tomcat]
+2020-12-26 00:44:35.326 INFO  o.a.c.c.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-12-26 00:44:35.533 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring embedded WebApplicationContext
+2020-12-26 00:44:35.533 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 2144 ms
+2020-12-26 00:44:35.741 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-26 00:44:35.801 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-26 00:44:35.879 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-12-26 00:44:36.153 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-26 00:44:36.204 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 00:44:36.336 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-12-26 00:44:36.520 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-12-26 00:44:36.563 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-26 00:44:38.018 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-26 00:44:38.030 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 00:44:38.596 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 00:44:39.021 INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword:86 - 
+
+Using generated security password: c8e17c55-c408-4d88-8699-d386a42236fc
+
+2020-12-26 00:44:39.105 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/', GET], []
+2020-12-26 00:44:39.105 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2020-12-26 00:44:39.105 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/*.html', GET], []
+2020-12-26 00:44:39.105 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-12-26 00:44:39.105 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2020-12-26 00:44:39.106 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2020-12-26 00:44:39.106 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2020-12-26 00:44:39.162 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16b76858, org.springframework.security.web.context.SecurityContextPersistenceFilter@655621fd, org.springframework.security.web.header.HeaderWriterFilter@1a345298, org.springframework.web.filter.CorsFilter@69cd7630, org.springframework.security.web.authentication.logout.LogoutFilter@56b9d43f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fcd0e8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@78128dd0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d3cce46, org.springframework.security.web.session.SessionManagementFilter@eded048, org.springframework.security.web.access.ExceptionTranslationFilter@3e8b8f0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@21b744ec]
+2020-12-26 00:44:39.191 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-26 00:44:39.198 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-26 00:44:39.973 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2020-12-26 00:44:40.887 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2020-12-26 00:44:40.958 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2020-12-26 00:44:41.368 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2020-12-26 00:44:41.368 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2020-12-26 00:44:41.484 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2020-12-26 00:44:41.485 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2020-12-26 00:44:41.689 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 00:44:41.873 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-26 00:44:41.873 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-26 00:44:41.873 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-26 00:44:41.873 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-26 00:44:41.874 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-26 00:44:41.874 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-26 00:44:41.874 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-26 00:44:42.068 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1102 - The response status is 200
+2020-12-26 00:44:42.071 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2020-12-26 00:44:42.073 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-12-26 00:44:42.077 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1608939882076 with initial instances count: 1
+2020-12-26 00:44:42.080 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application UNICREDIT with eureka with status UP
+2020-12-26 00:44:42.081 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1608939882081, current=UP, previous=STARTING]
+2020-12-26 00:44:42.083 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-26 00:44:42.084 INFO  o.a.c.h.Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8091"]
+2020-12-26 00:44:42.110 INFO  o.s.b.w.e.t.TomcatWebServer.start:220 - Tomcat started on port(s): 8091 (http) with context path ''
+2020-12-26 00:44:42.111 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent:145 - Updating port to 8091
+2020-12-26 00:44:42.389 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091 - registration status: 204
+2020-12-26 00:44:42.400 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 00:44:42.400 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 00:44:42.408 INFO  c.p.u.UnicreditServiceApplication.logStarted:61 - Started UnicreditServiceApplication in 11.521 seconds (JVM running for 13.902)
+2020-12-26 00:45:09.858 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-26 00:45:09.859 INFO  o.s.w.s.DispatcherServlet.initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-26 00:45:09.870 INFO  o.s.w.s.DispatcherServlet.initServletBean:547 - Completed initialization in 11 ms
+2020-12-26 00:45:09.954 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 00:45:10.843 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 00:45:11.480 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 00:45:11.532 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 00:45:18.930 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 00:45:20.582 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:220 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 00:45:20.583 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:228 - ["Unicredit Bank"] customer account reducing [name=Wilfred Zaha], [amount=4200.0]
+2020-12-26 00:45:22.253 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 00:45:22.840 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 00:45:23.427 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 00:45:23.431 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 00:45:30.811 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 00:45:32.012 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:220 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 00:45:32.012 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:228 - ["Unicredit Bank"] customer account reducing [name=Wilfred Zaha], [amount=4200.0]
+2020-12-26 00:45:34.250 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 00:45:34.831 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 00:45:35.416 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 00:45:35.420 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 00:45:42.519 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 00:45:43.732 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:220 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 00:46:22.797 INFO  o.s.c.n.e.s.EurekaServiceRegistry.deregister:65 - Unregistering application UNICREDIT with eureka with status DOWN
+2020-12-26 00:46:22.797 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-26 00:46:23.089 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 00:46:23.091 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform:526 - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-26 00:46:23.240 INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-26 00:46:23.240 INFO  c.z.h.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-12-26 00:46:23.258 INFO  c.z.h.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-12-26 00:46:23.261 INFO  c.n.d.DiscoveryClient.shutdown:932 - Shutting down DiscoveryClient ...
+2020-12-26 00:46:39.222 INFO  c.p.u.UnicreditServiceApplication.logStartupProfileInfo:655 - The following profiles are active: dev
+2020-12-26 00:46:39.917 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-26 00:46:40.040 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 114ms. Found 9 JPA repository interfaces.
+2020-12-26 00:46:40.391 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=145e74bb-8099-3284-aedd-1f94bb3ad17d
+2020-12-26 00:46:40.448 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.unicreditservice.feign.PccClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 00:46:40.497 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f60ef285] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 00:46:40.533 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-12-26 00:46:40.624 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@71ed560f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 00:46:40.633 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 00:46:40.962 INFO  o.s.b.w.e.t.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8091 (http)
+2020-12-26 00:46:40.971 INFO  o.a.c.h.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8091"]
+2020-12-26 00:46:40.972 INFO  o.a.c.c.StandardService.log:173 - Starting service [Tomcat]
+2020-12-26 00:46:40.972 INFO  o.a.c.c.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-12-26 00:46:41.131 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring embedded WebApplicationContext
+2020-12-26 00:46:41.131 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 1882 ms
+2020-12-26 00:46:41.318 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-26 00:46:41.369 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-26 00:46:41.442 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-12-26 00:46:41.646 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-26 00:46:41.650 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 00:46:41.779 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-12-26 00:46:41.895 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-12-26 00:46:41.914 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-26 00:46:43.314 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-26 00:46:43.324 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 00:46:43.785 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 00:46:44.080 INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword:86 - 
+
+Using generated security password: 543423c7-6516-42d1-970a-36a106d67edc
+
+2020-12-26 00:46:44.143 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/', GET], []
+2020-12-26 00:46:44.144 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2020-12-26 00:46:44.144 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/*.html', GET], []
+2020-12-26 00:46:44.144 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-12-26 00:46:44.144 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2020-12-26 00:46:44.145 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2020-12-26 00:46:44.145 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2020-12-26 00:46:44.198 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3e28dc96, org.springframework.security.web.context.SecurityContextPersistenceFilter@23396fc0, org.springframework.security.web.header.HeaderWriterFilter@66715ca9, org.springframework.web.filter.CorsFilter@7c90b7b7, org.springframework.security.web.authentication.logout.LogoutFilter@7f6b57f2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e5e6573, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@270f28cf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44eb2452, org.springframework.security.web.session.SessionManagementFilter@156cfa20, org.springframework.security.web.access.ExceptionTranslationFilter@1209a0f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5cffec7]
+2020-12-26 00:46:44.223 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-26 00:46:44.228 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-26 00:46:45.222 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2020-12-26 00:46:45.584 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2020-12-26 00:46:45.629 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2020-12-26 00:46:45.957 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2020-12-26 00:46:45.957 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2020-12-26 00:46:46.102 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2020-12-26 00:46:46.102 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2020-12-26 00:46:46.303 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 00:46:46.490 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-26 00:46:46.490 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-26 00:46:46.490 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-26 00:46:46.491 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-26 00:46:46.491 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-26 00:46:46.491 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-26 00:46:46.491 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-26 00:46:46.682 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1102 - The response status is 200
+2020-12-26 00:46:46.684 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2020-12-26 00:46:46.687 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-12-26 00:46:46.690 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1608940006690 with initial instances count: 1
+2020-12-26 00:46:46.694 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application UNICREDIT with eureka with status UP
+2020-12-26 00:46:46.695 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1608940006695, current=UP, previous=STARTING]
+2020-12-26 00:46:46.697 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-26 00:46:46.697 INFO  o.a.c.h.Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8091"]
+2020-12-26 00:46:46.725 INFO  o.s.b.w.e.t.TomcatWebServer.start:220 - Tomcat started on port(s): 8091 (http) with context path ''
+2020-12-26 00:46:46.726 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent:145 - Updating port to 8091
+2020-12-26 00:46:46.992 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091 - registration status: 204
+2020-12-26 00:46:47.028 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 00:46:47.028 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 00:46:47.038 INFO  c.p.u.UnicreditServiceApplication.logStarted:61 - Started UnicreditServiceApplication in 10.481 seconds (JVM running for 12.338)
+2020-12-26 00:47:11.520 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-26 00:47:11.521 INFO  o.s.w.s.DispatcherServlet.initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-26 00:47:11.530 INFO  o.s.w.s.DispatcherServlet.initServletBean:547 - Completed initialization in 8 ms
+2020-12-26 00:47:11.595 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 00:47:12.347 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 00:47:12.954 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 00:47:12.989 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 00:47:18.794 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 00:47:20.245 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:215 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 00:47:20.245 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:223 - ["Unicredit Bank"] customer account reducing [name=Wilfred Zaha], [amount=4200.0]
+2020-12-26 00:47:22.597 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 00:47:23.188 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 00:47:23.755 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 00:47:23.758 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 00:47:26.635 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 00:47:27.809 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:215 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 00:47:27.809 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:223 - ["Unicredit Bank"] customer account reducing [name=Wilfred Zaha], [amount=4200.0]
+2020-12-26 00:47:29.436 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 00:47:30.017 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 00:47:30.604 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 00:47:30.609 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 00:47:34.209 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 00:47:35.391 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:215 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 00:47:40.943 INFO  o.s.c.n.e.s.EurekaServiceRegistry.deregister:65 - Unregistering application UNICREDIT with eureka with status DOWN
+2020-12-26 00:47:40.944 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-26 00:47:41.181 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 00:47:41.181 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform:526 - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-26 00:47:41.337 INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-26 00:47:41.338 INFO  c.z.h.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-12-26 00:47:41.368 INFO  c.z.h.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-12-26 00:47:41.369 INFO  c.n.d.DiscoveryClient.shutdown:932 - Shutting down DiscoveryClient ...
+2020-12-26 09:43:43.980 INFO  c.p.u.UnicreditServiceApplication.logStartupProfileInfo:655 - The following profiles are active: dev
+2020-12-26 09:43:45.120 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-26 09:43:45.328 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 190ms. Found 9 JPA repository interfaces.
+2020-12-26 09:43:45.798 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=145e74bb-8099-3284-aedd-1f94bb3ad17d
+2020-12-26 09:43:45.872 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.unicreditservice.feign.PccClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 09:43:45.912 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$3bd210ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 09:43:45.951 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-12-26 09:43:46.094 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@771d1ffb' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 09:43:46.101 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 09:43:46.573 INFO  o.s.b.w.e.t.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8091 (http)
+2020-12-26 09:43:46.590 INFO  o.a.c.h.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8091"]
+2020-12-26 09:43:46.591 INFO  o.a.c.c.StandardService.log:173 - Starting service [Tomcat]
+2020-12-26 09:43:46.592 INFO  o.a.c.c.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-12-26 09:43:47.238 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring embedded WebApplicationContext
+2020-12-26 09:43:47.239 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 3227 ms
+2020-12-26 09:43:47.687 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-26 09:43:47.931 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-26 09:43:48.058 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-12-26 09:43:48.406 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-26 09:43:48.457 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 09:43:48.632 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-12-26 09:43:48.832 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-12-26 09:43:48.873 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-26 09:43:51.446 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-26 09:43:51.462 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 09:43:52.594 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 09:43:53.120 INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword:86 - 
+
+Using generated security password: 9931cac5-addd-47d4-a107-b631595bb1c3
+
+2020-12-26 09:43:53.252 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/', GET], []
+2020-12-26 09:43:53.253 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2020-12-26 09:43:53.253 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/*.html', GET], []
+2020-12-26 09:43:53.254 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-12-26 09:43:53.254 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2020-12-26 09:43:53.255 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2020-12-26 09:43:53.255 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2020-12-26 09:43:53.336 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1e54a6b1, org.springframework.security.web.context.SecurityContextPersistenceFilter@1983b48a, org.springframework.security.web.header.HeaderWriterFilter@1775c4e7, org.springframework.web.filter.CorsFilter@71945bc0, org.springframework.security.web.authentication.logout.LogoutFilter@52c9d3d0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@b791a81, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6579cdbb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f238e4f, org.springframework.security.web.session.SessionManagementFilter@40d52be7, org.springframework.security.web.access.ExceptionTranslationFilter@b5c6a30, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f171912]
+2020-12-26 09:43:53.378 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-26 09:43:53.388 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-26 09:43:55.354 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2020-12-26 09:43:56.174 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2020-12-26 09:43:56.233 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2020-12-26 09:43:57.052 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2020-12-26 09:43:57.052 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2020-12-26 09:43:57.461 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2020-12-26 09:43:57.462 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2020-12-26 09:43:58.003 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 09:43:58.505 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-26 09:43:58.505 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-26 09:43:58.506 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-26 09:43:58.506 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-26 09:43:58.506 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-26 09:43:58.507 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-26 09:43:58.507 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-26 09:43:58.811 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1102 - The response status is 200
+2020-12-26 09:43:58.816 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2020-12-26 09:43:58.822 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-12-26 09:43:58.828 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1608972238827 with initial instances count: 1
+2020-12-26 09:43:58.836 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application UNICREDIT with eureka with status UP
+2020-12-26 09:43:58.838 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1608972238838, current=UP, previous=STARTING]
+2020-12-26 09:43:58.841 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-26 09:43:58.841 INFO  o.a.c.h.Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8091"]
+2020-12-26 09:43:58.883 INFO  o.s.b.w.e.t.TomcatWebServer.start:220 - Tomcat started on port(s): 8091 (http) with context path ''
+2020-12-26 09:43:58.885 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent:145 - Updating port to 8091
+2020-12-26 09:43:59.330 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091 - registration status: 204
+2020-12-26 09:43:59.498 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 09:43:59.499 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 09:43:59.517 INFO  c.p.u.UnicreditServiceApplication.logStarted:61 - Started UnicreditServiceApplication in 18.681 seconds (JVM running for 20.226)
+2020-12-26 09:47:23.055 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-26 09:47:23.059 INFO  o.s.w.s.DispatcherServlet.initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-26 09:47:23.123 INFO  o.s.w.s.DispatcherServlet.initServletBean:547 - Completed initialization in 64 ms
+2020-12-26 09:47:23.287 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 09:47:24.165 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 09:47:24.747 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 09:47:24.815 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 09:48:02.979 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 09:48:04.277 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:215 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 09:48:04.277 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:223 - ["Unicredit Bank"] customer account reducing [name=Wilfred Zaha], [amount=4200.0]
+2020-12-26 09:48:58.514 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 09:53:58.517 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 09:58:58.518 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:03:58.522 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:08:58.524 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:13:58.526 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:17:32.197 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:42 - ["Unicredit Bank"] check payment request [merchantId=LMo0-]
+2020-12-26 10:17:32.834 INFO  c.p.u.s.i.PaymentService.checkPaymentRequest:49 - ["Unicredit Bank"] payment request valid [merchantId=LMo0-]
+2020-12-26 10:17:33.440 INFO  c.p.u.s.i.PaymentService.createMerchantOrder:68 - ["Unicredit Bank"] create merchantOrder [merchantId=LMo0-]
+2020-12-26 10:17:33.450 INFO  c.p.u.s.i.PaymentService.createPaymentRequest:59 - ["Unicredit Bank"] create paymentId [merchantId=LMo0-]
+2020-12-26 10:18:10.640 INFO  c.p.u.s.i.TransactionService.pay:52 - ["Unicredit Bank"] payment proccess [Wilfred Zaha]
+2020-12-26 10:18:11.933 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:215 - ["Unicredit Bank"] one bank settlement [from=Wilfred Zaha], [to=Paulo Dybala], [amount=4200.0]
+2020-12-26 10:18:11.933 INFO  c.p.u.s.i.TransactionService.settlementInSameBank:223 - ["Unicredit Bank"] customer account reducing [name=Wilfred Zaha], [amount=4200.0]
+2020-12-26 10:18:58.528 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:20:03.392 INFO  c.p.u.s.i.TransactionService.payPcc:128 - ["Unicredit Bank"] payment pcc request [acq-orderId=1]
+2020-12-26 10:20:04.691 INFO  c.p.u.s.i.TransactionService.payPcc:139 - ["Unicredit Bank"] payment pcc successfull [acq-orderId=1]
+2020-12-26 10:23:58.532 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:28:58.533 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:33:58.535 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:38:58.536 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:43:58.539 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:48:58.541 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:53:58.543 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:58:58.544 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration

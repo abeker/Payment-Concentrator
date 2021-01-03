@@ -1,0 +1,151 @@
+2021-01-02 13:55:34.084 INFO  c.p.r.RaiffeisenServiceApplication.logStartupProfileInfo:655 - The following profiles are active: dev
+2021-01-02 13:55:35.997 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-01-02 13:55:36.326 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 301ms. Found 9 JPA repository interfaces.
+2021-01-02 13:55:36.836 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=c8b91b8c-a618-3054-b03e-776931b3ffae
+2021-01-02 13:55:36.945 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.raiffeisenservice.feign.PccClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-02 13:55:37.012 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$91ef39a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-02 13:55:37.104 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-01-02 13:55:37.389 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@45adc393' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-02 13:55:37.403 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-02 13:55:38.241 INFO  o.s.b.w.e.t.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8090 (http)
+2021-01-02 13:55:38.417 INFO  o.a.c.h.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8090"]
+2021-01-02 13:55:38.419 INFO  o.a.c.c.StandardService.log:173 - Starting service [Tomcat]
+2021-01-02 13:55:38.420 INFO  o.a.c.c.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-01-02 13:55:38.842 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring embedded WebApplicationContext
+2021-01-02 13:55:38.845 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 4684 ms
+2021-01-02 13:55:39.170 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-02 13:55:39.257 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-02 13:55:39.353 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2021-01-02 13:55:39.623 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-02 13:55:39.715 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2021-01-02 13:55:39.885 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2021-01-02 13:55:40.060 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2021-01-02 13:55:40.088 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-01-02 13:55:42.279 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-02 13:55:42.295 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-02 13:55:42.990 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2021-01-02 13:55:43.654 INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword:86 - 
+
+Using generated security password: 0b535adc-caa9-4e9b-8ac5-f13854c69b88
+
+2021-01-02 13:55:43.806 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/', GET], []
+2021-01-02 13:55:43.807 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2021-01-02 13:55:43.808 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/*.html', GET], []
+2021-01-02 13:55:43.808 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2021-01-02 13:55:43.808 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2021-01-02 13:55:43.809 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2021-01-02 13:55:43.809 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2021-01-02 13:55:43.905 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a6556b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@56b05bd7, org.springframework.security.web.header.HeaderWriterFilter@7cdfa824, org.springframework.web.filter.CorsFilter@35bfa1bb, org.springframework.security.web.authentication.logout.LogoutFilter@29b8df5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22aefae0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@311a0b3e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63bca84d, org.springframework.security.web.session.SessionManagementFilter@4ffa7041, org.springframework.security.web.access.ExceptionTranslationFilter@c94bd18, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d4e99de]
+2021-01-02 13:55:43.944 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-01-02 13:55:43.954 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-01-02 13:55:45.142 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2021-01-02 13:55:45.665 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2021-01-02 13:55:45.738 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2021-01-02 13:55:46.248 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2021-01-02 13:55:46.248 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2021-01-02 13:55:46.398 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2021-01-02 13:55:46.398 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2021-01-02 13:55:46.631 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-02 13:55:46.845 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2021-01-02 13:55:46.846 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2021-01-02 13:55:46.846 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2021-01-02 13:55:46.847 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2021-01-02 13:55:46.847 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2021-01-02 13:55:46.847 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2021-01-02 13:55:46.848 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2021-01-02 13:55:47.060 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1102 - The response status is 200
+2021-01-02 13:55:47.063 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2021-01-02 13:55:47.067 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-01-02 13:55:47.072 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1609592147071 with initial instances count: 1
+2021-01-02 13:55:47.077 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application RAIFFEISEN with eureka with status UP
+2021-01-02 13:55:47.077 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1609592147077, current=UP, previous=STARTING]
+2021-01-02 13:55:47.080 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_RAIFFEISEN/host.docker.internal:raiffeisen:8090: registering service...
+2021-01-02 13:55:47.081 INFO  o.a.c.h.Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8090"]
+2021-01-02 13:55:47.120 INFO  o.s.b.w.e.t.TomcatWebServer.start:220 - Tomcat started on port(s): 8090 (http) with context path ''
+2021-01-02 13:55:47.121 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent:145 - Updating port to 8090
+2021-01-02 13:55:47.148 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_RAIFFEISEN/host.docker.internal:raiffeisen:8090 - registration status: 204
+2021-01-02 13:55:47.429 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2021-01-02 13:55:47.430 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2021-01-02 13:55:47.443 INFO  c.p.r.RaiffeisenServiceApplication.logStarted:61 - Started RaiffeisenServiceApplication in 17.28 seconds (JVM running for 19.763)
+2021-01-02 14:00:46.851 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-02 14:05:46.853 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-02 14:10:46.864 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-02 14:15:46.867 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-02 14:17:08.368 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-02 14:17:08.369 INFO  o.s.w.s.DispatcherServlet.initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2021-01-02 14:17:08.455 INFO  o.s.w.s.DispatcherServlet.initServletBean:547 - Completed initialization in 85 ms
+2021-01-02 14:17:08.687 INFO  c.p.r.s.i.PaymentService.checkPaymentRequest:42 - ["Raiffeisen Bank"] check payment request [merchantId=3ypo-]
+2021-01-02 14:17:09.793 INFO  c.p.r.s.i.PaymentService.checkPaymentRequest:49 - ["Raiffeisen Bank"] payment request valid [merchantId=3ypo-]
+2021-01-02 14:17:10.433 INFO  c.p.r.s.i.PaymentService.createMerchantOrder:68 - ["Raiffeisen Bank"] create merchantOrder [merchantId=3ypo-]
+2021-01-02 14:17:10.542 INFO  c.p.r.s.i.PaymentService.createPaymentRequest:59 - ["Raiffeisen Bank"] create paymentId [merchantId=3ypo-]
+2021-01-02 14:17:58.983 INFO  c.p.r.s.i.PaymentService.checkPaymentRequest:42 - ["Raiffeisen Bank"] check payment request [merchantId=3ypo-]
+2021-01-02 14:17:59.573 INFO  c.p.r.s.i.PaymentService.checkPaymentRequest:49 - ["Raiffeisen Bank"] payment request valid [merchantId=3ypo-]
+2021-01-02 14:18:00.402 INFO  c.p.r.s.i.PaymentService.createMerchantOrder:68 - ["Raiffeisen Bank"] create merchantOrder [merchantId=3ypo-]
+2021-01-02 14:18:00.442 INFO  c.p.r.s.i.PaymentService.createPaymentRequest:59 - ["Raiffeisen Bank"] create paymentId [merchantId=3ypo-]
+2021-01-02 14:20:23.344 INFO  c.p.r.s.i.PaymentService.checkPaymentRequest:42 - ["Raiffeisen Bank"] check payment request [merchantId=3ypo-]
+2021-01-02 14:20:23.933 INFO  c.p.r.s.i.PaymentService.checkPaymentRequest:49 - ["Raiffeisen Bank"] payment request valid [merchantId=3ypo-]
+2021-01-02 14:20:24.516 INFO  c.p.r.s.i.PaymentService.createMerchantOrder:68 - ["Raiffeisen Bank"] create merchantOrder [merchantId=3ypo-]
+2021-01-02 14:20:24.519 INFO  c.p.r.s.i.PaymentService.createPaymentRequest:59 - ["Raiffeisen Bank"] create paymentId [merchantId=3ypo-]
+2021-01-02 14:20:46.869 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-02 14:25:46.873 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-02 14:30:46.875 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-02 14:31:43.817 INFO  c.p.r.s.i.PaymentService.checkPaymentRequest:42 - ["Raiffeisen Bank"] check payment request [merchantId=3ypo-]
+2021-01-02 14:31:44.451 INFO  c.p.r.s.i.PaymentService.checkPaymentRequest:49 - ["Raiffeisen Bank"] payment request valid [merchantId=3ypo-]
+2021-01-02 14:31:45.026 INFO  c.p.r.s.i.PaymentService.createMerchantOrder:68 - ["Raiffeisen Bank"] create merchantOrder [merchantId=3ypo-]
+2021-01-02 14:31:45.030 INFO  c.p.r.s.i.PaymentService.createPaymentRequest:59 - ["Raiffeisen Bank"] create paymentId [merchantId=3ypo-]
+2021-01-02 14:32:21.866 INFO  c.p.r.s.i.TransactionService.pay:53 - ["Raiffeisen Bank"] payment proccess [Wilfred Zaha]
+2021-01-02 14:32:22.972 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: pcc.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2021-01-02 14:32:23.043 INFO  c.n.u.c.ShutdownEnabledTimer.<init>:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-pcc
+2021-01-02 14:32:23.045 INFO  c.n.l.BaseLoadBalancer.initWithConfig:197 - Client: pcc instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=pcc,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2021-01-02 14:32:23.058 INFO  c.n.l.DynamicServerListLoadBalancer.enableAndInitLearnNewServersFeature:222 - Using serverListUpdater PollingServerListUpdater
+2021-01-02 14:32:23.110 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: pcc.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2021-01-02 14:32:23.114 INFO  c.n.l.DynamicServerListLoadBalancer.restOfInit:150 - DynamicServerListLoadBalancer for client pcc initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=pcc,current list of Servers=[192.168.2.37:8084],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.37:8084;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@6734f9f2
+2021-01-02 14:32:23.141 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2021-01-02 14:32:23.142 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2021-01-02 14:32:24.067 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: pcc.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2021-01-02 14:32:46.419 INFO  c.n.l.PollingServerListUpdater.run:53 - Shutting down the Executor Pool for PollingServerListUpdater
+2021-01-02 14:32:46.422 INFO  o.s.c.n.e.s.EurekaServiceRegistry.deregister:65 - Unregistering application RAIFFEISEN with eureka with status DOWN
+2021-01-02 14:32:46.423 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_RAIFFEISEN/host.docker.internal:raiffeisen:8090: registering service...
+2021-01-02 14:32:46.443 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_RAIFFEISEN/host.docker.internal:raiffeisen:8090 - registration status: 204
+2021-01-02 14:32:47.014 INFO  c.n.u.c.ShutdownEnabledTimer.cancel:67 - Shutdown hook removed for: NFLoadBalancer-PingTimer-pcc
+2021-01-02 14:32:47.028 INFO  c.n.u.c.ShutdownEnabledTimer.cancel:72 - Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.lang.Runtime.removeShutdownHook(Runtime.java:239)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1092)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1085)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1061)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:979)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1092)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1085)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1061)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1030)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:949)
+2021-01-02 14:32:47.052 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-02 14:32:47.054 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform:526 - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-01-02 14:32:47.311 INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-02 14:32:47.312 INFO  c.z.h.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2021-01-02 14:32:47.330 INFO  c.z.h.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2021-01-02 14:32:47.331 INFO  c.n.d.DiscoveryClient.shutdown:932 - Shutting down DiscoveryClient ...

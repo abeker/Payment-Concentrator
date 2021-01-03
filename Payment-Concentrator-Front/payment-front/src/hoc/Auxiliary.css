@@ -1,0 +1,30 @@
+.Background {
+    background: url("../assets/images/payment-back.png") no-repeat center center fixed; 
+    background-size: cover;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+}
+
+.Unicredit {
+    background: url("../assets/images/unicredit-back.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    opacity: 80%;
+}
+
+.Raiffeisen {
+    background: url("../assets/images/raiffeisen-background.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    position: absolute; 
+    top: -5%; 
+    left: -25%; 
+    right: 0; 
+    bottom: 0; 
+}

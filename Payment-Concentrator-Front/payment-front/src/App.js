@@ -4,6 +4,7 @@ import PayPalComponent from './components/paypal/PayPalComponent';
 import Aux from './hoc/Auxiliary';
 import Unicredit from './components/bank/unicredit/Unicredit';
 import Raiffeisen from './components/bank/raiffeisen/Raiffeisen';
+import "antd/dist/antd.css";
 
 // const RenderRoutes=(route)=>{
 //   document.title = route.title || 'App name'
@@ -18,7 +19,6 @@ import Raiffeisen from './components/bank/raiffeisen/Raiffeisen';
 // }
 
 function App() {
-
     let routes = (
         <Switch> 
             <Route path="/paypal" render={ (props) => <PayPalComponent {...props} /> } />
