@@ -1,9 +1,11 @@
 import Aux from "../../../hoc/Auxiliary";
+import {useHistory} from 'react-router-dom'
 import BankForm from '../BankForm';
 import unicreditLogo from '../../../assets/images/unicredit1.png';
 import classes from './Unicredit.module.css';
 
 const Unicredit = (props) => {
+    let history = useHistory();
     const onSendData = (event) => {
         event.preventDefault();
         const cardholderName = event.target[0].value;
@@ -28,6 +30,7 @@ const Unicredit = (props) => {
             return response.json();
         }).then(responseData => {
             console.log(responseData);
+            history.push('/success')
         }).catch(error => {
             alert("Invalid Card Holder Data!");
         });

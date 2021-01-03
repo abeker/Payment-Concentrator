@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Aux from '../../hoc/Auxiliary';
 import Image from '../images/Image';
+import axios from 'axios'
 
 const Dashboard = (props) => {
     const [error, setError] = useState(null);
-
     const imageClickHandler = (type) => {
         if(type === 'UNICREDIT') {
             sendRequestBody('https://localhost:8443/api/unicredit', 'PUT', {
@@ -19,6 +19,7 @@ const Dashboard = (props) => {
                 amount: 4200
             });
         } else if(type === 'PAYPAL') {
+            axios.get("https://localhost:8443/api/paypal/paypal").then(response => alert(response.data))
             props.history.push('/paypal');
         } else if(type === 'BITCOIN') {
             sendRequest('https://localhost:8443/api/bitcoin/pay');

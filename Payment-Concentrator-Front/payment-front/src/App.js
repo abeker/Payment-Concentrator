@@ -5,6 +5,7 @@ import Aux from './hoc/Auxiliary';
 import Unicredit from './components/bank/unicredit/Unicredit';
 import Raiffeisen from './components/bank/raiffeisen/Raiffeisen';
 import "antd/dist/antd.css";
+import SuccessPayment from './components/paypal/SuccessfullPayment';
 
 // const RenderRoutes=(route)=>{
 //   document.title = route.title || 'App name'
@@ -25,6 +26,7 @@ function App() {
             <Route path="/payment-unicredit/:paymentId" render={ (props) => <Unicredit {...props} /> } />
             <Route path="/payment-raiffeisen/:paymentId" render={ (props) => <Raiffeisen {...props} /> } />
             <Route path="/" exact render={ (props) => <Dashboard {...props} /> } />
+            <Route path="/success" exact  render= {() => <SuccessPayment/>}/>
             <Redirect to="/" />
         </Switch>
     );
