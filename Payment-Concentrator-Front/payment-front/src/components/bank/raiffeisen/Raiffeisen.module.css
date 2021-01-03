@@ -1,0 +1,13 @@
+.H2 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    color: yellow;
+    font-size: 40px;
+}
+
+.Img {
+    width: 200px;
+    height: 200px;
+    margin-top: 14%;
+    margin-left: 21%;
+}

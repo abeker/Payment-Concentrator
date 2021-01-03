@@ -1,0 +1,150 @@
+2020-12-26 00:02:51.068 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-26 00:02:51.079 INFO  o.s.w.s.DispatcherServlet.initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-26 00:02:51.157 INFO  o.s.w.s.DispatcherServlet.initServletBean:547 - Completed initialization in 77 ms
+2020-12-26 00:02:59.107 INFO  c.p.p.s.i.PccService.forwardRequest:36 - [PCC] pcc request forwarding [from=Unicredit Bank], [to=Raiffeisen Bank], [acq-orderId=1]
+2020-12-26 00:02:59.329 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: unicredit.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-12-26 00:02:59.373 INFO  c.n.u.c.ShutdownEnabledTimer.<init>:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-unicredit
+2020-12-26 00:02:59.375 INFO  c.n.l.BaseLoadBalancer.initWithConfig:197 - Client: unicredit instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=unicredit,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-12-26 00:02:59.383 INFO  c.n.l.DynamicServerListLoadBalancer.enableAndInitLearnNewServersFeature:222 - Using serverListUpdater PollingServerListUpdater
+2020-12-26 00:02:59.416 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: unicredit.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-12-26 00:02:59.419 INFO  c.n.l.DynamicServerListLoadBalancer.restOfInit:150 - DynamicServerListLoadBalancer for client unicredit initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=unicredit,current list of Servers=[192.168.2.37:8091],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.37:8091;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@86c8b2a
+2020-12-26 00:02:59.439 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 00:02:59.440 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 00:03:00.387 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: unicredit.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-12-26 00:03:37.779 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 00:08:37.782 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 00:09:43.582 INFO  c.p.p.s.i.PccService.forwardRequest:36 - [PCC] pcc request forwarding [from=Unicredit Bank], [to=Raiffeisen Bank], [acq-orderId=2]
+2020-12-26 00:10:29.599 INFO  c.n.l.PollingServerListUpdater.run:53 - Shutting down the Executor Pool for PollingServerListUpdater
+2020-12-26 00:10:29.605 INFO  o.s.c.n.e.s.EurekaServiceRegistry.deregister:65 - Unregistering application PCC with eureka with status DOWN
+2020-12-26 00:10:29.610 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_PCC/host.docker.internal:pcc:8084: registering service...
+2020-12-26 00:10:29.645 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_PCC/host.docker.internal:pcc:8084 - registration status: 204
+2020-12-26 00:10:29.966 INFO  c.n.u.c.ShutdownEnabledTimer.cancel:67 - Shutdown hook removed for: NFLoadBalancer-PingTimer-unicredit
+2020-12-26 00:10:29.977 INFO  c.n.u.c.ShutdownEnabledTimer.cancel:72 - Exception caught (might be ok if at shutdown)
+java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.remove(ApplicationShutdownHooks.java:82)
+	at java.lang.Runtime.removeShutdownHook(Runtime.java:239)
+	at com.netflix.util.concurrent.ShutdownEnabledTimer.cancel(ShutdownEnabledTimer.java:70)
+	at com.netflix.loadbalancer.BaseLoadBalancer.cancelPingTask(BaseLoadBalancer.java:632)
+	at com.netflix.loadbalancer.BaseLoadBalancer.shutdown(BaseLoadBalancer.java:883)
+	at com.netflix.loadbalancer.DynamicServerListLoadBalancer.shutdown(DynamicServerListLoadBalancer.java:285)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.invokeCustomDestroyMethod(DisposableBeanAdapter.java:339)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:273)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1092)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1085)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1061)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1030)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:979)
+	at org.springframework.cloud.context.named.NamedContextFactory.destroy(NamedContextFactory.java:92)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:258)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:579)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:551)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:1092)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:512)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:1085)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1061)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1030)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:170)
+	at org.springframework.context.support.AbstractApplicationContext$1.run(AbstractApplicationContext.java:949)
+2020-12-26 00:10:30.040 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 00:10:30.047 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform:526 - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2020-12-26 00:10:30.088 INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-26 00:10:30.089 INFO  c.z.h.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2020-12-26 00:10:30.111 INFO  c.z.h.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2020-12-26 00:10:30.117 INFO  c.n.d.DiscoveryClient.shutdown:932 - Shutting down DiscoveryClient ...
+2020-12-26 09:43:56.355 INFO  c.p.p.PccServiceApplication.logStartupProfileInfo:655 - The following profiles are active: dev
+2020-12-26 09:43:57.709 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-26 09:43:58.024 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 300ms. Found 1 JPA repository interfaces.
+2020-12-26 09:43:58.503 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=24cc0aef-5eb9-320d-b37f-42633a0a1feb
+2020-12-26 09:43:58.530 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.pccservice.feign.RaiffeisenClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 09:43:58.532 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.pccservice.feign.UnicreditClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 09:43:58.604 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$2dd44f3f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 09:43:58.654 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-12-26 09:43:59.063 INFO  o.s.b.w.e.t.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8084 (http)
+2020-12-26 09:43:59.073 INFO  o.a.c.h.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8084"]
+2020-12-26 09:43:59.074 INFO  o.a.c.c.StandardService.log:173 - Starting service [Tomcat]
+2020-12-26 09:43:59.075 INFO  o.a.c.c.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-12-26 09:43:59.383 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring embedded WebApplicationContext
+2020-12-26 09:43:59.383 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 3002 ms
+2020-12-26 09:43:59.787 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-26 09:43:59.866 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-26 09:43:59.946 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-12-26 09:44:00.149 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 09:44:00.208 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-26 09:44:00.492 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-12-26 09:44:00.645 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-12-26 09:44:00.667 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-26 09:44:01.930 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-26 09:44:01.938 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-26 09:44:02.239 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 09:44:02.335 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 09:44:02.336 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 09:44:02.350 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-26 09:44:02.355 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-26 09:44:03.253 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2020-12-26 09:44:03.798 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2020-12-26 09:44:03.848 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2020-12-26 09:44:04.577 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2020-12-26 09:44:04.578 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2020-12-26 09:44:04.782 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2020-12-26 09:44:04.782 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2020-12-26 09:44:04.952 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 09:44:05.153 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-26 09:44:05.154 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-26 09:44:05.154 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-26 09:44:05.154 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-26 09:44:05.154 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-26 09:44:05.154 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-26 09:44:05.155 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-26 09:44:05.317 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1102 - The response status is 200
+2020-12-26 09:44:05.321 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2020-12-26 09:44:05.323 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-12-26 09:44:05.327 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1608972245326 with initial instances count: 2
+2020-12-26 09:44:05.329 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application PCC with eureka with status UP
+2020-12-26 09:44:05.330 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1608972245330, current=UP, previous=STARTING]
+2020-12-26 09:44:05.332 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_PCC/host.docker.internal:pcc:8084: registering service...
+2020-12-26 09:44:05.332 INFO  o.a.c.h.Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8084"]
+2020-12-26 09:44:05.357 INFO  o.s.b.w.e.t.TomcatWebServer.start:220 - Tomcat started on port(s): 8084 (http) with context path ''
+2020-12-26 09:44:05.359 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent:145 - Updating port to 8084
+2020-12-26 09:44:05.385 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_PCC/host.docker.internal:pcc:8084 - registration status: 204
+2020-12-26 09:44:05.670 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 09:44:05.670 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 09:44:05.679 INFO  c.p.p.PccServiceApplication.logStarted:61 - Started PccServiceApplication in 12.284 seconds (JVM running for 14.299)
+2020-12-26 09:49:05.167 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 09:54:05.190 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 09:59:05.192 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:04:05.195 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:09:05.196 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:14:05.199 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:19:05.201 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:20:02.224 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-26 10:20:02.226 INFO  o.s.w.s.DispatcherServlet.initServletBean:525 - Initializing Servlet 'dispatcherServlet'
+2020-12-26 10:20:02.322 INFO  o.s.w.s.DispatcherServlet.initServletBean:547 - Completed initialization in 93 ms
+2020-12-26 10:20:02.806 INFO  c.p.p.s.i.PccService.forwardRequest:36 - [PCC] pcc request forwarding [from=Unicredit Bank], [to=Raiffeisen Bank], [acq-orderId=1]
+2020-12-26 10:20:03.142 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: unicredit.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-12-26 10:20:03.208 INFO  c.n.u.c.ShutdownEnabledTimer.<init>:58 - Shutdown hook installed for: NFLoadBalancer-PingTimer-unicredit
+2020-12-26 10:20:03.210 INFO  c.n.l.BaseLoadBalancer.initWithConfig:197 - Client: unicredit instantiated a LoadBalancer: DynamicServerListLoadBalancer:{NFLoadBalancer:name=unicredit,current list of Servers=[],Load balancer stats=Zone stats: {},Server stats: []}ServerList:null
+2020-12-26 10:20:03.223 INFO  c.n.l.DynamicServerListLoadBalancer.enableAndInitLearnNewServersFeature:222 - Using serverListUpdater PollingServerListUpdater
+2020-12-26 10:20:03.264 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: unicredit.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-12-26 10:20:03.269 INFO  c.n.l.DynamicServerListLoadBalancer.restOfInit:150 - DynamicServerListLoadBalancer for client unicredit initialized: DynamicServerListLoadBalancer:{NFLoadBalancer:name=unicredit,current list of Servers=[192.168.2.37:8091],Load balancer stats=Zone stats: {defaultzone=[Zone:defaultzone;	Instance count:1;	Active connections count: 0;	Circuit breaker tripped count: 0;	Active connections per server: 0.0;]
+},Server stats: [[Server:192.168.2.37:8091;	Zone:defaultZone;	Total Requests:0;	Successive connection failure:0;	Total blackout seconds:0;	Last connection made:Thu Jan 01 01:00:00 CET 1970;	First connection made: Thu Jan 01 01:00:00 CET 1970;	Active Connections:0;	total failure count in last (1000) msecs:0;	average resp time:0.0;	90 percentile resp time:0.0;	95 percentile resp time:0.0;	min resp time:0.0;	max resp time:0.0;	stddev resp time:0.0]
+]}ServerList:org.springframework.cloud.netflix.ribbon.eureka.DomainExtractingServerList@21818a6e
+2020-12-26 10:20:03.290 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-26 10:20:03.290 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-26 10:20:04.229 INFO  c.n.c.ChainedDynamicProperty.checkAndFlip:115 - Flipping property: unicredit.ribbon.ActiveConnectionsLimit to use NEXT property: niws.loadbalancer.availabilityFilteringRule.activeConnectionsLimit = 2147483647
+2020-12-26 10:24:05.204 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:29:05.206 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:34:05.209 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:39:05.210 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:44:05.211 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:49:05.213 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:54:05.215 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-26 10:59:05.217 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration

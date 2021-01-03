@@ -1,0 +1,8 @@
+02-01-2021;13:55:39 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-01-2021;13:55:43 WARN  c.n.c.s.URLConfigurationSource.<init>:121 - No URLs will be polled as dynamic configuration sources.
+02-01-2021;13:55:43 WARN  c.n.c.s.URLConfigurationSource.<init>:121 - No URLs will be polled as dynamic configuration sources.
+02-01-2021;13:55:45 WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger.logWarning:86 - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+02-01-2021;14:32:22 WARN  c.p.r.s.i.TransactionService.pay:63 - ["Raiffeisen Bank"] account not found [Wilfred Zaha]
+02-01-2021;14:32:22 WARN  c.p.r.s.i.TransactionService.pay:66 - ["Raiffeisen Bank"] cross bank transaction [Wilfred Zaha],[acq-orderId=1]
+02-01-2021;14:32:30 WARN  c.p.r.s.i.TransactionService.pay:73 - ["Raiffeisen Bank"] account not found [Wilfred Zaha]
+02-01-2021;14:32:46 WARN  c.n.d.DiscoveryClient.notify:1351 - Saw local status change event StatusChangeEvent [timestamp=1609594366423, current=DOWN, previous=UP]

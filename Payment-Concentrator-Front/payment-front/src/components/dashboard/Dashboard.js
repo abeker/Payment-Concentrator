@@ -6,10 +6,16 @@ import axios from 'axios'
 const Dashboard = (props) => {
     const [error, setError] = useState(null);
     const imageClickHandler = (type) => {
-        if(type === 'BANK') {
+        if(type === 'UNICREDIT') {
             sendRequestBody('https://localhost:8443/api/unicredit', 'PUT', {
                 merchantId: "LMo0aUBivXliLs9rjBijU096ufdv56",
                 merchantPassword: "p62om0FvEhG70wzCjwrW6rsZCYSY9SikETjbpHNIrJ37Ul6odV4GgV025kFLP7Vwa79XJ8WTsAsDB2D3r9jW26G7a3zp78HbW9z",
+                amount: 4200
+            });
+        } else if(type === 'RAIFFEISEN') {
+            sendRequestBody('https://localhost:8443/api/raiffeisen', 'PUT', {
+                merchantId: "3ypomvybMdZlWTZNVH1X9Tm35b4ETD",
+                merchantPassword: "lBMIS5zIk1I2WsDyST3tVmgupt5utGHpFhj84l4ytosQqrv9wiK4XgpWDmTzpoA51FQBh2XmJm8RDhEIyc1F2slCBKFrm0QXdVww",
                 amount: 4200
             });
         } else if(type === 'PAYPAL') {
@@ -48,9 +54,11 @@ const Dashboard = (props) => {
     
 
     return (
-        <Aux>
+        <Aux classes="Background">
             { error && alert(error) }
-            <Image type="BANK" clicked={ imageClickHandler.bind(this, "BANK") } />
+            <Image type="RAIFFEISEN" clicked={ imageClickHandler.bind(this, "RAIFFEISEN") } />
+            <Image type="UNICREDIT" clicked={ imageClickHandler.bind(this, "UNICREDIT") } />
+            {/* <Image type="VISA" clicked={ imageClickHandler.bind(this, "VISA") } /> */}
             <Image type="PAYPAL" clicked={ imageClickHandler.bind(this, "PAYPAL") } />
             <Image type="BITCOIN" clicked={ imageClickHandler.bind(this, "BITCOIN") } />
         </Aux>

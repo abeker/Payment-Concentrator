@@ -77,6 +77,7 @@ public class TransactionService implements ITransactionService {
                 throw new IllegalAccessException();
             } else {
                 settlementInSameBank(accountOptional.get(), paymentRequest, paymentRequest.getAmount());
+
             }
         }
 
