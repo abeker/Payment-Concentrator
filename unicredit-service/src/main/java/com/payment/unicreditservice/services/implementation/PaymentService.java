@@ -12,8 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @SuppressWarnings("FieldCanBeLocal")
 @Service
@@ -28,13 +27,15 @@ public class PaymentService implements IPaymentService {
     private final IMerchantOrderRepository _merchantOrderRepository;
     private final IPaymentRequestRepository _paymentRequestRepository;
     private final IUrlResponderRepository _urlResponderRepository;
+    private final IBankRepository _bankRepository;
 
-    public PaymentService(PasswordEncoder passwordEncoder, ISellerAccountRepository sellerAccountRepository, IMerchantOrderRepository merchantOrderRepository, IPaymentRequestRepository paymentRequestRepository, IUrlResponderRepository urlResponderRepository) {
+    public PaymentService(PasswordEncoder passwordEncoder, ISellerAccountRepository sellerAccountRepository, IMerchantOrderRepository merchantOrderRepository, IPaymentRequestRepository paymentRequestRepository, IUrlResponderRepository urlResponderRepository, IBankRepository bankRepository) {
         _passwordEncoder = passwordEncoder;
         _sellerAccountRepository = sellerAccountRepository;
         _merchantOrderRepository = merchantOrderRepository;
         _paymentRequestRepository = paymentRequestRepository;
         _urlResponderRepository = urlResponderRepository;
+        _bankRepository = bankRepository;
     }
 
     @Override
@@ -56,8 +57,17 @@ public class PaymentService implements IPaymentService {
         PaymentRequest paymentRequest = new PaymentRequest();
         paymentRequest.setAmount(paymentRequestDTO.getAmount());
         paymentRequest.setMerchantOrder(savedMerchantOrder);
+        Bank bank = saveNewPaymentInBank(savedMerchantOrder.getSellerAccount().getBankCode());
+        paymentRequest.setPaymentCounter(bank.getPaymentCounter());
         logger.info("[{}] create paymentId [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
         return _paymentRequestRepository.save(paymentRequest);
+    }
+
+    // TODO pessimistic lock
+    private Bank saveNewPaymentInBank(String bankCode) {
+        Bank bank = _bankRepository.findByBankCode(bankCode);
+        bank.setPaymentCounter(bank.getPaymentCounter() + 1);
+        return _bankRepository.save(bank);
     }
 
     private MerchantOrder createMerchantOrder(PaymentRequestDTO paymentRequestDTO) {
@@ -65,23 +75,65 @@ public class PaymentService implements IPaymentService {
         merchantOrder.setDateOpened(LocalDateTime.now());
         Optional<SellerAccount> sellerAccount = getMerchantById(paymentRequestDTO.getMerchantId(), paymentRequestDTO.getMerchantPassword());
         sellerAccount.ifPresent(merchantOrder::setSellerAccount);
+        merchantOrder.setCounter(getNextMerchantNumber(sellerAccount));
         logger.info("[{}] create merchantOrder [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
         return _merchantOrderRepository.save(merchantOrder);
     }
 
+    // TODO pessimistic lock
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
+    private int getNextMerchantNumber(Optional<SellerAccount> sellerAccount) {
+        if(sellerAccount.isPresent()) {
+            Set<MerchantOrder> merchantOrdersFromBank = _merchantOrderRepository.findAllBySellerAccount(sellerAccount.get());
+            int currentCounter = getMaxMerchantOrder(merchantOrdersFromBank);
+            return currentCounter + 1;
+        }
+        return -1;
+    }
+
+    private int getMaxMerchantOrder(Set<MerchantOrder> merchantOrdersFromBank) {
+        List<Integer> countersFromBank = new ArrayList<>();
+        for (MerchantOrder order : merchantOrdersFromBank) {
+            countersFromBank.add(order.getCounter());
+        }
+        return getMaxNumber(countersFromBank);
+    }
+
+    private int getMaxNumber(List<Integer> listIntegers) {
+        return listIntegers.stream()
+                .mapToInt(v -> v)
+                .max().orElse(0);
+    }
+
     private PaymentResponse mapPaymentRequestToPaymentResponse(PaymentRequest paymentRequest) {
         return PaymentResponse.builder().
-                paymentId(String.valueOf(paymentRequest.getId())).
-                paymentUrl(getLatestPaymentUrl()).
+                paymentId(String.valueOf(getLastPaymentCounterFromBank(paymentRequest.getMerchantOrder().getSellerAccount().getBankCode()))).
+                paymentUrl(getLatestPaymentUrl(paymentRequest.getMerchantOrder().getSellerAccount().getBankCode())).
                 build();
     }
 
-    private String getLatestPaymentUrl() {
+    private int getLastPaymentCounterFromBank(String bankCode) {
+        Bank bank = _bankRepository.findByBankCode(bankCode);
+        return bank.getPaymentCounter();
+    }
+
+    private String getLatestPaymentUrl(String bankCode) {
+        String bankName = getBankNameFromBankCode(bankCode);
         List<UrlResponder> urls = _urlResponderRepository.findAll();
         for (UrlResponder url : urls) {
-            if(url.getDateClosed() == null) {
+            if(url.getDateClosed() == null &&
+                bankName != null &&
+                    url.getPaymentUrl().contains(bankName)) {
                 return url.getPaymentUrl();
             }
+        }
+        return null;
+    }
+
+    private String getBankNameFromBankCode(String bankCode) {
+        Bank bank = _bankRepository.findByBankCode(bankCode);
+        if(bank != null) {
+            return bank.getName();
         }
         return null;
     }

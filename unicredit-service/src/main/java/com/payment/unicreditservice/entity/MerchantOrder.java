@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -13,7 +14,10 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MerchantOrder extends SequenceEntity {
+public class MerchantOrder extends BaseEntity {
+
+    // sequence counter for merchant transaction
+    private int counter;
 
     private LocalDateTime dateOpened;
 
@@ -22,4 +26,5 @@ public class MerchantOrder extends SequenceEntity {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "merchantOrder")
     private PaymentRequest paymentRequest;
+
 }

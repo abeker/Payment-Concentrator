@@ -7,7 +7,7 @@ import com.payment.unicreditservice.dto.response.TransactionResponse;
 
 public interface ITransactionService {
 
-    TransactionResponse pay(CardHolderData cardHolderData) throws IllegalAccessException, NoSuchFieldException;
+    TransactionResponse pay(CardHolderData cardHolderData, String bankName) throws IllegalAccessException, NoSuchFieldException;
 
     ResponsePcc payPcc(RequestPcc requestPcc) throws IllegalAccessException;
 }

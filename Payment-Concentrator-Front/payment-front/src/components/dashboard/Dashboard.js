@@ -7,13 +7,13 @@ const Dashboard = (props) => {
     const [error, setError] = useState(null);
     const imageClickHandler = (type) => {
         if(type === 'UNICREDIT') {
-            sendRequestBody('https://localhost:8443/api/unicredit', 'PUT', {
+            sendRequestBody('https://localhost:8443/api/bank', 'PUT', {
                 merchantId: "LMo0aUBivXliLs9rjBijU096ufdv56",
                 merchantPassword: "p62om0FvEhG70wzCjwrW6rsZCYSY9SikETjbpHNIrJ37Ul6odV4GgV025kFLP7Vwa79XJ8WTsAsDB2D3r9jW26G7a3zp78HbW9z",
                 amount: 4200
             });
         } else if(type === 'RAIFFEISEN') {
-            sendRequestBody('https://localhost:8443/api/raiffeisen', 'PUT', {
+            sendRequestBody('https://localhost:8443/api/bank', 'PUT', {
                 merchantId: "3ypomvybMdZlWTZNVH1X9Tm35b4ETD",
                 merchantPassword: "lBMIS5zIk1I2WsDyST3tVmgupt5utGHpFhj84l4ytosQqrv9wiK4XgpWDmTzpoA51FQBh2XmJm8RDhEIyc1F2slCBKFrm0QXdVww",
                 amount: 4200

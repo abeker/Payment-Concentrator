@@ -17,7 +17,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -25,7 +27,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class TransactionService implements ITransactionService {
 
     private final Logger logger = LoggerFactory.getLogger(TransactionService.class);
-    @Value("${bank.name}")
     private String bankName;
 
     private final PasswordEncoder _passwordEncoder;
@@ -34,25 +35,28 @@ public class TransactionService implements ITransactionService {
     private final ICustomerAccountRepository _customerAccountRepository;
     private final ITransactionRepository _transactionRepository;
     private final IOrderCounterRepository _orderCounterRepository;
+    private final IBankRepository _bankRepository;
     private final PccClient _pccClient;
 
-    public TransactionService(PasswordEncoder passwordEncoder, IPaymentRequestRepository paymentRequestRepository, IAccountRepository accountRepository, ICustomerAccountRepository customerAccountRepository, ITransactionRepository transactionRepository, IOrderCounterRepository orderCounterRepository, PccClient pccClient) {
+    public TransactionService(PasswordEncoder passwordEncoder, IPaymentRequestRepository paymentRequestRepository, IAccountRepository accountRepository, ICustomerAccountRepository customerAccountRepository, ITransactionRepository transactionRepository, IOrderCounterRepository orderCounterRepository, IBankRepository bankRepository, PccClient pccClient) {
         _passwordEncoder = passwordEncoder;
         _paymentRequestRepository = paymentRequestRepository;
         _accountRepository = accountRepository;
         _customerAccountRepository = customerAccountRepository;
         _transactionRepository = transactionRepository;
         _orderCounterRepository = orderCounterRepository;
+        _bankRepository = bankRepository;
         _pccClient = pccClient;
     }
 
     @Override
-    public TransactionResponse pay(CardHolderData cardHolderData) throws IllegalAccessException, NoSuchFieldException {
+    public TransactionResponse pay(CardHolderData cardHolderData, String bankName) throws IllegalAccessException, NoSuchFieldException {
+        this.bankName = bankName;
         String cardholderName = cardHolderData.getCardHolderName();
         logger.info("[{}] payment proccess [{}]", bankName, cardholderName);
-        PaymentRequest paymentRequestOptional = getPaymentRequestFromPaymentId(cardHolderData.getPaymentId());
+        PaymentRequest paymentRequestOptional = getPaymentRequestFromPaymentCounter(cardHolderData.getPaymentId(), bankName);
         PaymentRequest paymentRequest = Optional.ofNullable(paymentRequestOptional).orElseThrow(NoSuchElementException::new);
-        Optional<Account> accountOptional = getAccountFromCardHolderData(cardHolderData);
+        Optional<Account> accountOptional = getAccountFromCardHolderData(cardHolderData, bankName);
 
         if(isPaymentRequestProcessed(paymentRequest)) {
             logger.warn("[{}] request already processed [{}]", bankName, paymentRequest.getId());
@@ -61,8 +65,8 @@ public class TransactionService implements ITransactionService {
             if (!accountOptional.isPresent()) {
                 logger.warn("[{}] account not found [{}]", bankName, cardholderName);
                 if (!isBankEquals(cardHolderData, paymentRequest)) {
-                    OrderCounter orderCounter = createNewOrderCounter();
-                    logger.warn("[{}] cross bank transaction [{}],[acq-orderId={}]", bankName, cardholderName, orderCounter.getId());
+                    OrderCounter orderCounter = createNewOrderCounter(cardHolderData.getAccountNumber(), bankName, false);
+                    logger.warn("[{}] cross bank transaction [{}],[acq-orderId={}]", bankName, cardholderName, orderCounter.getCounter());
                     RequestPcc requestPcc = createRequestPcc(orderCounter, cardHolderData, paymentRequest.getAmount());
                     ResponsePcc responsePcc = _pccClient.sendToPcc(requestPcc);
 
@@ -77,7 +81,6 @@ public class TransactionService implements ITransactionService {
                 throw new IllegalAccessException();
             } else {
                 settlementInSameBank(accountOptional.get(), paymentRequest, paymentRequest.getAmount());
-
             }
         }
 
@@ -114,7 +117,7 @@ public class TransactionService implements ITransactionService {
     private RequestPcc createRequestPcc(OrderCounter orderCounter, CardHolderData cardHolderData, double amount) {
         RequestPcc requestPcc = new RequestPcc();
         requestPcc.setAccountNumber(cardHolderData.getAccountNumber());
-        requestPcc.setAcquirerOrderId(orderCounter.getId());
+        requestPcc.setAcquirerOrderId(getLastOrderCounterByBankCode(orderCounter.getBankCode()));
         requestPcc.setAcquirerOrderTimestamp(orderCounter.getCurrentDateTime().toString());
         requestPcc.setAmount(amount);
         requestPcc.setName(cardHolderData.getCardHolderName());
@@ -127,7 +130,7 @@ public class TransactionService implements ITransactionService {
     public ResponsePcc payPcc(RequestPcc requestPcc) throws IllegalAccessException {
         logger.info("[{}] payment pcc request [acq-orderId={}]", bankName, requestPcc.getAcquirerOrderId());
         CardHolderData cardHolderData = createCardHolderDataFromRequestPcc(requestPcc);
-        Optional<Account> accountOptional = getAccountFromCardHolderData(cardHolderData);
+        Optional<Account> accountOptional = getAccountFromCardHolderData(cardHolderData, getBankNameFromBankCode(requestPcc.getAccountNumber().substring(1,6)));
         Account customer = accountOptional.orElseThrow(IllegalAccessError::new);
 
         if(!isCardHolderDataValid(customer, cardHolderData)) {
@@ -135,7 +138,7 @@ public class TransactionService implements ITransactionService {
             throw new IllegalAccessException();
         }
 
-        OrderCounter orderCounter = settlementInOneBank(customer, requestPcc.getAmount());
+        OrderCounter orderCounter = settlementInOneBank(customer, requestPcc.getAmount(), requestPcc.getAccountNumber());
         logger.info("[{}] payment pcc successfull [acq-orderId={}]", bankName, requestPcc.getAcquirerOrderId());
         return mapOrderCounterToResponsePcc(orderCounter, requestPcc);
     }
@@ -147,13 +150,18 @@ public class TransactionService implements ITransactionService {
         ResponsePcc responsePcc = new ResponsePcc();
         responsePcc.setAcquirerOrderId(requestPcc.getAcquirerOrderId());
         responsePcc.setAcquirerOrderTimestamp(requestPcc.getAcquirerOrderTimestamp());
-        responsePcc.setIssuerOrderId(orderCounter.getId());
+        responsePcc.setIssuerOrderId(orderCounter.getCounter());
         responsePcc.setIssuerOrderTimestamp(orderCounter.getCurrentDateTime().toString());
         return responsePcc;
     }
 
+    private int getLastOrderCounterByBankCode(String bankCode) {
+        Bank bank = _bankRepository.findByBankCode(bankCode);
+        return bank.getOrderCounterAcquirer();
+    }
+
     ReentrantLock lockOneBank = new ReentrantLock();
-    private OrderCounter settlementInOneBank(Account customer, double amount) {
+    private OrderCounter settlementInOneBank(Account customer, double amount, String accountNumber) {
         if(customer.getCurrentAmount()-amount < 0) {
             logger.warn("[{}] customer not have enough [name={}], [amount={}]", bankName, customer.getName(), amount);
             return null;
@@ -167,16 +175,61 @@ public class TransactionService implements ITransactionService {
             } finally {
                 lockOneBank.unlock();
             }
-            return createNewOrderCounter();
+            return createNewOrderCounter(accountNumber, getBankNameFromBankCode(customer.getBankCode()), true);
         }
     }
 
-    private OrderCounter createNewOrderCounter() {
+    private OrderCounter createNewOrderCounter(String accountNumber, String bankName, boolean isPcc) {
         OrderCounter orderCounter = new OrderCounter();
+        String bankCode = accountNumber.substring(1,6);
+        orderCounter.setBankCode(bankCode);
+        Bank updatedBank;
+        if(isPcc) {
+            updatedBank = saveNewOrderCounterIssuerInBank(getBankCodeFromBankName(bankName));
+            orderCounter.setCounter(updatedBank.getOrderCounterIssuer());
+        } else {
+            updatedBank = saveNewOrderCounterInBank(getBankCodeFromBankName(bankName));
+            orderCounter.setCounter(updatedBank.getOrderCounterAcquirer());
+        }
         orderCounter.setCurrentDateTime(LocalDateTime.now());
         orderCounter.setStatus(TransactionStatus.SUCCESS);
         return _orderCounterRepository.save(orderCounter);
     }
+
+    private String getBankCodeFromBankName(String bankName) {
+        Bank bank = _bankRepository.findByName(bankName);
+        return bank.getBankCode();
+    }
+
+    // TODO pessimistic lock
+    private Bank saveNewOrderCounterIssuerInBank(String bankCode) {
+        Bank bank = _bankRepository.findByBankCode(bankCode);
+        bank.setOrderCounterIssuer(bank.getOrderCounterIssuer() + 1);
+        return _bankRepository.save(bank);
+    }
+
+    // TODO pessimistic lock
+    private Bank saveNewOrderCounterInBank(String bankCode) {
+        Bank bank = _bankRepository.findByBankCode(bankCode);
+        bank.setOrderCounterAcquirer(bank.getOrderCounterAcquirer() + 1);
+        return _bankRepository.save(bank);
+    }
+
+//    // TODO pessimistic lock
+//    private int getNextOrderCounter(String bankCode) {
+//        List<Integer> countersForOneBank = new ArrayList<>();
+//        for (OrderCounter orderCounter : _orderCounterRepository.findAll()) {
+//            countersForOneBank.add(orderCounter.getCounter());
+//        }
+//        int maxCounter = getMaxNumber(countersForOneBank);
+//        return maxCounter + 1;
+//    }
+//
+//    private int getMaxNumber(List<Integer> listIntegers) {
+//        return listIntegers.stream()
+//                .mapToInt(v -> v)
+//                .max().orElseThrow(NoSuchElementException::new);
+//    }
 
     private CardHolderData createCardHolderDataFromRequestPcc(RequestPcc requestPcc) {
         CardHolderData cardHolderData = new CardHolderData();
@@ -185,6 +238,14 @@ public class TransactionService implements ITransactionService {
         cardHolderData.setSecurityCode(requestPcc.getSecurityCode());
         cardHolderData.setValidThru(requestPcc.getValidThru());
         return cardHolderData;
+    }
+
+    private String getBankNameFromBankCode(String bankCode) {
+        Bank bank = _bankRepository.findByBankCode(bankCode);
+        if(bank != null) {
+            return bank.getName();
+        }
+        return null;
     }
 
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
@@ -198,13 +259,13 @@ public class TransactionService implements ITransactionService {
     }
 
     private TransactionResponse mapTransactionToTransactionResponse(PaymentRequest paymentRequest) {
-        String acquirerOrderId = paymentRequest.getOrderCounter() != null ? String.valueOf(paymentRequest.getOrderCounter().getId()) : null;
+        String acquirerOrderId = paymentRequest.getOrderCounter() != null ? String.valueOf(paymentRequest.getOrderCounter().getCounter()) : null;
         String acquirerOrderTimestamp = paymentRequest.getOrderCounter() != null ? paymentRequest.getOrderCounter().getCurrentDateTime().toString() : null;
         return TransactionResponse.builder()
                 .acquirerOrderId(acquirerOrderId)
                 .acquirerTimestamp(acquirerOrderTimestamp)
-                .merchantOrderId(String.valueOf(paymentRequest.getMerchantOrder().getId()))
-                .paymentId(String.valueOf(paymentRequest.getId()))
+                .merchantOrderId(String.valueOf(paymentRequest.getMerchantOrder().getCounter()))
+                .paymentId(String.valueOf(paymentRequest.getPaymentCounter()))
                 .build();
     }
 
@@ -242,15 +303,21 @@ public class TransactionService implements ITransactionService {
         _transactionRepository.save(transaction);
     }
 
-    private Optional<Account> getAccountFromCardHolderData(CardHolderData cardHolderData) {
+    private Optional<Account> getAccountFromCardHolderData(CardHolderData cardHolderData, String bankName) {
         return _accountRepository.findAll().stream()
                 .filter(acc -> LocalDate.now().isAfter(acc.getDateOpened()) &&
                         acc.getDateClosed() == null &&
+                        isBankNameEquals(cardHolderData.getAccountNumber().substring(1,6), bankName) &&
                         _passwordEncoder.matches(cardHolderData.getAccountNumber(), acc.getAccountNumber()) &&
                         acc.getName().equals(cardHolderData.getCardHolderName()) &&
-                        _customerAccountRepository.findById(acc.getId()).orElse(null).getValidThru().equals(cardHolderData.getValidThru()) &&
-                        _passwordEncoder.matches(cardHolderData.getSecurityCode(), _customerAccountRepository.findById(acc.getId()).orElse(null).getSecurityCode()))
+                        Objects.requireNonNull(_customerAccountRepository.findById(acc.getId()).orElse(null)).getValidThru().equals(cardHolderData.getValidThru()) &&
+                        _passwordEncoder.matches(cardHolderData.getSecurityCode(), Objects.requireNonNull(_customerAccountRepository.findById(acc.getId()).orElse(null)).getSecurityCode()))
                 .findFirst();
+    }
+
+    private boolean isBankNameEquals(String bankCode, String bankName) {
+        String bankNameFromBankCode = getBankNameFromBankCode(bankCode);
+        return bankNameFromBankCode.equals(bankName);
     }
 
     private boolean isBankEquals(CardHolderData cardHolderData, PaymentRequest paymentRequest) {
@@ -265,11 +332,23 @@ public class TransactionService implements ITransactionService {
         return sellerAccount.getBankCode();
     }
 
-    private PaymentRequest getPaymentRequestFromPaymentId(String paymentId) {
-        Optional<PaymentRequest> paymentRequestOptional = _paymentRequestRepository.findById(Integer.parseInt(paymentId));
-        if(paymentRequestOptional.isPresent() &&
-                !paymentRequestOptional.get().isDeleted()) {
-            return paymentRequestOptional.get();
+    private PaymentRequest getPaymentRequestFromPaymentCounter(String paymentCounter, String bankName) {
+        PaymentRequest paymentRequest = getPaymentRequest(Integer.parseInt(paymentCounter), bankName);
+        if(paymentRequest != null &&
+            !paymentRequest.isDeleted()) {
+            return paymentRequest;
+        }
+        return null;
+    }
+
+    private PaymentRequest getPaymentRequest(int paymentCounter, String bankName) {
+        List<PaymentRequest> paymentRequestsForPaymentId = _paymentRequestRepository.findByPaymentCounter(paymentCounter);
+        for (PaymentRequest paymentRequest : paymentRequestsForPaymentId) {
+            MerchantOrder merchantOrder = paymentRequest.getMerchantOrder();
+            String bankNameFromPaymentRequest = getBankNameFromBankCode(merchantOrder.getSellerAccount().getBankCode());
+            if(bankNameFromPaymentRequest.equals(bankName)) {
+                return paymentRequest;
+            }
         }
         return null;
     }

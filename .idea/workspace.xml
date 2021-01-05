@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="51c008a9-3ce9-49b6-bf7a-22c4a82bd4c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/EurekaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/EurekaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/EurekaStateChangeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/EurekaStateChangeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/controller/PaymentTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/controller/PaymentTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/entity/PaymentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/entity/PaymentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/definition/IPaymentTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/definition/IPaymentTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/implementation/PaymentTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/implementation/PaymentTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Eureka/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/raiffeisen/Raiffeisen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/raiffeisen/Raiffeisen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/unicredit/Unicredit.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/unicredit/Unicredit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zuul/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Zuul/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/feign/UnicreditClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/feign/UnicreditClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/service/implementation/PccService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/service/implementation/PccService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/controller/UnicreditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/controller/UnicreditController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/MerchantOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/MerchantOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/OrderCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/OrderCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/PaymentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/PaymentRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IMerchantOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IMerchantOrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IPaymentRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IPaymentRequestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/definition/ITransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/definition/ITransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/implementation/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/implementation/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/implementation/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/implementation/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/resources/data.sql" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1meTYKrAFIZKoXUJ4QuOicLaK0p" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.ZuulApplication">
+    <configuration name="BankServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bank-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.payment.bankservice.BankServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BitcoinServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bitcoin-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.payment.bitcoinservice.BitcoinServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Eureka" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sep.Eureka.EurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaypalServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="paypal-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.payment.paypalservice.PaypalServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PccServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="pcc-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.payment.pccservice.PccServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnicreditServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="unicredit-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.payment.unicreditservice.UnicreditServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZuulApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Zuul" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sep.Zuul.ZuulApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.EurekaApplication" />
+      <item itemvalue="Spring Boot.BankServiceApplication" />
+      <item itemvalue="Spring Boot.PccServiceApplication" />
+      <item itemvalue="Spring Boot.ZuulApplication" />
+      <item itemvalue="Spring Boot.BitcoinServiceApplication" />
+      <item itemvalue="Spring Boot.PaypalServiceApplication" />
+      <item itemvalue="Spring Boot.UnicreditServiceApplication" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51c008a9-3ce9-49b6-bf7a-22c4a82bd4c3" name="Default Changelist" comment="" />
+      <created>1609853102929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609853102929</updated>
+      <workItem from="1609853113451" duration="6886000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609857971697">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1609857971697" />
+    <state width="1492" height="277" key="GridCell.Tab.0.bottom" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.0.center" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.0.left" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.0.right" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.1.bottom" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.1.center" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.1.left" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.1.right" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.2.bottom" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.2.center" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.2.left" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+    <state width="1492" height="277" key="GridCell.Tab.2.right" timestamp="1609863951105">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="277" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1609863951105" />
+  </component>
+</project>
