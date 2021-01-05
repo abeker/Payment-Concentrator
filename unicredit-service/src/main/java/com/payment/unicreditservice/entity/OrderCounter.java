@@ -16,11 +16,15 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderCounter extends SequenceEntity {
+public class OrderCounter extends BaseEntity {
 
+//    // sequence counter for cross-bank transactions (different banks have different counters)
+//    private int counter;
+
+    private int counter;
     private LocalDateTime currentDateTime;
-
     @Enumerated(EnumType.STRING)
     private TransactionStatus status;
+    private String bankCode;
 
 }

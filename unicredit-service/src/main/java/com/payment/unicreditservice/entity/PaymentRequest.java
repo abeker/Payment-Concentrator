@@ -15,12 +15,16 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PaymentRequest extends SequenceEntity {
+public class PaymentRequest extends BaseEntity {
+
+//    // sequence counter for payments in one bank
+//    private int counter;
 
     @Column(precision = 10, scale = 2)
     @Type(type = "double")
     private double amount;
     private boolean deleted = false;
+    private int paymentCounter;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumns({

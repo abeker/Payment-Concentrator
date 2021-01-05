@@ -15,8 +15,16 @@ import java.util.Set;
 @NoArgsConstructor
 public class PaymentType extends BaseEntity {
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String paymentType;
+
+    @Column(nullable = false)
+    private String port;
+
+    @Column(nullable = false)
+    private String secureVipAddress;
+
+    private String bankCode;
 
     private boolean deleted = false;
 

@@ -2,35 +2,26 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="unicredit-service" />
         <module name="bank-service" />
-        <module name="paypal-service" />
-        <module name="book-service" />
+        <module name="unicredit-service" />
         <module name="Zuul" />
-        <module name="payment-service" />
-        <module name="Eureka" />
-        <module name="raiffeisen-service" />
-        <module name="authentication-service" />
-        <module name="bitcoin-service" />
         <module name="pcc-service" />
+        <module name="Eureka" />
+        <module name="bitcoin-service" />
+        <module name="paypal-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.8">
-      <module name="authentication-service" target="1.8" />
+    <bytecodeTargetLevel>
       <module name="bank-service" target="1.8" />
       <module name="bitcoin-service" target="1.8" />
-      <module name="book-service" target="1.8" />
       <module name="Eureka" target="1.8" />
       <module name="Payment-Microservices" target="1.5" />
-      <module name="payment-service" target="1.8" />
       <module name="paypal-service" target="1.8" />
       <module name="pcc-service" target="1.8" />
-      <module name="raiffeisen-service" target="1.8" />
       <module name="unicredit-service" target="1.8" />
       <module name="Zuul" target="1.8" />
     </bytecodeTargetLevel>
@@ -39,14 +30,10 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Eureka" options="-parameters" />
       <module name="Zuul" options="-parameters" />
-      <module name="authentication-service" options="-parameters" />
       <module name="bank-service" options="-parameters" />
       <module name="bitcoin-service" options="-parameters" />
-      <module name="book-service" options="-parameters" />
-      <module name="payment-service" options="-parameters" />
       <module name="paypal-service" options="-parameters" />
       <module name="pcc-service" options="-parameters" />
-      <module name="raiffeisen-service" options="-parameters" />
       <module name="unicredit-service" options="-parameters" />
     </option>
   </component>
