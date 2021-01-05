@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import classes from './paypal.module.css';
 
 function SuccessPayment() {
     return(
-        <div>
-            <h2>Payment was successfull</h2>
-            <Link to="/">Go to the main page</Link>
+        <div className={ classes.Background }>
+            <Link to="/" className={ classes.Link }>Go to the main page</Link>
         </div>
     )
 }

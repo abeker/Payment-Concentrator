@@ -2,40 +2,139 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51c008a9-3ce9-49b6-bf7a-22c4a82bd4c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/EurekaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/EurekaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/EurekaStateChangeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/EurekaStateChangeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/controller/PaymentTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/controller/PaymentTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/entity/PaymentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/entity/PaymentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/definition/IPaymentTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/definition/IPaymentTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/implementation/PaymentTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/implementation/PaymentTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/raiffeisen/Raiffeisen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/raiffeisen/Raiffeisen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/unicredit/Unicredit.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/unicredit/Unicredit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zuul/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Zuul/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/feign/UnicreditClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/feign/UnicreditClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/service/implementation/PccService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/service/implementation/PccService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/controller/UnicreditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/controller/UnicreditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/MerchantOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/MerchantOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/OrderCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/OrderCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/PaymentRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/PaymentRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IMerchantOrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IMerchantOrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IPaymentRequestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IPaymentRequestRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/definition/ITransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/definition/ITransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/implementation/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/implementation/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/implementation/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/implementation/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/error/2020-12/2020-12-17.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/error/2020-12/2020-12-19.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/error/2020-12/2020-12-22.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/error/2020-12/2020-12-25.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/error/2020-12/2020-12-26.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/error/2021-01/2021-01-02.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/info/2020-12/2020-12-17.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/info/2020-12/2020-12-19.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/info/2020-12/2020-12-22.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/info/2020-12/2020-12-25.0.log.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/info/2020-12/2020-12-26.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/info/2021-01/2021-01-02.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/warning/2020-12/2020-12-17.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/warning/2020-12/2020-12-19.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/warning/2020-12/2020-12-22.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/warning/2020-12/2020-12-25.0.log.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/warning/2020-12/2020-12-26.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/logs/warning/2021-01/2021-01-02.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/RaiffeisenServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/config/SimpleCorsFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/config/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/controller/DummyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/controller/RaiffeisenController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/dto/request/CardHolderData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/dto/request/PaymentRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/dto/request/RequestPcc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/dto/response/PaymentResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/dto/response/ResponsePcc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/dto/response/TransactionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/CustomerAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/MerchantOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/OrderCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/PaymentRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/SellerAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/SequenceEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/Transaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/entity/UrlResponder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/feign/PccClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/generators/CustomSequenceGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/generators/StringPrefixedSequenceIdGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/IAccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/IAddressRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/ICustomerAccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/IMerchantOrderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/IOrderCounterRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/IPaymentRequestRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/ISellerAccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/ITransactionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/repository/IUrlResponderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/services/definition/IPaymentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/services/definition/ITransactionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/services/implementation/PaymentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/services/implementation/TransactionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/java/com/payment/raiffeisenservice/util/enums/TransactionStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/resources/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/resources/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/test/java/com/payment/raiffeisenservice/RaiffeisenServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/error/2020-12/2020-12-17.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/error/2020-12/2020-12-19.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/error/2020-12/2020-12-22.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/error/2020-12/2020-12-25.0.log.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/error/2020-12/2020-12-26.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/error/2021-01/2021-01-02.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/info/2020-12/2020-12-17.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/info/2020-12/2020-12-19.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/info/2020-12/2020-12-22.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/info/2020-12/2020-12-25.0.log.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/info/2020-12/2020-12-26.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/info/2021-01/2021-01-02.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/warning/2020-12/2020-12-17.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/warning/2020-12/2020-12-19.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/warning/2020-12/2020-12-22.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/warning/2020-12/2020-12-25.0.log.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/warning/2020-12/2020-12-26.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/logs/warning/2021-01/2021-01-02.0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/UnicreditServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/config/SimpleCorsFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/config/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/controller/DummyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/dto/request/CardHolderData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/dto/request/PaymentRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/dto/request/RequestPcc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/dto/response/PaymentResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/dto/response/ResponsePcc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/dto/response/TransactionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/CustomerAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/SellerAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/SequenceEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/Transaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/entity/UrlResponder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/feign/PccClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/generators/CustomSequenceGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/generators/StringPrefixedSequenceIdGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IAccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IAddressRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/ICustomerAccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IOrderCounterRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/ISellerAccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/ITransactionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/repository/IUrlResponderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/services/definition/IPaymentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/java/com/payment/unicreditservice/util/enums/TransactionStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/resources/bootstrap.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/resources/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/test/java/com/payment/unicreditservice/UnicreditServiceApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +241,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609853102929</updated>
       <workItem from="1609853113451" duration="6886000" />
+      <workItem from="1609864205322" duration="445000" />
     </task>
     <servers />
   </component>
