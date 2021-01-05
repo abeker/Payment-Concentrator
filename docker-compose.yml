@@ -37,43 +37,24 @@ services:
     #         static-network:
     #           ipv4_address: 172.20.0.2
 
-  # paypal-service:
-  #   image: paypal-service
-  #   container_name: paypal-service
-  #   build:
-  #     context: ./paypal-service
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     REGISTRY_HOST: eureka-server
-  #     REGISTRY_PORT: 8761
-  #     POSTGRES_HOST: dbpostgresql
-  #   ports:
-  #     - "8082:8082"
-  #   depends_on:
-  #     - eureka-server
-  #     - dbpostgresql
-  #   links:
-  #     - "eureka-server:eureka-server"
-  #     - "dbpostgresql:dbpostgresql"
-
-  # unicredit-service:
-  #   image: unicredit-service
-  #   # container_name: unicredit-service
-  #   build:
-  #     context: ./unicredit-service
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     REGISTRY_HOST: eureka-server
-  #     REGISTRY_PORT: 8761
-  #     POSTGRES_HOST: dbpostgresql
-  #   ports:
-  #     - "8091-8093:8091"
-  #   depends_on:
-  #     - eureka-server
-  #     - dbpostgresql
-  #   links:
-  #     - "eureka-server:eureka-server"
-  #     - "dbpostgresql:dbpostgresql"
+  paypal-service:
+    image: paypal-service
+    container_name: paypal-service
+    build:
+      context: ./paypal-service
+      dockerfile: Dockerfile
+    environment:
+      REGISTRY_HOST: eureka-server
+      REGISTRY_PORT: 8761
+      POSTGRES_HOST: dbpostgresql
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka-server
+      - dbpostgresql
+    links:
+      - "eureka-server:eureka-server"
+      - "dbpostgresql:dbpostgresql"
 
   bank-service:
     image: bank-service
@@ -112,47 +93,6 @@ services:
     links:
       - "eureka-server:eureka-server"
       - "dbpostgresql:dbpostgresql"
-
-  # bank-service:
-  #   image: bank-service
-  #   container_name: bank-service
-  #   build:
-  #     context: ./bank-service
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     REGISTRY_HOST: eureka-server
-  #     REGISTRY_PORT: 8761
-  #     POSTGRES_HOST: dbpostgresql
-  #   ports:
-  #     - "8081:8081"
-  #   depends_on:
-  #     - eureka-server
-  #     - dbpostgresql
-  #   links:
-  #     - "eureka-server:eureka-server"
-  #     - "dbpostgresql:dbpostgresql"
-  # networks:
-  #   - static-network
-
-
-  # raiffeisen-service:
-  #   image: raiffeisen-service
-  #   container_name: raiffeisen-service
-  #   build:
-  #     context: ./raiffeisen-service
-  #     dockerfile: Dockerfile
-  #   environment:
-  #     REGISTRY_HOST: eureka-server
-  #     REGISTRY_PORT: 8761
-  #     POSTGRES_HOST: dbpostgresql
-  #   ports:
-  #     - "8090:8090"
-  #   depends_on:
-  #     - eureka-server
-  #     - dbpostgresql
-  #   links:
-  #     - "eureka-server:eureka-server"
-  #     - "dbpostgresql:dbpostgresql"
 
   # bitcoin-service:
   #   image: bitcoin-service
