@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@EnableFeignClients
-@EnableEurekaClient
+//@EnableFeignClients
+//@EnableEurekaClient
 public class BitcoinServiceApplication {
 
 	public static void main(String[] args) {
