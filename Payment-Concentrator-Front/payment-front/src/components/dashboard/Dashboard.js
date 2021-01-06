@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Aux from '../../hoc/Auxiliary';
 import Image from '../images/Image';
 import axios from 'axios'
+import Bitcoin from '../bitcoin/Bitcoin';
 
 const Dashboard = (props) => {
     const [error, setError] = useState(null);
@@ -22,7 +23,8 @@ const Dashboard = (props) => {
             axios.get("https://localhost:8443/api/paypal/paypal").then(response => alert(response.data))
             props.history.push('/paypal');
         } else if(type === 'BITCOIN') {
-            sendRequest('https://localhost:8443/api/bitcoin/pay');
+            // sendRequest('https://localhost:8443/api/bitcoin/pay');
+            props.history.push('/bitcoin')
         }
     }
 
