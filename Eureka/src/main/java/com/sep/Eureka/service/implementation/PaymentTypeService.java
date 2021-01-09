@@ -99,6 +99,7 @@ public class PaymentTypeService implements IPaymentTypeService {
                 nameOfPaymentTypes.add(paymentType.getPaymentType());
             }
         }
+        retPaymentTypes.setPaymentTypeNames(nameOfPaymentTypes);
         return retPaymentTypes;
     }
 

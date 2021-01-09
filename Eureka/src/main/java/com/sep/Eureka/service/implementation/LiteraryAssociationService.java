@@ -1,6 +1,7 @@
 package com.sep.Eureka.service.implementation;
 
 import com.sep.Eureka.dto.request.PaymentTypes;
+import com.sep.Eureka.dto.response.LiteraryAssociationResponse;
 import com.sep.Eureka.entity.LiteraryAssociation;
 import com.sep.Eureka.entity.PaymentType;
 import com.sep.Eureka.repository.ILiteraryAssociationRepository;
@@ -75,12 +76,12 @@ public class LiteraryAssociationService implements ILiteraryAssociationService {
         _literaryAssociationRepository.save(literaryAssociation);
     }
 
-    private void saveNewLiteraryAssociation(String luId, PaymentTypes paymentTypes) {
+    private LiteraryAssociation saveNewLiteraryAssociation(String luId, PaymentTypes paymentTypes) {
         LiteraryAssociation newLiteraryAssociation = new LiteraryAssociation();
         Set<PaymentType> paymentTypesOfLiteraryAssociation = getSetOfPaymentTypes(paymentTypes);
         newLiteraryAssociation.setLuId(luId);
         newLiteraryAssociation.setPaymentType(paymentTypesOfLiteraryAssociation);
-        _literaryAssociationRepository.save(newLiteraryAssociation);
+        return _literaryAssociationRepository.save(newLiteraryAssociation);
     }
 
     private Set<PaymentType> getSetOfPaymentTypes(PaymentTypes paymentTypes) {

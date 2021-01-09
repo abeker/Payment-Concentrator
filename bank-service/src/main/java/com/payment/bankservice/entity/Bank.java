@@ -22,5 +22,6 @@ public class Bank extends BaseEntity {
     private int orderCounterAcquirer = 0;
     private int orderCounterIssuer = 0;
     private int paymentCounter = 0;
+    private boolean deleted = false;
 
 }

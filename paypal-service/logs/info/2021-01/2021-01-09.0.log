@@ -1,0 +1,64 @@
+2021-01-09 21:50:50.143 INFO  c.p.p.PaypalServiceApplication.logStartupProfileInfo:655 - The following profiles are active: dev
+2021-01-09 21:50:50.626 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-01-09 21:50:50.690 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 55ms. Found 1 JPA repository interfaces.
+2021-01-09 21:50:50.917 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=d5b1f3d2-e3c2-35f2-b802-828b899527ff
+2021-01-09 21:50:50.971 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$1ca0637f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-09 21:50:51.004 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-01-09 21:50:51.229 INFO  o.s.b.w.e.t.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8082 (http)
+2021-01-09 21:50:51.236 INFO  o.a.c.h.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8082"]
+2021-01-09 21:50:51.237 INFO  o.a.c.c.StandardService.log:173 - Starting service [Tomcat]
+2021-01-09 21:50:51.237 INFO  o.a.c.c.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-01-09 21:50:51.416 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring embedded WebApplicationContext
+2021-01-09 21:50:51.416 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 1256 ms
+2021-01-09 21:50:51.563 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-09 21:50:51.613 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-09 21:50:51.683 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2021-01-09 21:50:51.852 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-09 21:50:51.962 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2021-01-09 21:50:52.073 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2021-01-09 21:50:52.089 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-01-09 21:50:52.901 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-09 21:50:52.908 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-09 21:50:53.341 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-01-09 21:50:53.347 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-01-09 21:50:54.030 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2021-01-09 21:50:54.406 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2021-01-09 21:50:54.445 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2021-01-09 21:50:54.510 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2021-01-09 21:50:54.510 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2021-01-09 21:50:54.824 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2021-01-09 21:50:54.825 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2021-01-09 21:50:55.051 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-09 21:50:55.245 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2021-01-09 21:50:55.246 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2021-01-09 21:50:55.246 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2021-01-09 21:50:55.246 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2021-01-09 21:50:55.246 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2021-01-09 21:50:55.246 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2021-01-09 21:50:55.247 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2021-01-09 21:50:55.447 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1102 - The response status is 200
+2021-01-09 21:50:55.449 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2021-01-09 21:50:55.452 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-01-09 21:50:55.456 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1610225455454 with initial instances count: 1
+2021-01-09 21:50:55.458 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application PAYPAL with eureka with status UP
+2021-01-09 21:50:55.458 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1610225455458, current=UP, previous=STARTING]
+2021-01-09 21:50:55.460 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_PAYPAL/host.docker.internal:paypal:8082: registering service...
+2021-01-09 21:50:55.461 INFO  o.a.c.h.Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8082"]
+2021-01-09 21:50:55.491 INFO  o.s.b.w.e.t.TomcatWebServer.start:220 - Tomcat started on port(s): 8082 (http) with context path ''
+2021-01-09 21:50:55.492 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent:145 - Updating port to 8082
+2021-01-09 21:50:55.763 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_PAYPAL/host.docker.internal:paypal:8082 - registration status: 204
+2021-01-09 21:50:55.780 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2021-01-09 21:50:55.987 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2021-01-09 21:50:55.995 INFO  c.p.p.PaypalServiceApplication.logStarted:61 - Started PaypalServiceApplication in 7.264 seconds (JVM running for 8.55)
+2021-01-09 21:51:09.614 INFO  o.s.c.n.e.s.EurekaServiceRegistry.deregister:65 - Unregistering application PAYPAL with eureka with status DOWN
+2021-01-09 21:51:09.615 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_PAYPAL/host.docker.internal:paypal:8082: registering service...
+2021-01-09 21:51:09.629 INFO  c.n.d.DiscoveryClient.register:879 - DiscoveryClient_PAYPAL/host.docker.internal:paypal:8082 - registration status: 204
+2021-01-09 21:51:09.790 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-09 21:51:09.791 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform:526 - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-01-09 21:51:09.799 INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-09 21:51:09.800 INFO  c.z.h.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2021-01-09 21:51:09.804 INFO  c.z.h.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2021-01-09 21:51:09.805 INFO  c.n.d.DiscoveryClient.shutdown:932 - Shutting down DiscoveryClient ...
+2021-01-09 21:51:12.807 INFO  c.n.d.DiscoveryClient.unregister:968 - Unregistering ...
+2021-01-09 21:51:12.846 INFO  c.n.d.DiscoveryClient.unregister:970 - DiscoveryClient_PAYPAL/host.docker.internal:paypal:8082 - deregister  status: 200
+2021-01-09 21:51:12.855 INFO  c.n.d.DiscoveryClient.shutdown:957 - Completed shut down of DiscoveryClient
