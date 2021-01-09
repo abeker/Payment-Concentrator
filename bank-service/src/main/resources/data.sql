@@ -1,7 +1,7 @@
 -- noinspection SqlDialectInspectionForFile
-insert into bank (id, name, bank_code, order_counter_acquirer, order_counter_issuer, payment_counter) values
-    ('776cd924-84aa-42f6-82c6-e57082f931d2', 'unicredit', '99273', 0, 0, 0),
-    ('9f5b5dc1-8092-4e55-9311-f21e44f8ff03', 'raiffeisen', '89454', 0, 0, 0);
+insert into bank (id, name, bank_code, order_counter_acquirer, order_counter_issuer, payment_counter, deleted) values
+    ('776cd924-84aa-42f6-82c6-e57082f931d2', 'unicredit', '99273', 0, 0, 0, false),
+    ('9f5b5dc1-8092-4e55-9311-f21e44f8ff03', 'raiffeisen', '89454', 0, 0, 0, false);
 
 insert into address (city, country, zip_code, street, number, id) values
     ('Novi Sad', 'Serbia', '21400', 'Cara Dusana', '4a', '6fe69dab-ed15-42cd-9237-06d8728fc788'),

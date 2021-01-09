@@ -15,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class LiteraryAssociation extends BaseEntity {
 
-    private String luId;         // literaryAssociation - id
+    private String luId;        // literaryAssociation id
 
     private boolean deleted = false;
 
