@@ -10,25 +10,9 @@ const Bitcoin = () => {
     const currencyOptions = ['USD',"EUR","CAD","BTC","ETH"];
     const receiveOptions = ['USD',"EUR","USDT","BTC","ETH","LTC","DO_NOT_CONVERT"];
 
-    const payBitcoin = () => {
-        axios.post('https://api-sandbox.coingate.com/v2/orders', {
-            price_amount: 10.00,
-            price_currency: 'EUR',
-            receive_currency: 'BTC',
-            callback_url: 'http://localhost:3000/callback',
-            success_url: 'http://localhost:3000/success'
-        },{
-            headers: { 'Authorization' :'Bearer GwDq5QV1jC8DNZvixxRM2bEubWp158x_P7xnLBUV'}
-        }).then(response=>{
-            console.log(response.data)
-        }).catch(error=>{
-            console.log(error)
-        })
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:8083/order",{
+        axios.post("https://localhost:8443/api/bitcoin/order",{
             title: title,
             price_amount: parseFloat(price),
             price_currency: priceCurrency,

@@ -3,6 +3,7 @@ import Aux from '../../hoc/Auxiliary';
 import Image from '../images/Image';
 import axios from 'axios'
 import Bitcoin from '../bitcoin/Bitcoin';
+import Subscipe from '../paypal/Subscipe';
 
 const Dashboard = (props) => {
     const [error, setError] = useState(null);
@@ -63,6 +64,12 @@ const Dashboard = (props) => {
             {/* <Image type="VISA" clicked={ imageClickHandler.bind(this, "VISA") } /> */}
             <Image type="PAYPAL" clicked={ imageClickHandler.bind(this, "PAYPAL") } />
             <Image type="BITCOIN" clicked={ imageClickHandler.bind(this, "BITCOIN") } />
+            
+            <div style={{display:'flex', justifyContent: 'center',alignItems: 'center', width: '800'}}>
+                <h3> Subscripe fast to PayPal</h3>
+                <br/>
+                <Subscipe />
+            </div>
         </Aux>
     );
 }

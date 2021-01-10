@@ -9,20 +9,26 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.Id;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Subscriber extends BaseEntity {
+public class Subscriber {
+
+    @Id
+    private Long id;
 
     private String email;
-    private String organisationName;
+    private String organisation_name;
     private String address;
     private String city;
     private String country;
-    private String postalCode;
+    private String postal_code;
+    private String subsciber_id;
+    private String authkey;
 
     @Enumerated(EnumType.STRING)
     private SubscriberStatus subscriberStatus;
