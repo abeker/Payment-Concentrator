@@ -1,0 +1,73 @@
+2021-01-10 10:44:29.031 INFO  c.p.b.BankServiceApplicationTests.logStartupProfileInfo:655 - The following profiles are active: dev
+2021-01-10 10:44:29.884 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-01-10 10:44:30.229 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 331ms. Found 10 JPA repository interfaces.
+2021-01-10 10:44:30.753 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=979cf830-e92c-3246-a2a8-ba5901c44df9
+2021-01-10 10:44:30.872 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.bankservice.feign.EurekaClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-10 10:44:30.874 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.bankservice.feign.PccClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-10 10:44:30.955 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$f0f336b7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-10 10:44:31.009 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2021-01-10 10:44:31.145 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@590adb41' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-10 10:44:31.172 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-10 10:44:31.507 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-10 10:44:31.613 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-01-10 10:44:31.740 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2021-01-10 10:44:32.020 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2021-01-10 10:44:32.233 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2021-01-10 10:44:32.611 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2021-01-10 10:44:32.810 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2021-01-10 10:44:32.842 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2021-01-10 10:44:34.491 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-01-10 10:44:34.501 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-10 10:44:35.333 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2021-01-10 10:44:35.504 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2021-01-10 10:44:35.505 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2021-01-10 10:44:35.653 INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword:86 - 
+
+Using generated security password: 80292a21-4b5b-4353-b4a3-a2da26d657b3
+
+2021-01-10 10:44:35.771 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/', GET], []
+2021-01-10 10:44:35.772 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2021-01-10 10:44:35.773 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/*.html', GET], []
+2021-01-10 10:44:35.774 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2021-01-10 10:44:35.775 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2021-01-10 10:44:35.775 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2021-01-10 10:44:35.776 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2021-01-10 10:44:36.465 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@9d3d54e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ccd611e, org.springframework.security.web.header.HeaderWriterFilter@42c0a16e, org.springframework.web.filter.CorsFilter@2f04993d, org.springframework.security.web.authentication.logout.LogoutFilter@6c951ada, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c3d4f05, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d0e45a5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@333398f, org.springframework.security.web.session.SessionManagementFilter@51ac12ac, org.springframework.security.web.access.ExceptionTranslationFilter@1bd8afc8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20349058]
+2021-01-10 10:44:36.685 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-01-10 10:44:36.696 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-01-10 10:44:37.863 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2021-01-10 10:44:38.503 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2021-01-10 10:44:38.625 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2021-01-10 10:44:39.241 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2021-01-10 10:44:39.242 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2021-01-10 10:44:39.456 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2021-01-10 10:44:39.457 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2021-01-10 10:44:39.657 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2021-01-10 10:44:39.886 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2021-01-10 10:44:39.886 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2021-01-10 10:44:39.887 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2021-01-10 10:44:39.887 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2021-01-10 10:44:39.888 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2021-01-10 10:44:39.888 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2021-01-10 10:44:39.888 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2021-01-10 10:44:44.030 INFO  c.n.d.DiscoveryClient.<init>:442 - Initial registry fetch from primary servers failed
+2021-01-10 10:44:44.032 INFO  c.n.d.DiscoveryClient.<init>:447 - Initial registry fetch from backup servers failed
+2021-01-10 10:44:44.034 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2021-01-10 10:44:44.037 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-01-10 10:44:44.041 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1610271884040 with initial instances count: 0
+2021-01-10 10:44:44.047 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application BANK with eureka with status UP
+2021-01-10 10:44:44.049 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1610271884049, current=UP, previous=STARTING]
+2021-01-10 10:44:44.053 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_BANK/host.docker.internal:bank:8095: registering service...
+2021-01-10 10:44:44.060 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2021-01-10 10:44:44.062 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2021-01-10 10:44:44.082 INFO  c.p.b.BankServiceApplicationTests.logStarted:61 - Started BankServiceApplicationTests in 16.776 seconds (JVM running for 18.005)
+2021-01-10 10:44:45.056 INFO  o.s.c.n.e.s.EurekaServiceRegistry.deregister:65 - Unregistering application BANK with eureka with status DOWN
+2021-01-10 10:44:45.066 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy:598 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-10 10:44:45.067 INFO  o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl.perform:526 - HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-01-10 10:44:45.208 INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown:218 - Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-10 10:44:45.208 INFO  c.z.h.HikariDataSource.close:350 - HikariPool-1 - Shutdown initiated...
+2021-01-10 10:44:45.217 INFO  c.z.h.HikariDataSource.close:352 - HikariPool-1 - Shutdown completed.
+2021-01-10 10:44:45.218 INFO  c.n.d.DiscoveryClient.shutdown:932 - Shutting down DiscoveryClient ...
+2021-01-10 10:44:48.100 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_BANK/host.docker.internal:bank:8095: registering service...
+2021-01-10 10:44:48.222 INFO  c.n.d.DiscoveryClient.unregister:968 - Unregistering ...
+2021-01-10 10:44:52.244 INFO  c.n.d.DiscoveryClient.shutdown:957 - Completed shut down of DiscoveryClient

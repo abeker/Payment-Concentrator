@@ -86,7 +86,7 @@ services:
       REGISTRY_PORT: 8761
       POSTGRES_HOST: dbpostgresql
     ports:
-      - "8084:8084"
+      - "8079:8079"
     depends_on:
       - eureka-server
       - dbpostgresql

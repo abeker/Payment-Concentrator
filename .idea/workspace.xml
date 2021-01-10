@@ -32,18 +32,7 @@
   <component name="ChangeListManager">
     <list default="true" id="51c008a9-3ce9-49b6-bf7a-22c4a82bd4c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/entity/LiteraryAssociation.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/entity/LiteraryAssociation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/implementation/LiteraryAssociationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/implementation/LiteraryAssociationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/implementation/PaymentTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/service/implementation/PaymentTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zuul/src/main/java/com/sep/Zuul/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zuul/src/main/java/com/sep/Zuul/AuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zuul/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Zuul/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/src/main/java/com/payment/bankservice/controller/BankController.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/java/com/payment/bankservice/controller/BankController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/src/main/java/com/payment/bankservice/entity/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/java/com/payment/bankservice/entity/Bank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/src/main/java/com/payment/bankservice/services/definition/IBankService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/java/com/payment/bankservice/services/definition/IBankService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/src/main/java/com/payment/bankservice/services/implementation/BankService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/java/com/payment/bankservice/services/implementation/BankService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bank-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/bank-service/src/main/resources/data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/resources/bootstrap.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
@@ -159,6 +149,7 @@
       <workItem from="1609864205322" duration="445000" />
       <workItem from="1610121724802" duration="3073000" />
       <workItem from="1610190559090" duration="15917000" />
+      <workItem from="1610270737948" duration="1157000" />
     </task>
     <servers />
   </component>
