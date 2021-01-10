@@ -31,3 +31,4 @@ build/
 paypal-service/logs
 ### VS Code ###
 .vscode/
+logs

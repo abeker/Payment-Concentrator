@@ -1,0 +1,307 @@
+2020-12-21 20:18:34.923 INFO  c.p.u.UnicreditServiceApplication.logStartupProfileInfo:655 - The following profiles are active: dev
+2020-12-21 20:18:35.575 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-21 20:18:35.650 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 66ms. Found 9 JPA repository interfaces.
+2020-12-21 20:18:35.831 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=145e74bb-8099-3284-aedd-1f94bb3ad17d
+2020-12-21 20:18:35.864 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.unicreditservice.feign.PccClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-21 20:18:35.883 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$57510072] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-21 20:18:35.915 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-12-21 20:18:35.962 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@51ab1ee3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-21 20:18:35.965 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-21 20:18:36.120 INFO  o.s.b.w.e.t.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8091 (http)
+2020-12-21 20:18:36.125 INFO  o.a.c.h.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8091"]
+2020-12-21 20:18:36.126 INFO  o.a.c.c.StandardService.log:173 - Starting service [Tomcat]
+2020-12-21 20:18:36.126 INFO  o.a.c.c.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-12-21 20:18:36.227 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring embedded WebApplicationContext
+2020-12-21 20:18:36.227 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 1288 ms
+2020-12-21 20:18:36.331 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 20:18:36.364 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-21 20:18:36.406 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-12-21 20:18:36.533 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-21 20:18:36.533 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-21 20:18:36.599 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-12-21 20:18:36.668 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-12-21 20:18:36.678 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-21 20:18:37.360 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-21 20:18:37.364 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 20:18:37.643 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-21 20:18:37.823 INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword:86 - 
+
+Using generated security password: 92bd7f0f-e19c-4b55-a725-fee82a757382
+
+2020-12-21 20:18:37.866 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/', GET], []
+2020-12-21 20:18:37.866 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2020-12-21 20:18:37.867 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/*.html', GET], []
+2020-12-21 20:18:37.867 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-12-21 20:18:37.867 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2020-12-21 20:18:37.867 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2020-12-21 20:18:37.867 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2020-12-21 20:18:37.897 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37a3ec27, org.springframework.security.web.context.SecurityContextPersistenceFilter@49122853, org.springframework.security.web.header.HeaderWriterFilter@4fa91d5b, org.springframework.web.filter.CorsFilter@718fd7c1, org.springframework.security.web.authentication.logout.LogoutFilter@2aac8ad7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d6b42cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3cf4dec7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@283baa39, org.springframework.security.web.session.SessionManagementFilter@4a833595, org.springframework.security.web.access.ExceptionTranslationFilter@58f7215c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6afeaf2d]
+2020-12-21 20:18:37.913 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-21 20:18:37.917 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-21 20:18:38.137 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2020-12-21 20:18:38.267 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2020-12-21 20:18:38.291 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2020-12-21 20:18:38.482 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2020-12-21 20:18:38.482 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2020-12-21 20:18:38.561 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2020-12-21 20:18:38.561 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2020-12-21 20:18:38.672 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-21 20:18:38.687 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:18:38.688 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:18:38.688 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:18:38.688 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:18:38.688 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:18:38.688 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:18:38.688 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:18:42.742 INFO  c.n.d.DiscoveryClient.<init>:442 - Initial registry fetch from primary servers failed
+2020-12-21 20:18:42.743 INFO  c.n.d.DiscoveryClient.<init>:447 - Initial registry fetch from backup servers failed
+2020-12-21 20:18:42.743 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2020-12-21 20:18:42.745 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-12-21 20:18:42.748 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1608578322747 with initial instances count: 0
+2020-12-21 20:18:42.750 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application UNICREDIT with eureka with status UP
+2020-12-21 20:18:42.751 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1608578322751, current=UP, previous=STARTING]
+2020-12-21 20:18:42.752 INFO  o.a.c.h.Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8091"]
+2020-12-21 20:18:42.752 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:18:42.767 INFO  o.s.b.w.e.t.TomcatWebServer.start:220 - Tomcat started on port(s): 8091 (http) with context path ''
+2020-12-21 20:18:42.768 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent:145 - Updating port to 8091
+2020-12-21 20:18:42.797 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-21 20:18:42.797 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-21 20:18:42.805 INFO  c.p.u.UnicreditServiceApplication.logStarted:61 - Started UnicreditServiceApplication in 8.655 seconds (JVM running for 9.291)
+2020-12-21 20:19:43.093 INFO  c.p.u.UnicreditServiceApplication.logStartupProfileInfo:655 - The following profiles are active: dev
+2020-12-21 20:19:43.475 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:127 - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-12-21 20:19:43.534 INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn:187 - Finished Spring Data repository scanning in 54ms. Found 9 JPA repository interfaces.
+2020-12-21 20:19:43.701 INFO  o.s.c.c.s.GenericScope.setSerializationId:295 - BeanFactory id=145e74bb-8099-3284-aedd-1f94bb3ad17d
+2020-12-21 20:19:43.732 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'com.payment.unicreditservice.feign.PccClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-21 20:19:43.750 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$238296fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-21 20:19:43.771 INFO  o.s.w.s.a.s.AnnotationActionEndpointMapping.afterPropertiesSet:236 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2020-12-21 20:19:43.820 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6a756082' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-21 20:19:43.824 INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization:335 - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-21 20:19:43.967 INFO  o.s.b.w.e.t.TomcatWebServer.initialize:108 - Tomcat initialized with port(s): 8091 (http)
+2020-12-21 20:19:43.971 INFO  o.a.c.h.Http11NioProtocol.log:173 - Initializing ProtocolHandler ["http-nio-8091"]
+2020-12-21 20:19:43.972 INFO  o.a.c.c.StandardService.log:173 - Starting service [Tomcat]
+2020-12-21 20:19:43.972 INFO  o.a.c.c.StandardEngine.log:173 - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-12-21 20:19:44.059 INFO  o.a.c.c.C.[.[.[/].log:173 - Initializing Spring embedded WebApplicationContext
+2020-12-21 20:19:44.059 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext.prepareWebApplicationContext:285 - Root WebApplicationContext: initialization completed in 953 ms
+2020-12-21 20:19:44.155 INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 20:19:44.180 INFO  o.h.j.i.u.LogHelper.logPersistenceUnitInformation:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-21 20:19:44.204 INFO  o.h.Version.logVersion:44 - HHH000412: Hibernate ORM core version 5.4.18.Final
+2020-12-21 20:19:44.280 INFO  o.h.a.c.Version.<clinit>:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-21 20:19:44.319 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-21 20:19:44.333 INFO  c.z.h.HikariDataSource.getConnection:110 - HikariPool-1 - Starting...
+2020-12-21 20:19:44.440 INFO  c.z.h.HikariDataSource.getConnection:123 - HikariPool-1 - Start completed.
+2020-12-21 20:19:44.448 INFO  o.h.d.Dialect.<init>:172 - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2020-12-21 20:19:45.092 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-21 20:19:45.097 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-21 20:19:45.355 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-21 20:19:45.510 INFO  o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword:86 - 
+
+Using generated security password: 1ee0bdb2-8c7c-43a2-9ada-7a2944d4b785
+
+2020-12-21 20:19:45.539 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/', GET], []
+2020-12-21 20:19:45.539 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/webjars/**', GET], []
+2020-12-21 20:19:45.539 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/*.html', GET], []
+2020-12-21 20:19:45.539 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/favicon.ico', GET], []
+2020-12-21 20:19:45.539 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.html', GET], []
+2020-12-21 20:19:45.539 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.css', GET], []
+2020-12-21 20:19:45.539 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: Ant [pattern='/**/*.js', GET], []
+2020-12-21 20:19:45.564 INFO  o.s.s.w.DefaultSecurityFilterChain.<init>:43 - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@105dc04d, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b5798c2, org.springframework.security.web.header.HeaderWriterFilter@432c0f1, org.springframework.web.filter.CorsFilter@4bb147ec, org.springframework.security.web.authentication.logout.LogoutFilter@7ce30c0b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71039ce1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4070ace9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@504b8705, org.springframework.security.web.session.SessionManagementFilter@5fdb7394, org.springframework.security.web.access.ExceptionTranslationFilter@7d6c4079, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4813d0]
+2020-12-21 20:19:45.577 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-21 20:19:45.580 INFO  c.n.c.s.URLConfigurationSource.<init>:122 - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-12-21 20:19:45.773 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration.discoveryClientOptionalArgs:78 - Eureka HTTP Client uses Jersey
+2020-12-21 20:19:45.887 INFO  o.s.c.n.e.InstanceInfoFactory.create:72 - Setting initial instance status as: STARTING
+2020-12-21 20:19:45.906 INFO  c.n.d.DiscoveryClient.<init>:371 - Initializing Eureka in region us-east-1
+2020-12-21 20:19:46.031 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:70 - Using JSON encoding codec LegacyJacksonJson
+2020-12-21 20:19:46.031 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:71 - Using JSON decoding codec LegacyJacksonJson
+2020-12-21 20:19:46.098 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:80 - Using XML encoding codec XStreamXml
+2020-12-21 20:19:46.098 INFO  c.n.d.p.DiscoveryJerseyProvider.<init>:81 - Using XML decoding codec XStreamXml
+2020-12-21 20:19:46.190 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-21 20:19:46.203 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:19:46.204 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:19:46.204 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:19:46.204 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:19:46.204 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:19:46.204 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:19:46.204 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:19:50.240 INFO  c.n.d.DiscoveryClient.<init>:442 - Initial registry fetch from primary servers failed
+2020-12-21 20:19:50.241 INFO  c.n.d.DiscoveryClient.<init>:447 - Initial registry fetch from backup servers failed
+2020-12-21 20:19:50.241 INFO  c.n.d.DiscoveryClient.initScheduledTasks:1317 - Starting heartbeat executor: renew interval is: 30
+2020-12-21 20:19:50.243 INFO  c.n.d.InstanceInfoReplicator.<init>:60 - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-12-21 20:19:50.246 INFO  c.n.d.DiscoveryClient.<init>:491 - Discovery Client initialized at timestamp 1608578390245 with initial instances count: 0
+2020-12-21 20:19:50.248 INFO  o.s.c.n.e.s.EurekaServiceRegistry.register:41 - Registering application UNICREDIT with eureka with status UP
+2020-12-21 20:19:50.249 INFO  c.n.d.DiscoveryClient.notify:1353 - Saw local status change event StatusChangeEvent [timestamp=1608578390249, current=UP, previous=STARTING]
+2020-12-21 20:19:50.250 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:19:50.250 INFO  o.a.c.h.Http11NioProtocol.log:173 - Starting ProtocolHandler ["http-nio-8091"]
+2020-12-21 20:19:50.270 INFO  o.s.b.w.e.t.TomcatWebServer.start:220 - Tomcat started on port(s): 8091 (http) with context path ''
+2020-12-21 20:19:50.271 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration.onApplicationEvent:145 - Updating port to 8091
+2020-12-21 20:19:50.301 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:49 - Triggering deferred initialization of Spring Data repositories…
+2020-12-21 20:19:50.301 INFO  o.s.d.r.c.DeferredRepositoryInitializationListener.onApplicationEvent:53 - Spring Data repositories initialized!
+2020-12-21 20:19:50.308 INFO  c.p.u.UnicreditServiceApplication.logStarted:61 - Started UnicreditServiceApplication in 7.726 seconds (JVM running for 8.133)
+2020-12-21 20:20:20.242 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:20:20.242 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:20:20.242 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:20:20.242 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:20:20.242 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:20:20.243 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:20:20.243 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:20:24.260 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:20:54.251 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:20:54.251 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:20:54.251 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:20:54.251 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:20:54.251 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:20:54.251 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:20:54.251 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:20:58.269 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:21:28.260 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:21:28.260 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:21:28.260 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:21:28.260 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:21:28.260 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:21:28.260 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:21:28.260 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:21:32.308 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:22:02.268 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:22:02.268 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:22:02.268 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:22:02.268 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:22:02.268 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:22:02.268 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:22:02.268 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:22:06.319 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:22:36.275 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:22:36.275 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:22:36.275 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:22:36.275 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:22:36.275 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:22:36.275 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:22:36.275 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:22:40.328 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:23:10.283 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:23:10.283 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:23:10.283 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:23:10.283 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:23:10.283 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:23:10.283 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:23:10.283 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:23:14.335 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:23:44.295 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:23:44.295 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:23:44.295 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:23:44.295 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:23:44.295 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:23:44.295 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:23:44.295 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:23:48.343 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:24:18.300 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:24:18.300 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:24:18.300 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:24:18.300 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:24:18.300 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:24:18.300 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:24:18.300 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:24:22.351 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:24:46.205 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-21 20:24:52.306 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:24:52.306 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:24:52.306 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:24:52.306 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:24:52.306 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:24:52.306 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:24:52.306 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:24:56.359 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:25:26.313 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:25:26.313 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:25:26.313 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:25:26.313 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:25:26.313 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:25:26.313 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:25:26.313 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:25:30.366 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:26:00.320 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:26:00.320 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:26:00.320 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:26:00.320 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:26:00.320 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:26:00.320 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:26:00.320 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:26:04.374 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:26:34.326 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:26:34.326 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:26:34.326 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:26:34.326 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:26:34.326 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:26:34.326 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:26:34.326 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:26:38.383 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:27:08.332 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:27:08.332 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:27:08.332 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:27:08.332 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:27:08.332 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:27:08.332 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:27:08.332 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:27:12.402 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:27:42.349 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:27:42.349 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:27:42.349 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:27:42.349 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:27:42.349 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:27:42.349 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:27:42.349 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:27:46.409 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:28:16.356 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:28:16.356 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:28:16.356 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:28:16.356 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:28:16.356 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:28:16.356 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:28:16.356 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:28:20.416 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:28:50.365 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:28:50.365 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:28:50.365 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:28:50.365 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:28:50.365 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:28:50.365 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:28:50.365 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:28:54.427 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:29:24.370 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:29:24.370 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:29:24.370 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:29:24.370 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:29:24.370 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:29:24.370 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:29:24.370 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:29:28.432 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:29:46.208 INFO  c.n.d.s.r.a.ConfigClusterResolver.getClusterEndpoints:43 - Resolving eureka endpoints via configuration
+2020-12-21 20:29:58.389 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:29:58.389 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:29:58.389 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:29:58.389 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:29:58.389 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:29:58.389 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:29:58.389 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:30:02.438 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:30:32.400 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:30:32.400 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:30:32.400 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:30:32.400 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:30:32.400 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:30:32.400 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:30:32.400 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:30:36.445 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:31:06.405 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:31:06.405 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:31:06.405 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:31:06.405 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:31:06.405 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:31:06.405 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:31:06.405 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
+2020-12-21 20:31:10.453 INFO  c.n.d.DiscoveryClient.register:870 - DiscoveryClient_UNICREDIT/host.docker.internal:unicredit:8091: registering service...
+2020-12-21 20:31:40.424 INFO  c.n.d.DiscoveryClient.fetchRegistry:1004 - Disable delta property : false
+2020-12-21 20:31:40.424 INFO  c.n.d.DiscoveryClient.fetchRegistry:1005 - Single vip registry refresh property : null
+2020-12-21 20:31:40.424 INFO  c.n.d.DiscoveryClient.fetchRegistry:1006 - Force full registry fetch : false
+2020-12-21 20:31:40.424 INFO  c.n.d.DiscoveryClient.fetchRegistry:1007 - Application is null : false
+2020-12-21 20:31:40.424 INFO  c.n.d.DiscoveryClient.fetchRegistry:1008 - Registered Applications size is zero : true
+2020-12-21 20:31:40.424 INFO  c.n.d.DiscoveryClient.fetchRegistry:1010 - Application version is -1: true
+2020-12-21 20:31:40.424 INFO  c.n.d.DiscoveryClient.getAndStoreFullRegistry:1093 - Getting all instance registry info from the eureka server
