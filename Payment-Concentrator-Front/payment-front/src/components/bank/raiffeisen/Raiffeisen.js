@@ -1,10 +1,24 @@
+import axios from 'axios';
+import { useBeforeunload } from 'react-beforeunload';
+import { useHistory } from 'react-router-dom';
+import raiffeisenLogo from '../../../assets/images/raiffeisen-logo.jpg';
 import Aux from "../../../hoc/Auxiliary";
 import BankForm from '../BankForm';
-import raiffeisenLogo from '../../../assets/images/raiffeisen-logo.jpg';
 import classes from './Raiffeisen.module.css';
-import {useHistory} from 'react-router-dom';
 
 const Raiffeisen = (props) => {
+    useBeforeunload((event) => {
+        cancelRequest(props.match.params.paymentId);
+        event.preventDefault();
+    });
+
+    const cancelRequest = (paymentRequestId) => {
+        axios.put(`https://localhost:8443/api/bank/${paymentRequestId}/cancel/bank1`)
+            .then(response => {
+                // do nothing
+            });
+    }
+
     let history = useHistory();
     const onSendData = (event) => {
         event.preventDefault();
@@ -29,10 +43,11 @@ const Raiffeisen = (props) => {
         }).then(response => {
             return response.json();
         }).then(responseData => {
-            history.push('/success');
-            console.log(responseData);
-        }).catch(error => {
-            alert("Invalid Card Holder Data!");
+            if(responseData.status === 500) {
+                history.push('/error');
+            } else {
+                history.push('/success');
+            }
         });
     }
 

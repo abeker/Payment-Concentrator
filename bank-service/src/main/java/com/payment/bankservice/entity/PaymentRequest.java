@@ -17,7 +17,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class PaymentRequest extends BaseEntity {
 
-//    // sequence counter for payments in one bank
+    // sequence counter for payments in one bank
 //    private int counter;
 
     @Column(precision = 10, scale = 2)

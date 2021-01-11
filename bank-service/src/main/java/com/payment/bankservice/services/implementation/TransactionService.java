@@ -22,6 +22,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.locks.ReentrantLock;
 
+@SuppressWarnings("SpellCheckingInspection")
 @Service
 public class TransactionService implements ITransactionService {
 
@@ -69,11 +70,15 @@ public class TransactionService implements ITransactionService {
                     RequestPcc requestPcc = createRequestPcc(orderCounter, cardHolderData, paymentRequest.getAmount());
                     ResponsePcc responsePcc = _pccClient.sendToPcc(requestPcc);
 
-                    addMoneyOnMerchantAccount(responsePcc, cardHolderData, paymentRequest);
-                    paymentRequest.setOrderCounter(orderCounter);
-                    TransactionStatus transactionStatus = responsePcc != null ? TransactionStatus.SUCCESS : TransactionStatus.ERROR;
-                    logger.warn("[{}] account not found [{}]", bankName, cardholderName);
-                    createTransactionFromPcc(paymentRequest, transactionStatus);
+                    // nema vise para na racunu od klijenta
+                    if(responsePcc == null) {
+                        createTransactionAfterPcc(TransactionStatus.ERROR, cardholderName, paymentRequest);
+                        throw new NoSuchElementException();
+                    } else {
+                        addMoneyOnMerchantAccount(responsePcc, cardHolderData, paymentRequest);
+                        paymentRequest.setOrderCounter(orderCounter);
+                        createTransactionAfterPcc(TransactionStatus.SUCCESS, cardholderName, paymentRequest);
+                    }
                 }
             } else if (!isCardHolderDataValid(accountOptional.get(), cardHolderData)) {
                 logger.warn("[{}] invalid cardholder data [{}]", bankName, cardholderName);
@@ -84,6 +89,11 @@ public class TransactionService implements ITransactionService {
         }
 
         return mapTransactionToTransactionResponse(paymentRequest);
+    }
+
+    private void createTransactionAfterPcc(TransactionStatus transactionStatus, String cardholderName, PaymentRequest paymentRequest) {
+        logger.warn("[{}] account not found [{}]", bankName, cardholderName);
+        createTransactionFromPcc(paymentRequest, transactionStatus);
     }
 
     private boolean isPaymentRequestProcessed(PaymentRequest paymentRequest) {

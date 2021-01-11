@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@SuppressWarnings("SpellCheckingInspection")
+@SuppressWarnings({"SpellCheckingInspection", "rawtypes"})
 @RestController
 @RequestMapping(value="/")
 public class BankController {
@@ -32,7 +32,7 @@ public class BankController {
     }
 
     @GetMapping()
-    public ResponseEntity<?> getBanks() throws IllegalAccessException {
+    public ResponseEntity<?> getBanks() {
         return new ResponseEntity<>(_bankService.getBanks(), HttpStatus.OK);
     }
 
@@ -41,6 +41,17 @@ public class BankController {
         List<RegisterBank> registeredBanks = _eurekaClient.getBanks();
         _bankService.registerBanks(registeredBanks);
         return new ResponseEntity<>(_paymentService.checkPaymentRequest(paymentRequestDTO), HttpStatus.OK);
+    }
+
+    @PutMapping("/{paymentId}/cancel/{bankName}")
+    public void cancelRequest(@PathVariable("paymentId") String paymentId, @PathVariable("bankName") String bankName) {
+        _paymentService.cancelRequest(paymentId, bankName);
+    }
+
+    @GetMapping("/{paymentId}/status/{bankName}")
+    public ResponseEntity<PaymentRequestStatus> checkPaymentRequestStatus(@PathVariable("paymentId") String paymentId,
+                                                                          @PathVariable("bankName") String bankName) {
+        return new ResponseEntity<PaymentRequestStatus>(_paymentService.checkRequestStatus(paymentId, bankName), HttpStatus.OK);
     }
 
     /**

@@ -1,18 +1,20 @@
 package com.payment.bankservice.services.implementation;
 
 import com.payment.bankservice.dto.request.PaymentRequestDTO;
+import com.payment.bankservice.dto.response.PaymentRequestStatus;
 import com.payment.bankservice.dto.response.PaymentResponse;
 import com.payment.bankservice.entity.*;
 import com.payment.bankservice.repository.*;
 import com.payment.bankservice.services.definition.IPaymentService;
+import com.payment.bankservice.util.enums.TransactionStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("FieldCanBeLocal")
 @Service
@@ -26,14 +28,16 @@ public class PaymentService implements IPaymentService {
     private final IMerchantOrderRepository _merchantOrderRepository;
     private final IPaymentRequestRepository _paymentRequestRepository;
     private final IUrlResponderRepository _urlResponderRepository;
+    private final ITransactionRepository _transactionRepository;
     private final IBankRepository _bankRepository;
 
-    public PaymentService(PasswordEncoder passwordEncoder, ISellerAccountRepository sellerAccountRepository, IMerchantOrderRepository merchantOrderRepository, IPaymentRequestRepository paymentRequestRepository, IUrlResponderRepository urlResponderRepository, IBankRepository bankRepository) {
+    public PaymentService(PasswordEncoder passwordEncoder, ISellerAccountRepository sellerAccountRepository, IMerchantOrderRepository merchantOrderRepository, IPaymentRequestRepository paymentRequestRepository, IUrlResponderRepository urlResponderRepository, ITransactionRepository transactionRepository, IBankRepository bankRepository) {
         _passwordEncoder = passwordEncoder;
         _sellerAccountRepository = sellerAccountRepository;
         _merchantOrderRepository = merchantOrderRepository;
         _paymentRequestRepository = paymentRequestRepository;
         _urlResponderRepository = urlResponderRepository;
+        _transactionRepository = transactionRepository;
         _bankRepository = bankRepository;
     }
 
@@ -49,6 +53,73 @@ public class PaymentService implements IPaymentService {
         logger.info("[{}] payment request valid [merchantId={}-]", bankName, paymentRequestDTO.getMerchantId().substring(0, 4));
         PaymentRequest storedPaymentRequest = createPaymentRequest(paymentRequestDTO);
         return mapPaymentRequestToPaymentResponse(storedPaymentRequest);
+    }
+
+    @Override
+    public void cancelRequest(String paymentId, String bankName) {
+        PaymentRequest paymentRequest = getPaymentRequestFromPaymentCounterAndBankName(paymentId, bankName);
+        if(paymentRequest != null) {
+            paymentRequest.setDeleted(true);
+            _paymentRequestRepository.save(paymentRequest);
+        }
+    }
+
+    private PaymentRequest getPaymentRequestFromPaymentCounterAndBankName(String paymentId, String bankName) {
+        List<PaymentRequest> paymentRequestList = _paymentRequestRepository.findByPaymentCounter(Integer.parseInt(paymentId))
+                .stream()
+                .filter(paymentRequest -> !paymentRequest.isDeleted())
+                .collect(Collectors.toList());
+        return getPaymentRequestForBankName(paymentRequestList, bankName);
+    }
+
+    @Override
+    public PaymentRequestStatus checkRequestStatus(String paymentId, String bankName) {
+        PaymentRequest paymentRequestForBankName = getPaymentRequestFromPaymentCounterAndBankName(paymentId, bankName);
+        if(paymentRequestForBankName != null) {
+            TransactionStatus transactionStatus = checkTransactionStatusForPayRequest(paymentRequestForBankName);
+            if(transactionStatus == null) {
+                return createPaymentRequestStatus("PENDING");
+            } else {
+                return createPaymentRequestStatus(transactionStatus.toString());
+            }
+        }
+        return null;
+    }
+
+    private PaymentRequest getPaymentRequestForBankName(List<PaymentRequest> paymentRequestList, String bankName) {
+        for (PaymentRequest paymentRequest : paymentRequestList) {
+            MerchantOrder merchantOrder = paymentRequest.getMerchantOrder();
+            SellerAccount sellerAccount = merchantOrder.getSellerAccount();
+            String bankCode = getBankCodeFromBankName(bankName);
+            if(sellerAccount.getBankCode().equals(bankCode)) {
+                return paymentRequest;
+            }
+        }
+        return null;
+    }
+
+    private String getBankCodeFromBankName(String bankName) {
+        for (Bank bank: _bankRepository.findAll()) {
+            if(bank.getName().toLowerCase().equals(bankName.toLowerCase())) {
+                return bank.getBankCode();
+            }
+        }
+        return null;
+    }
+
+    private PaymentRequestStatus createPaymentRequestStatus(String status) {
+        PaymentRequestStatus paymentRequestStatus = new PaymentRequestStatus();
+        paymentRequestStatus.setStatus(status);
+        return paymentRequestStatus;
+    }
+
+    private TransactionStatus checkTransactionStatusForPayRequest(PaymentRequest paymentRequest) {
+        for (Transaction transaction : _transactionRepository.findAll()) {
+            if(transaction.getPaymentRequest().getId().equals(paymentRequest.getId())) {
+                return transaction.getStatus();
+            }
+        }
+        return null;
     }
 
     private PaymentRequest createPaymentRequest(PaymentRequestDTO paymentRequestDTO) {

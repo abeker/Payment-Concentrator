@@ -22,5 +22,5 @@ public class Transaction extends BaseEntity {
     private PaymentRequest paymentRequest;
 
     @Enumerated(EnumType.STRING)
-    private TransactionStatus status;
+    private TransactionStatus status = TransactionStatus.PENDING;
 }
