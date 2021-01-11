@@ -7,6 +7,7 @@ import Raiffeisen from './components/bank/raiffeisen/Raiffeisen';
 import "antd/dist/antd.css";
 import SuccessPayment from './components/paypal/SuccessfullPayment';
 import Bitcoin from './components/bitcoin/Bitcoin';
+import ErrorPage from './components/UI/ErrorPage/Error';
 
 // const RenderRoutes=(route)=>{
 //   document.title = route.title || 'App name'
@@ -28,6 +29,7 @@ function App() {
             <Route path="/payment-raiffeisen/:paymentId" render={ (props) => <Raiffeisen {...props} /> } />
             <Route path="/" exact render={ (props) => <Dashboard {...props} /> } />
             <Route path="/success" exact  render= {() => <SuccessPayment/>}/>
+            <Route path="/error" exact  render= {() => <ErrorPage/>}/>
             <Route path="/bitcoin" exact  render= {() => <Bitcoin/>}/>
             <Redirect to="/" />
         </Switch>
