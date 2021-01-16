@@ -18,7 +18,9 @@ public class PaymentTypeController {
     }
 
     @GetMapping("")
-    public PaymentTypes getAll(){ return _paymentTypeService.getAll(); }
+    public PaymentTypes getAll(){
+        return _paymentTypeService.getAll();
+    }
 
     @GetMapping("/bank")
     public List<RegisterBank> getBanks(){

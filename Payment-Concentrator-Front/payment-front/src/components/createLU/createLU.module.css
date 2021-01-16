@@ -1,0 +1,33 @@
+.Wallpaper{
+    background-image: url('https://z9e9i7a5.stackpathcdn.com/wp-content/uploads/2020/06/HD-Web-Solutios-Portfolio.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.Form {
+    margin-left: -30%;
+    padding-top: 4%;
+}
+
+.h3 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 30px;
+    margin-left: 7%;
+}
+
+.Headline {
+    margin-left: 12%;
+    padding-top: 1%;
+    font: 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.Checkbox {
+    margin-left: 10%;
+    padding-left: 5%;
+}

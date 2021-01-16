@@ -1,10 +1,10 @@
-import bitcoin from '../../assets/images/bitcoin.jpg';
-import visa from '../../assets/images/visa.jpg';
+import PropTypes from 'prop-types';
+import bitcoin from '../../assets/images/bitcoin.svg';
+import paypal from '../../assets/images/paypal.svg';
+import newLU from '../../assets/images/newLU.svg';
 import raiffeisenImage from '../../assets/images/raiffeisen.png';
 import unicreditImage from '../../assets/images/unicredit1.png';
-import paypal from '../../assets/images/paypal.png';
-import PropTypes from 'prop-types';
-import Aux from '../../hoc/Auxiliary';
+import bank from '../../assets/images/bank.svg';
 import classes from './image.module.css';
 
 const image = (props) => {
@@ -14,11 +14,23 @@ const image = (props) => {
     } else if(props.type === 'RAIFFEISEN') {
         img = <img src={ raiffeisenImage } alt='RAIFFEISEN' className={ classes.Image } onClick={ props.clicked } />;
     } else if(props.type === 'VISA') {
-        img = <img src={ visa } alt='VISA' className={ classes.Image } onClick={ props.clicked } />;
+        img = <img src={ bank } alt='VISA' className={ classes.Image } onClick={ props.clicked } />;
     } else if(props.type === 'UNICREDIT') {
         img = <img src={ unicreditImage } alt='UNICREDIT' className={ classes.Image } onClick={ props.clicked } />;
     } else if(props.type === 'PAYPAL') {
         img = <img src={ paypal } alt='PAYPAL' className={ classes.Image } onClick={ props.clicked } />;
+    } else if(props.type === 'NEW_LU') {
+        img = <img src={ newLU } 
+            alt='NEW_LU' 
+            className={ classes.Image }
+            style={{ width: '140px' }} 
+            onClick={ props.clicked } />;
+    } else if(props.type === 'LU_PAYPAL') {
+        img = <img src={ paypal } alt='LU_PAYPAL'  className={ classes.ImageLU } onClick={ props.clicked } />;
+    } else if(props.type === 'LU_BITCOIN') {
+        img = <img src={ bitcoin } alt='LU_BITCOIN'  className={ classes.ImageLU } onClick={ props.clicked } />;
+    } else if(props.type === 'LU_BANK') {
+        img = <img src={ bank } alt='LU_BANK'  className={ classes.ImageLU } onClick={ props.clicked } />;
     }
     
     return (

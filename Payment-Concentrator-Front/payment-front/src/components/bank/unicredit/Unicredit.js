@@ -19,7 +19,7 @@ const Unicredit = (props) => {
     });
 
     const cancelRequest = (paymentRequestId) => {
-        axios.put(`https://localhost:8443/api/bank/${paymentRequestId}/cancel/bank`)
+        axios.put(`https://localhost:8443/api/unicredit/${paymentRequestId}/cancel`)
             .then(response => {
                 // do nothing
             });
@@ -32,7 +32,7 @@ const Unicredit = (props) => {
         const pan = event.target[1].value;
         const validThru = event.target[2].value;
         const security_code = event.target[3].value;
-        sendRequestBody('https://localhost:8443/api/bank/pay/bank', 'POST', {
+        sendRequestBody('https://localhost:8443/api/unicredit/pay', 'POST', {
             "cardHolderName": cardholderName,
             "accountNumber": pan,
             "securityCode": security_code,

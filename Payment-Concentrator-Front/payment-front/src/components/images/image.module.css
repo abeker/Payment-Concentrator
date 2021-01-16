@@ -2,7 +2,13 @@
     width: 200px;
     height: 200px;
     border-radius: 10%;
-    margin-left: 14%;
+    margin-left: 10%;
     margin-top: 10%;
+    cursor: pointer;
+}
+
+.ImageLU {
+    width: 70px;
+    height: 70px;
     cursor: pointer;
 }

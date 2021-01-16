@@ -12,6 +12,7 @@
         <module name="Zuul" />
         <module name="pcc-service" />
         <module name="Eureka" />
+        <module name="raiffeisen-service" />
         <module name="bitcoin-service" />
         <module name="bank-service" />
       </profile>
@@ -23,6 +24,7 @@
       <module name="Payment-Microservices" target="1.5" />
       <module name="paypal-service" target="1.8" />
       <module name="pcc-service" target="1.8" />
+      <module name="raiffeisen-service" target="1.8" />
       <module name="unicredit-service" target="1.8" />
       <module name="Zuul" target="1.8" />
     </bytecodeTargetLevel>
@@ -35,6 +37,7 @@
       <module name="bitcoin-service" options="-parameters" />
       <module name="paypal-service" options="-parameters" />
       <module name="pcc-service" options="-parameters" />
+      <module name="raiffeisen-service" options="-parameters" />
       <module name="unicredit-service" options="-parameters" />
     </option>
   </component>
