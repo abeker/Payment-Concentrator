@@ -7,6 +7,7 @@ import Raiffeisen from './components/bank/raiffeisen/Raiffeisen';
 import "antd/dist/antd.css";
 import SuccessPayment from './components/paypal/SuccessfullPayment';
 import Bitcoin from './components/bitcoin/Bitcoin';
+import CreateLU from './components/createLU/CreateLU';
 import ErrorPage from './components/UI/ErrorPage/Error';
 
 // const RenderRoutes=(route)=>{
@@ -25,6 +26,7 @@ function App() {
     let routes = (
         <Switch> 
             <Route path="/paypal" render={ (props) => <PayPalComponent {...props} /> } />
+            <Route path="/create-lu" render={ (props) => <CreateLU {...props} /> } />
             <Route path="/payment-unicredit/:paymentId" render={ (props) => <Unicredit {...props} /> } />
             <Route path="/payment-raiffeisen/:paymentId" render={ (props) => <Raiffeisen {...props} /> } />
             <Route path="/" exact render={ (props) => <Dashboard {...props} /> } />
