@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import RegistrationForm from '../UI/RegistrationForm/RegistrationForm';
-import classes from './createLU.module.css';
-import Image from '../images/Image';
 import { Checkbox, message } from 'antd';
 import axios from 'axios';
-import { Component } from 'react';
+import React, { Component } from 'react';
+import Image from '../images/Image';
+import RegistrationForm from '../UI/RegistrationForm/RegistrationForm';
+import classes from './createLU.module.css';
 
 class CreateLU extends Component {
     state = {

@@ -30,32 +30,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51c008a9-3ce9-49b6-bf7a-22c4a82bd4c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Payment-Concentrator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/controller/PaymentTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Eureka/src/main/java/com/sep/Eureka/controller/PaymentTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/raiffeisen/Raiffeisen.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/raiffeisen/Raiffeisen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/unicredit/Unicredit.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/unicredit/Unicredit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/images/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/images/Image.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/images/image.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/images/image.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zuul/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Zuul/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/feign/BankClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/feign/UnicreditClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/feign/UnicreditClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/service/implementation/PccService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/java/com/payment/pccservice/service/implementation/PccService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pcc-service/src/main/resources/bootstrap.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pcc-service/src/main/resources/bootstrap.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="51c008a9-3ce9-49b6-bf7a-22c4a82bd4c3" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,6 +184,7 @@
       <workItem from="1610725226015" duration="993000" />
       <workItem from="1610726384445" duration="5207000" />
       <workItem from="1610752818428" duration="708000" />
+      <workItem from="1610809821525" duration="15000" />
     </task>
     <servers />
   </component>
