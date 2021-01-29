@@ -7,9 +7,11 @@ import Raiffeisen from './components/bank/raiffeisen/Raiffeisen';
 import "antd/dist/antd.css";
 import SuccessPayment from './components/paypal/SuccessfullPayment';
 import Bitcoin from './components/bitcoin/Bitcoin';
+import Books from './components/Books/Books';
 import CreateLU from './components/createLU/CreateLU';
 import ErrorPage from './components/UI/ErrorPage/Error';
 import Login from './containers/login/Login';
+import Toolbar from './components/Navigation/Toolbar/Toolbar';
 
 function App() {
     let routes = (
@@ -22,6 +24,7 @@ function App() {
             <Route path="/success" exact  render= {() => <SuccessPayment/>}/>
             <Route path="/error" exact  render= {() => <ErrorPage/>}/>
             <Route path="/bitcoin" exact  render= {() => <Bitcoin/>}/>
+            <Route path="/books" exact  render= {() => <Books/>}/>
             <Route path="/" exact render={ (props) => <Login {...props} /> } />
             <Redirect to="/" />
         </Switch>
