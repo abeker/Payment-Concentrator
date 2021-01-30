@@ -7,11 +7,10 @@ import Raiffeisen from './components/bank/raiffeisen/Raiffeisen';
 import "antd/dist/antd.css";
 import SuccessPayment from './components/paypal/SuccessfullPayment';
 import Bitcoin from './components/bitcoin/Bitcoin';
-import Books from './components/Books/Books';
+import Books from './containers/Books/Books';
 import CreateLU from './components/createLU/CreateLU';
 import ErrorPage from './components/UI/ErrorPage/Error';
 import Login from './containers/login/Login';
-import Toolbar from './components/Navigation/Toolbar/Toolbar';
 
 function App() {
     let routes = (

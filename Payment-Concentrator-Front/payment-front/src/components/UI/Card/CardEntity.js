@@ -1,4 +1,4 @@
-import { Card, Col, Row, Descriptions } from 'antd';
+import { Card, Col, Row, Descriptions, Button } from 'antd';
 import Aux from '../../../hoc/Auxiliary';
 import classes from './CardEntity.module.css';
 
@@ -23,7 +23,6 @@ const CardEntity = (props) => {
                     key={book.id}>
                     <Card 
                         className= { classes.Card }
-                        onClick={ () => props.onclickToCard(book) }
                         title={book.bookRequest.title} 
                         bordered={false}>
                         <Descriptions column={2} layout="horizontal">
@@ -49,19 +48,21 @@ const CardEntity = (props) => {
                             <Descriptions.Item 
                                 labelStyle={{ fontStyle: "italic" }} 
                                 contentStyle = {{ fontWeight: "bold" }}
-                                label="Publish Place">
+                                label="Publish Place"
+                                span={2}>
                                     { book.publishPlace }
                             </Descriptions.Item>
                             <Descriptions.Item 
                                 labelStyle={{ fontStyle: "italic" }} 
                                 contentStyle = {{ fontWeight: "bold" }}
-                                label="Publish Year">
+                                label="Publish Year"
+                                span={2}>
                                     { book.publishYear }
                             </Descriptions.Item>
                             <Descriptions.Item 
                                 labelStyle={{ fontStyle: "italic" }} 
                                 contentStyle = {{ fontWeight: "bold" }}
-                                label="Number of Pages">
+                                label="Page no.">
                                     { book.numberOfPages }
                             </Descriptions.Item>
                             <Descriptions.Item 
@@ -70,6 +71,16 @@ const CardEntity = (props) => {
                                 label="Price">
                                     { book.price } rsd
                             </Descriptions.Item>
+                            <Descriptions.Item span={2}></Descriptions.Item>
+                            <Descriptions.Item></Descriptions.Item>
+                            { props.isAddToCartVisible ? 
+                            <Descriptions.Item style={{ float:"right" }} span={2}>
+                                <Button
+                                    onClick={ () => props.onaddToCart(book) } 
+                                    type="primary" ghost>
+                                  Add To Cart
+                                </Button>
+                            </Descriptions.Item> : null }
                         </Descriptions>
                     </Card>
                 </Col>
