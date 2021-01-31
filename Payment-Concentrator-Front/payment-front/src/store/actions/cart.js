@@ -1,13 +1,14 @@
 import * as actionTypes from './actionTypes';
 
-export const addBook = (bookEntity) => {
+export const addBook = (book, bookPrice) => {
     return {
         type: actionTypes.ADD_BOOK,
-        payload: bookEntity
+        book: book,
+        bookPrice: bookPrice
     };
 };
 
-export const clearCart = (bookEntity) => {
+export const clearCart = () => {
     return {
         type: actionTypes.CLEAR_CART
     };

@@ -8,6 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Set;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
 @Getter
 @Setter
@@ -19,7 +20,11 @@ public class LiteraryAssociation extends BaseEntity {
 
     private boolean deleted = false;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
+    @JoinTable(name = "literary_association_payment_type",
+            joinColumns = @JoinColumn(name = "payment_type_id"),
+            inverseJoinColumns = @JoinColumn(name = "literary_association_id")
+    )
     private Set<PaymentType> paymentType;
 
 }

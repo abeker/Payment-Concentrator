@@ -2,15 +2,14 @@ package com.sep.Eureka.service.implementation;
 
 import com.sep.Eureka.dto.request.PaymentTypes;
 import com.sep.Eureka.dto.request.RegisterBank;
+import com.sep.Eureka.entity.LiteraryAssociation;
 import com.sep.Eureka.entity.PaymentType;
+import com.sep.Eureka.repository.ILiteraryAssociationRepository;
 import com.sep.Eureka.repository.IPaymentTypeRepository;
 import com.sep.Eureka.service.definition.IPaymentTypeService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
 
 @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
@@ -18,9 +17,11 @@ import java.util.concurrent.locks.ReentrantLock;
 public class PaymentTypeService implements IPaymentTypeService {
 
     private final IPaymentTypeRepository _paymentTypeRepository;
+    private final ILiteraryAssociationRepository _literaryAssociationRepository;
 
-    public PaymentTypeService(IPaymentTypeRepository paymentTypeRepository) {
+    public PaymentTypeService(IPaymentTypeRepository paymentTypeRepository, ILiteraryAssociationRepository literaryAssociationRepository) {
         _paymentTypeRepository = paymentTypeRepository;
+        _literaryAssociationRepository = literaryAssociationRepository;
     }
 
     ReentrantLock lockBankSaving = new ReentrantLock();
@@ -50,8 +51,18 @@ public class PaymentTypeService implements IPaymentTypeService {
             paymentType.setPaymentType(paymentTypeName);
         }
         setBankCode(paymentType, numberOfBanks);
+        PaymentType savedPaymentType = _paymentTypeRepository.save(paymentType);
+        addPaymentsToPredefinedLiteraryAssociation(savedPaymentType);
 
-        return _paymentTypeRepository.save(paymentType);
+        return savedPaymentType;
+    }
+
+    private void addPaymentsToPredefinedLiteraryAssociation(PaymentType paymentType) {
+        LiteraryAssociation literaryAssociation = _literaryAssociationRepository.findByLuId("d0c213f7-1e95-4ce4-8a65-334071e31ce8");
+        if(literaryAssociation != null) {
+            literaryAssociation.getPaymentType().add(paymentType);
+            _literaryAssociationRepository.save(literaryAssociation);
+        }
     }
 
     private void setBankCode(PaymentType paymentType, int numberOfBanks) {
@@ -83,11 +94,9 @@ public class PaymentTypeService implements IPaymentTypeService {
     }
 
     private boolean isThisBank(String paymentTypeName) {
-        if(paymentTypeName.toLowerCase().contains("bank") ||
-            paymentTypeName.toLowerCase().contains("unicredit")) {
-            return true;
-        }
-        return false;
+        return paymentTypeName.toLowerCase().contains("bank") ||
+                paymentTypeName.toLowerCase().contains("unicredit") ||
+                    paymentTypeName.toLowerCase().contains("raiffeisen");
     }
 
     @Override

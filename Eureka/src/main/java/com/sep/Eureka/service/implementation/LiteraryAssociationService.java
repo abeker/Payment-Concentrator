@@ -9,7 +9,9 @@ import com.sep.Eureka.repository.IPaymentTypeRepository;
 import com.sep.Eureka.service.definition.ILiteraryAssociationService;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -59,6 +61,18 @@ public class LiteraryAssociationService implements ILiteraryAssociationService {
         if(literaryAssociation != null && paymentType != null) {
             literaryAssociation.getPaymentType().remove(paymentType);
         }
+    }
+
+    @Override
+    public List<String> getPaymentTypes(String luId) {
+        LiteraryAssociation literaryAssociation = findByLuId(luId);
+        List<String> retPaymentTypeNames = new ArrayList<>();
+        if(literaryAssociation != null) {
+            for (PaymentType paymentType : literaryAssociation.getPaymentType()) {
+                retPaymentTypeNames.add(paymentType.getPaymentType());
+            }
+        }
+        return retPaymentTypeNames;
     }
 
     private void updateExistingPaymentTypesOfLiteraryAssociation(LiteraryAssociation literaryAssociation, PaymentTypes paymentTypes) {

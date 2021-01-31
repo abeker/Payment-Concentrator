@@ -27,6 +27,11 @@ const Unicredit = (props) => {
     
     let history = useHistory();
     const onSendData = (event) => {
+        // console.log('readerid: ' + props.location.state.readerId);
+        // console.log('books: ' + props.location.state.bookIds);
+        const readerId = props.location.state.readerId;
+        const bookIds = props.location.state.bookIds;
+
         event.preventDefault();
         const cardholderName = event.target[0].value;
         const pan = event.target[1].value;
@@ -42,8 +47,8 @@ const Unicredit = (props) => {
         sendToLiteraryAssociation('http://localhost:8084/la/reader-pay-request', {
             "paymentCounter": paymentRequestId,
             "bankCode": pan.substring(1,6),
-            "readerId": "readerId",
-            "bookId": "bookId"
+            "readerId": readerId,
+            "bookIds": bookIds
         });
     }
 

@@ -8,9 +8,11 @@ import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import cartReducer from './store/reducers/cart';
+import merchantReducer from './store/reducers/merchant';
 
 const rootReducer = combineReducers({
-    bookCart: cartReducer
+    bookCart: cartReducer,
+    merchant: merchantReducer
 });
 
 const composeEnhancers = process.env.NODE_ENV === 'development' 

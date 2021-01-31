@@ -29,3 +29,12 @@ export const checkValidity = (value, rules) => {
     }
     return isValid;
 }
+
+export const mapArrayToString = (array) => {
+    let returnString = "";
+    array.forEach(element => {
+        returnString += element + ", "
+    });        
+    
+    return returnString.substr(0, returnString.length-2);
+}

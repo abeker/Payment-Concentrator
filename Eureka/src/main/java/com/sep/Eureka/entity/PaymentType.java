@@ -28,7 +28,7 @@ public class PaymentType extends BaseEntity {
 
     private boolean deleted = false;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "paymentType")
     private Set<LiteraryAssociation> literaryAssociation;
 
 }

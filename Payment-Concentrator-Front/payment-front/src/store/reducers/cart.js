@@ -2,12 +2,14 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../../shared/utility'; 
 
 const initialState = {
-    books: []
+    books: [],
+    totalAmount: 0
 };
 
 const addBook = (state, action) => {
     return updateObject(state, { 
-        books: state.books.concat(action.payload)
+        books: state.books.concat(action.book),
+        totalAmount: state.totalAmount + action.bookPrice
     });
 }
 
@@ -16,7 +18,7 @@ const removeBook = (state, action) => {
 }
 
 const clearCart = (state, action) => {
-    return updateObject(state, { books: [] });
+    return updateObject(state, { books: [], totalAmount: 0 });
 }
 
 const reducer = (state = initialState, action) => {
