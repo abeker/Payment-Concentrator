@@ -3,8 +3,12 @@ import LoginForm from '../../components/UI/Login/LoginForm';
 import classes from './Login.module.css';
 import { message } from 'antd';
 import axios from 'axios';
+import PasswordAdvices from './PasswordAdvices';
 
 class Login extends Component {
+    state = {
+        passwordAdvicesVisible: false
+    }
 
     onFinish = (values) => {
         const body = {
@@ -25,6 +29,10 @@ class Login extends Component {
         message.warning("Login info doesn't submitted");
     };
 
+    onAdvicesForPassword = () => {
+        this.setState({passwordAdvicesVisible: !this.state.passwordAdvicesVisible});
+    }
+
     render() {
         return (
             <div className={ classes.Wallpaper }>
@@ -32,8 +40,10 @@ class Login extends Component {
                 <div className={ classes.Form }>
                     <LoginForm 
                         onFinish = { this.onFinish }
-                        onFinishFailed = { this.onFinishFailed }/>
+                        onFinishFailed = { this.onFinishFailed }
+                        onAdvicesForPassword = { this.onAdvicesForPassword }/>
                 </div>
+                { this.state.passwordAdvicesVisible ? <PasswordAdvices /> : null }
             </div>
         );
     }

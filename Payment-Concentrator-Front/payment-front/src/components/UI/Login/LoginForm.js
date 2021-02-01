@@ -1,4 +1,5 @@
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, Tooltip } from 'antd';
+import { InfoCircleTwoTone } from '@ant-design/icons';
 import FormItem from '../FormItem/FormItem';
 
 const layout = {
@@ -47,7 +48,14 @@ const LoginForm = (props) => {
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
+            
+            <Tooltip title="Advices for Strong Password" 
+                trigger={"hover"} 
+                onClick={ props.onAdvicesForPassword }>
+                <InfoCircleTwoTone style={{ marginLeft: "50px", cursor:"pointer" }} />
+            </Tooltip>
         </Form.Item>
+
     </Form>
   );
 };
