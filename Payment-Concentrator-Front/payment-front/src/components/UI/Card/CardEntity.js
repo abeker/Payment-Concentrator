@@ -69,7 +69,7 @@ const CardEntity = (props) => {
                                 labelStyle={{ fontStyle: "italic" }} 
                                 contentStyle = {{ fontWeight: "bold", color: "darkgreen" }}
                                 label="Price">
-                                    { book.price } rsd
+                                    { book.price } €
                             </Descriptions.Item>
                             <Descriptions.Item span={2}></Descriptions.Item>
                             <Descriptions.Item></Descriptions.Item>

@@ -53,7 +53,9 @@ const Unicredit = (props) => {
     }
 
     const sendToLiteraryAssociation = (url, body) => {
-        axios.post(url, body)
+        const token = JSON.parse(localStorage.getItem('user')).token;
+        console.log(token);
+        axios.post(url, body, {headers: {'Auth-Token': token}})
             .then(response => {
                 //do nothing
             });

@@ -12,6 +12,7 @@ import CreateLU from './components/createLU/CreateLU';
 import ErrorPage from './components/UI/ErrorPage/Error';
 import Login from './containers/login/Login';
 import BlockUser from './containers/login/BlockUser/BlockUser';
+import AdminPage from './containers/AdminPage/AdminPage';
 
 function App() {
     let routes = (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/error" exact  render= {() => <ErrorPage/>}/>
             <Route path="/bitcoin" exact  render= {() => <Bitcoin/>}/>
             <Route path="/books" exact  render= {() => <Books/>}/>
+            <Route path="/admin" exact  render= {() => <AdminPage/>}/>
             <Route path="/auth/block" exact  render= {() => <BlockUser />}/>
             <Route path="/" exact render={ (props) => <Login {...props} /> } />
             <Redirect to="/" />

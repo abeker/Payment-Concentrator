@@ -4,11 +4,11 @@ import axios from 'axios';
 import Image from '../images/Image';
 
 const PayPal = (props) => {
-    const [price,setPrice] = React.useState(props.price);
+    const [price,setPrice] = React.useState(props.location.state.amount);
     const [currency,setCurrency] = React.useState("USD");
-    const [method,setMethod] = React.useState("");
+    const [method,setMethod] = React.useState("paypal");
     const [intent,setIntent] = React.useState("SALE");
-    const [desc,setDesc] = React.useState("");
+    const [desc,setDesc] = React.useState("Request for book payment.");
     
     const handleSubmit = e => {
         e.preventDefault();
@@ -19,7 +19,7 @@ const PayPal = (props) => {
                 'Content-Type': 'application/json',
             }}).then(res => {
             console.log(res)
-            if(res.status==200){
+            if(res.status===200){
                 window.location = res.data
             }
             if(res.status >= 400){

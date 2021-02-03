@@ -93,7 +93,7 @@ class Books extends Component {
                     {booksInListItems}
                 </ul>
                 <hr/>
-                <p><strong>Total price: {priceSum} rsd</strong></p>
+                <p><strong>Total price: {priceSum} €</strong></p>
             </div>
         )});
     }
@@ -141,7 +141,7 @@ class Books extends Component {
             this.retrieveBooks();
         }
         return (
-            <div className={ classes.Background }>
+            <div>
                 <Sidebar 
                     onclickToCart={ this.listCartContent }
                     onClickToHeader = { this.retrieveBooks }

@@ -10,7 +10,9 @@ const SimpleModal = (props) => {
             onCloseComplete={props.onClose}
             onConfirm={props.onConfirm}
           >
-            {props.children}
+            <div>
+                {props.children}
+            </div>
           </Dialog>
         </Pane>
     );

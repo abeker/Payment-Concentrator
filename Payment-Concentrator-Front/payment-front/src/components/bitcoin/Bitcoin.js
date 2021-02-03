@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import {Container, Form, Grid, Button} from 'semantic-ui-react'
-const Bitcoin = () => {
-
-    const [title,setTitle] = useState('')
-    const [price,setPrice] = useState(0.0)
-    const [priceCurrency, setPriceCurrency] = useState('USD')
-    const [receiveCurrency, setReceiveCurrency] = useState('USD')
+const Bitcoin = (props) => {
+    const [title,setTitle] = useState("Request for book payment.");
+    const [price,setPrice] = useState(props.location.state.amount);
+    const [priceCurrency, setPriceCurrency] = useState('EUR');
+    const [receiveCurrency, setReceiveCurrency] = useState('BTC');
     const currencyOptions = ['USD',"EUR","CAD","BTC","ETH"];
     const receiveOptions = ['USD',"EUR","USDT","BTC","ETH","LTC","DO_NOT_CONVERT"];
 

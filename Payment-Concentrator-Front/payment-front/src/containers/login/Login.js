@@ -25,10 +25,15 @@ class Login extends Component {
         axios.put('http://localhost:8084/auth/login', body)
              .then(user => {
                 localStorage.setItem('user', JSON.stringify(user.data));
-                this.props.history.push({ pathname: "/books" });
                 localStorage.removeItem('userBlocked');
+                if(user.data.userRole === 'ADMIN') {
+                    this.props.history.push({ pathname: "/admin" });
+                } else {
+                    this.props.history.push({ pathname: "/books" });
+                }
             })
             .catch(error => {
+                console.log(error);
                 message.error(error.response.data);
                 if(error.response.status === 409) {
                     localStorage.setItem('userBlocked', '1');

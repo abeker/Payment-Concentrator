@@ -32,6 +32,22 @@
   <component name="ChangeListManager">
     <list default="true" id="51c008a9-3ce9-49b6-bf7a-22c4a82bd4c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/UI/Card/CardEntity.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/UI/Card/CardEntity.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/UI/ErrorPage/Error.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/UI/ErrorPage/Error.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/UI/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/UI/Sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/UI/Sidebar/Sidebar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/UI/Sidebar/Sidebar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/unicredit/Unicredit.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bank/unicredit/Unicredit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bitcoin/Bitcoin.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/bitcoin/Bitcoin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/paypal/PayPalComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/components/paypal/PayPalComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/containers/Books/Books.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/containers/Books/Books.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/containers/Books/Books.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/containers/Books/Books.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/containers/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/containers/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/containers/login/PasswordAdvices.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/containers/login/PasswordAdvices.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Payment-Concentrator-Front/payment-front/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raiffeisen-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/raiffeisen-service/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unicredit-service/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/unicredit-service/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +106,7 @@
       <recent name="D:\SistemiElektronskogPlacanja(SEP)\ProjektniZadatak\Payment-Concentrator\raiffeisen-service" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BitcoinServiceApplication">
+  <component name="RunManager" selected="Spring Boot.ZuulApplication">
     <configuration name="BankServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="bank-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.payment.bankservice.BankServiceApplication" />
@@ -197,6 +213,8 @@
       <workItem from="1610809821525" duration="15000" />
       <workItem from="1612091449281" duration="12031000" />
       <workItem from="1612177054048" duration="9572000" />
+      <workItem from="1612283585365" duration="3977000" />
+      <workItem from="1612341149872" duration="2591000" />
     </task>
     <servers />
   </component>
@@ -244,54 +262,54 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1610725331714" />
-    <state width="1492" height="246" key="GridCell.Tab.0.bottom" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.0.bottom" timestamp="1612343536951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.0.center" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1612343536951" />
+    <state width="1492" height="246" key="GridCell.Tab.0.center" timestamp="1612343536951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.0.left" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1612343536951" />
+    <state width="1492" height="246" key="GridCell.Tab.0.left" timestamp="1612343536951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.0.right" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1612343536951" />
+    <state width="1492" height="246" key="GridCell.Tab.0.right" timestamp="1612343536951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.1.bottom" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1612343536951" />
+    <state width="1492" height="246" key="GridCell.Tab.1.bottom" timestamp="1612343536952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.1.center" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1612343536952" />
+    <state width="1492" height="246" key="GridCell.Tab.1.center" timestamp="1612343536951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.1.left" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1612343536951" />
+    <state width="1492" height="246" key="GridCell.Tab.1.left" timestamp="1612343536951">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.1.right" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1612343536951" />
+    <state width="1492" height="246" key="GridCell.Tab.1.right" timestamp="1612343536952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.2.bottom" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1612343536952" />
+    <state width="1492" height="246" key="GridCell.Tab.2.bottom" timestamp="1612343536952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.2.center" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1612343536952" />
+    <state width="1492" height="246" key="GridCell.Tab.2.center" timestamp="1612343536952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.2.left" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1612343536952" />
+    <state width="1492" height="246" key="GridCell.Tab.2.left" timestamp="1612343536952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
-    <state width="1492" height="246" key="GridCell.Tab.2.right" timestamp="1612187661816">
+    <state width="1492" height="246" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1612343536952" />
+    <state width="1492" height="246" key="GridCell.Tab.2.right" timestamp="1612343536952">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1492" height="246" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1612187661816" />
+    <state width="1492" height="246" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1612343536952" />
     <state x="299" y="87" key="Maven.ArtifactSearchDialog" timestamp="1612188807315">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -352,5 +370,8 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Payment_Microservices$EurekaApplication.ic" NAME="EurekaApplication Coverage Results" MODIFIED="1612286076561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
