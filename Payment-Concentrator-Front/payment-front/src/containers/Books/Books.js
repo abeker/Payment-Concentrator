@@ -10,6 +10,7 @@ import classes from './Books.module.css';
 import Modal from '../../components/UI/Modal/SimpleModal';
 import { mapArrayToString } from '../../shared/utility';
 import { Redirect } from 'react-router';
+import Membership from '../../components/MembershipPage/MembershipPage';
 
 class Books extends Component {
     state = {
@@ -20,6 +21,7 @@ class Books extends Component {
         totalPrice: 0,
         isPurchaseFinished: false,
         isMyLibraryVisible: false,
+        isMembershipVisible: false,
         paymentTypes: []
     }
 
@@ -42,7 +44,8 @@ class Books extends Component {
             this.setState({bookChunk: chunk, 
                 isAddToCartVisible: true, 
                 isPurchaseFinished: false,
-                isMyLibraryVisible: false
+                isMyLibraryVisible: false,
+                isMembershipVisible: false
             });
         })
         .catch(error => {
@@ -62,7 +65,8 @@ class Books extends Component {
             const chunk = this.createChunks(this.props.books, 3);
             this.setState({bookChunk: chunk, 
                 isAddToCartVisible: false,
-                isMyLibraryVisible: false
+                isMyLibraryVisible: false,
+                isMembershipVisible: false
             });
         } else {
             message.info('Shopping cart is empty.');
@@ -129,15 +133,26 @@ class Books extends Component {
                 const chunk = this.createChunks(books.data, 3);
                 this.setState({bookChunk: chunk, 
                     isAddToCartVisible: false,
-                    isMyLibraryVisible: true});
+                    isMyLibraryVisible: true,
+                    isMembershipVisible: false
+                });
             })
             .catch(error => {
                 message.error('Error occured when retrieving my books.');
             });
     }
 
+    clickToMembership = () => {
+        this.setState({
+            bookChunk: null, 
+            isAddToCartVisible: true,
+            isMyLibraryVisible: false,
+            isMembershipVisible: true
+        });
+    }
+
     render() {
-        if(this.state.bookChunk === null) {
+        if(this.state.bookChunk === null && !this.state.isMembershipVisible) {
             this.retrieveBooks();
         }
         return (
@@ -147,6 +162,7 @@ class Books extends Component {
                     onClickToHeader = { this.retrieveBooks }
                     clearCart = { this.props.onClearCart }
                     onclickToMyLibrary = { this.clickToMyLibrary }
+                    onclickToMembership = { this.clickToMembership }
                     >
                     { this.state.bookChunk !== null ? 
                         <Card 
@@ -163,6 +179,9 @@ class Books extends Component {
                             Purchase
                         </Button> : null
                     }
+
+                    { this.state.isMembershipVisible ? 
+                        <Membership /> : null }
 
                     <Modal
                         isVisible = {this.state.isModalVisible}

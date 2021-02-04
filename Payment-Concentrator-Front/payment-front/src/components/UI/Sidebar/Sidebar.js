@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaConnectdevelop, FaGem, FaUserMinus, FaShoppingCart, FaBook, FaUserClock, FaPlusCircle } from "react-icons/fa";
+import { FaConnectdevelop, FaGem, FaUserMinus, FaShoppingCart, FaBook, FaUserClock, FaPlusCircle, FaMoneyCheckAlt } from "react-icons/fa";
 import { Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter, SidebarHeader, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { useHistory } from "react-router-dom";
@@ -21,6 +21,9 @@ const Sidebar = (props) => {
                             </MenuItem>
                             <MenuItem
                                 onClick={ props.onclickToMyLibrary } icon={<FaBook />}> My Library
+                            </MenuItem>
+                            <MenuItem
+                                onClick={ props.onclickToMembership } icon={<FaMoneyCheckAlt />}> Membership
                             </MenuItem>
                         </Menu>);
         } else if(userRole === 'WRITER') {

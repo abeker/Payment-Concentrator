@@ -75,7 +75,8 @@ class CreateLU extends Component {
     }
 
     sendRequestToLU = (requestBody, formValues) => {
-        axios.post('http://localhost:8084/la', requestBody)
+        const token = JSON.parse(localStorage.getItem('user')).token;
+        axios.post('http://localhost:8084/la', requestBody, {headers: {'Auth-Token': token}})
             .then(response => {
                 if(response.status === 200) {
                   this.sendRequestToKP(response.data.luId, formValues);
@@ -115,11 +116,13 @@ class CreateLU extends Component {
                     isBankSelected = { this.state.isBank }/>
             </div>
             <br/>
-            <h3 className={ classes.h3 }>Select Payment Type</h3>
-            <div>
-                { this.state.bitcoinCheckbox }
-                { this.state.paypalCheckbox }
-                { this.state.bankCheckbox }
+            <div className={ classes.divPayType }>
+                <h3 className={ classes.h3 }>Select Payment Type</h3>
+                <div>
+                    { this.state.bitcoinCheckbox }
+                    { this.state.paypalCheckbox }
+                    { this.state.bankCheckbox }
+                </div>
             </div>
         </div>
         )

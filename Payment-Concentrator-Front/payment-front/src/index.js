@@ -9,12 +9,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import cartReducer from './store/reducers/cart';
 import merchantReducer from './store/reducers/merchant';
-import axios from 'axios';
-
-const token = JSON.parse(localStorage.getItem('user')).token;
-if(token) {
-    axios.defaults.headers.common['Auth-Token'] = token;
-}
 
 const rootReducer = combineReducers({
     bookCart: cartReducer,
