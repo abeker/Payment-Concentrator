@@ -41,7 +41,7 @@ public class UnicreditController {
     }
 
     @PostMapping("/pay")
-    public ResponseEntity<?> pay(@RequestBody CardHolderData cardHolderData) throws IllegalAccessException, NoSuchFieldException {
+    public ResponseEntity<TransactionResponse> pay(@RequestBody CardHolderData cardHolderData) throws IllegalAccessException, NoSuchFieldException {
         return new ResponseEntity<TransactionResponse>(_transactionService.pay(cardHolderData), HttpStatus.OK);
     }
 
