@@ -6,6 +6,7 @@ import Image from '../images/Image';
 import Subscipe from '../paypal/Subscipe';
 import { connect } from 'react-redux';
 import classes from './dashboard.module.css';
+import { message } from 'antd';
 
 class Dashboard extends Component {
     state = {
@@ -36,7 +37,7 @@ class Dashboard extends Component {
         } else if(type === 'VISA') {
             this.sendRequestBody('https://localhost:8443/api/unicredit', 'PUT', body);
         } else if(type === 'PAYPAL') {
-            axios.get("https://localhost:8443/api/paypal/paypal").then(response => alert(response.data))
+            axios.get("https://localhost:8443/api/paypal/paypal").then(response => console.log(response.data))
             this.sendToPaypal(body.amount);
         } else if(type === 'BITCOIN') {
             this.sendToBitcoin(body.amount);
@@ -57,14 +58,36 @@ class Dashboard extends Component {
             headers: {
                 'Content-Type': 'application/json',
             }}).then(res => {
-            console.log(res)
+            console.log(res);
             if(res.status===200){
-                window.location = res.data
+                const readerId = JSON.parse(localStorage.getItem('user')).id;
+                this.sendToLiteraryAssociation('http://localhost:8084/la/reader-pay-request', {
+                    "paymentCounter": -1,
+                    "bankCode": "paypal",
+                    "readerId": readerId,
+                    "bookIds": this.getBookIds()
+                });
+                window.location = res.data;
             }
             if(res.status >= 400){
                 alert("Some error occurred, please check your bank account")
             }
         })
+    }
+
+    sendToLiteraryAssociation = (url, body) => {
+        const token = JSON.parse(localStorage.getItem('user')).token;
+        axios.post(url, body, {headers: {'Auth-Token': token}})
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error.response);
+                if(error.response.status === 409) {
+                    message.info('Book is not purchased. You have not paid your membership yet.');
+                    this.props.history.push('/error');
+                }
+            });
     }
     
     sendToBitcoin = (price) => {
@@ -80,6 +103,13 @@ class Dashboard extends Component {
             headers: {'Content-type':"application/json"}
         }).then(resp => {
             console.log(resp.data)
+            const readerId = JSON.parse(localStorage.getItem('user')).id;
+                this.sendToLiteraryAssociation('http://localhost:8084/la/reader-pay-request', {
+                    "paymentCounter": -1,
+                    "bankCode": "bitcoin",
+                    "readerId": readerId,
+                    "bookIds": this.getBookIds()
+                });
             window.location = resp.data.payment_url
         }).catch(error => {
             alert(error)

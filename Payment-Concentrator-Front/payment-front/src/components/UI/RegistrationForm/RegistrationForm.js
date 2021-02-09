@@ -41,8 +41,8 @@ const RegistrationForm = (props) => {
   let selectBox = null;
   if(props.isBankSelected) {
       selectBox = <Form.Item 
-              name="selectedBank"
-              label="Bank"
+              name="selectedGenres"
+              label="Genres"
               rules={[{
                   required: true,
                   message: 'Please select one bank!'

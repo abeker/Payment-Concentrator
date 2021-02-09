@@ -2,6 +2,7 @@ import React from 'react';
 //import axiosInstance from '../axios/axios'
 import axios from 'axios';
 import Image from '../images/Image';
+import { message } from 'antd';
 
 const PayPal = (props) => {
     const [price,setPrice] = React.useState(props.location.state.amount);
@@ -14,6 +15,12 @@ const PayPal = (props) => {
         e.preventDefault();
         console.log(price, currency,method, intent,desc);
         const json = JSON.stringify({ price,currency,method,intent,description: desc });
+        console.log(json);
+
+        const readerId = props.location.state.readerId;
+        const bookIds = props.location.state.bookIds;
+        console.log("readerId: "+  readerId + ", books: ");
+        console.log(bookIds);
         axios.post("https://localhost:8443/api/paypal/pay",json,{
             headers: {
                 'Content-Type': 'application/json',
@@ -26,6 +33,21 @@ const PayPal = (props) => {
                 alert("Some error occurred, please check your bank account")
             }
         })
+    }
+
+    const sendToLiteraryAssociation = (url, body) => {
+        const token = JSON.parse(localStorage.getItem('user')).token;
+        axios.post(url, body, {headers: {'Auth-Token': token}})
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error.response);
+                if(error.response.status === 409) {
+                    message.info('Book is not purchased. You have not paid your membership yet.');
+                    props.history.push('/error');
+                }
+            });
     }
 
     const handleChange=(event)=>{

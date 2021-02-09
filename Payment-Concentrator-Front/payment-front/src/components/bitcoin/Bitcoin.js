@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import {Container, Form, Grid, Button} from 'semantic-ui-react'
+import { message } from 'antd';
+
 const Bitcoin = (props) => {
     const [title,setTitle] = useState("Request for book payment.");
     const [price,setPrice] = useState(props.location.state.amount);
@@ -19,13 +21,31 @@ const Bitcoin = (props) => {
         },{
             headers: {'Content-type':"application/json"}
         }).then(resp => {
+            // TODO
+            // dodaj tu knjigu u literarnom
             console.log(resp.data)
             window.location = resp.data.payment_url
+            
         }).catch(error => {
             alert(error)
         })
-
     }
+
+    const sendToLiteraryAssociation = (url, body) => {
+        const token = JSON.parse(localStorage.getItem('user')).token;
+        axios.post(url, body, {headers: {'Auth-Token': token}})
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error.response);
+                if(error.response.status === 409) {
+                    message.info('Book is not purchased. You have not paid your membership yet.');
+                    props.history.push('/error');
+                }
+            });
+    }
+
     return (
         <Container>
             <Grid>

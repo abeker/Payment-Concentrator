@@ -1,11 +1,11 @@
+import Button from '@material-ui/core/Button';
+import AccountBalanceWalletRoundedIcon from '@material-ui/icons/AccountBalanceWalletRounded';
+import { message } from 'antd';
+import axios from 'axios';
+import { toaster } from 'evergreen-ui';
 import React, { useState } from 'react';
 import { useComponentWillMount } from '../Hooks/useComponentWillMount';
-import axios from 'axios';
-import { message } from 'antd';
 import Table from '../UI/Table/Table';
-import Button from '@material-ui/core/Button';
-import { toaster } from 'evergreen-ui';
-import AccountBalanceWalletRoundedIcon from '@material-ui/icons/AccountBalanceWalletRounded';
 
 const MembershipPage = () => {
     const [memberships, setMemberships] = useState(null);

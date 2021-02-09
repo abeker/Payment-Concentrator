@@ -26,8 +26,8 @@ public class UnicreditController {
     }
 
     @PutMapping()
-    public ResponseEntity<?> checkPaymentRequest(@RequestBody PaymentRequestDTO paymentRequestDTO) throws IllegalAccessException {
-        return new ResponseEntity<PaymentResponse>(_paymentService.checkPaymentRequest(paymentRequestDTO), HttpStatus.OK);
+    public ResponseEntity<PaymentResponse> checkPaymentRequest(@RequestBody PaymentRequestDTO paymentRequestDTO) throws IllegalAccessException {
+        return new ResponseEntity<>(_paymentService.checkPaymentRequest(paymentRequestDTO), HttpStatus.OK);
     }
 
     @PutMapping("/{paymentId}/cancel")
@@ -37,17 +37,18 @@ public class UnicreditController {
 
     @GetMapping("/{paymentId}/status")
     public ResponseEntity<PaymentRequestStatus> checkPaymentRequestStatus(@PathVariable("paymentId") String paymentId) {
-        return new ResponseEntity<PaymentRequestStatus>(_paymentService.checkRequestStatus(paymentId), HttpStatus.OK);
+        return new ResponseEntity<>(_paymentService.checkRequestStatus(paymentId), HttpStatus.OK);
     }
 
     @PostMapping("/pay")
     public ResponseEntity<TransactionResponse> pay(@RequestBody CardHolderData cardHolderData) throws IllegalAccessException, NoSuchFieldException {
-        return new ResponseEntity<TransactionResponse>(_transactionService.pay(cardHolderData), HttpStatus.OK);
+        return new ResponseEntity<>(_transactionService.pay(cardHolderData), HttpStatus.OK);
     }
 
     @PostMapping("/pay/pcc")
     public ResponseEntity<?> payPcc(@RequestBody RequestPcc requestPcc) throws IllegalAccessException {
-        return new ResponseEntity<ResponsePcc>(_transactionService.payPcc(requestPcc), HttpStatus.OK);
+        return new ResponseEntity<>(_transactionService.payPcc(requestPcc), HttpStatus.OK);
     }
-
 }
+
+// lu registration

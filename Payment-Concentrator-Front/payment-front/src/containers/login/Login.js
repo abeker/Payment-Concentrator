@@ -28,6 +28,8 @@ class Login extends Component {
                 localStorage.removeItem('userBlocked');
                 if(user.data.userRole === 'ADMIN') {
                     this.props.history.push({ pathname: "/admin" });
+                } else if (user.data.userRole === 'WRITER') {
+                    this.props.history.push({ pathname: "/writer" });
                 } else {
                     this.props.history.push({ pathname: "/books" });
                 }

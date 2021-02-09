@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FaConnectdevelop, FaGem, FaUserMinus, FaShoppingCart, FaBook, FaUserClock, FaPlusCircle, FaMoneyCheckAlt } from "react-icons/fa";
-import { Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter, SidebarHeader, SubMenu } from 'react-pro-sidebar';
+import { FaBook, FaMoneyCheckAlt, FaPlusCircle, FaShoppingCart, FaUserClock, FaUserMinus } from "react-icons/fa";
+import { Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter, SidebarHeader } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
 import { useHistory } from "react-router-dom";
 import Aux from '../../../hoc/Auxiliary';
@@ -28,11 +28,14 @@ const Sidebar = (props) => {
                         </Menu>);
         } else if(userRole === 'WRITER') {
             setmenuBar( <Menu>
-                            <MenuItem icon={<FaConnectdevelop />}>Dashboard</MenuItem>
-                            <SubMenu title="Components" icon={<FaGem />}>
-                              <MenuItem>Component 1</MenuItem>
-                              <MenuItem>Component 2</MenuItem>
-                            </SubMenu>
+                            <MenuItem
+                                onClick={ props.onclickToAddNewBook } 
+                                icon={<FaBook />}> New Book
+                            </MenuItem>
+                            <MenuItem
+                                onClick={ props.onclickToMembershipWriter } 
+                                icon={<FaMoneyCheckAlt />}> Membership
+                            </MenuItem>
                         </Menu>);
         } else if(userRole === 'ADMIN') {
             setmenuBar( <Menu>
