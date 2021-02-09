@@ -49,6 +49,7 @@ class Dashboard extends Component {
 
     sendToPaypal = (price) => {
         console.log(price);
+        console.log(this.props.lu_token);
         const currency = "EUR";
         const method = "paypal";
         const intent = "SALE";
@@ -57,6 +58,7 @@ class Dashboard extends Component {
         axios.post("https://localhost:8443/api/paypal/pay",json,{
             headers: {
                 'Content-Type': 'application/json',
+                "Auth-Token": this.props.lu_token
             }}).then(res => {
             console.log(res);
             if(res.status===200){
@@ -91,6 +93,7 @@ class Dashboard extends Component {
     }
     
     sendToBitcoin = (price) => {
+        console.log(this.props.lu_token);
         const title = "Request for book payment.";
         const priceCurrency = "EUR";
         const receiveCurrency = "BTC";
@@ -100,7 +103,7 @@ class Dashboard extends Component {
             price_currency: priceCurrency,
             receive_currency: receiveCurrency
         },{
-            headers: {'Content-type':"application/json"}
+            headers: {'Content-type':"application/json", "Auth-Token": this.props.lu_token}
         }).then(resp => {
             console.log(resp.data)
             const readerId = JSON.parse(localStorage.getItem('user')).id;
@@ -127,7 +130,7 @@ class Dashboard extends Component {
             const readerId = JSON.parse(localStorage.getItem('user')).id;
             this.props.history.push({
                 pathname: responseData.paymentUrl+"/"+responseData.paymentId,
-                state: { readerId: readerId, bookIds: this.getBookIds() }
+                state: { readerId: readerId, bookIds: this.getBookIds(), lu_token: this.props.lu_token }
             });
         }).catch(error => {
             console.log(error);
@@ -187,7 +190,8 @@ const mapStateToProps = state => {
     return {
         merchantId: state.merchant.merchantId,
         merchantPassword: state.merchant.merchantPassword,
-        totalPrice: state.bookCart.totalAmount
+        totalPrice: state.bookCart.totalAmount,
+        lu_token: state.merchant.lu_token
     };
 };
 

@@ -21,6 +21,7 @@
                 <name qname="pcc_service_schema" />
                 <name qname="raiffeisen_service_schema" />
                 <name qname="unicredit_service_schema" />
+                <name qname="auth_service_schema" />
               </node>
             </node>
           </node>

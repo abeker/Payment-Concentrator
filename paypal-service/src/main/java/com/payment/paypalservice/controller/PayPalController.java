@@ -15,6 +15,7 @@ import org.codehaus.jettison.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
@@ -49,6 +50,7 @@ public class PayPalController {
     }
 
     @PostMapping("/pay")
+    @PreAuthorize("hasAuthority('PAY_PAYPAL')")
     public String payment(@RequestBody Order order) throws PayPalRESTException {
         Payment payment = payPalService.createPayment(order.getPrice(),order.getCurrency(),order.getMethod(),order.getIntent(),
                 order.getDescription(),"http://localhost:8082/" + CANCEL_URL,"http://localhost:8082/"+SUCCESS_URL);

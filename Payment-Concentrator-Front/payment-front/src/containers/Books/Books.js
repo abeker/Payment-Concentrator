@@ -62,6 +62,8 @@ class Books extends Component {
 
     listCartContent = () => {
         if(this.props.books && this.props.books.length > 0) {
+            this.getPaymentTypesForLU();
+            this.getLuCredentials();
             const chunk = this.createChunks(this.props.books, 3);
             this.setState({bookChunk: chunk, 
                 isAddToCartVisible: false,
@@ -75,7 +77,6 @@ class Books extends Component {
 
     purchaseCartContent = () => {
         this.setState({isModalVisible: true});
-        this.getPaymentTypesForLU();
 
         let priceSum = 0;
         this.props.books.forEach(book => {
@@ -108,7 +109,6 @@ class Books extends Component {
 
     finishPurchase = () => {
         this.modalClose();
-        this.getPaymentTypesForLU();
         this.setState({isPurchaseFinished: true});
         this.retrieveBooks();
         this.props.onClearCart();
@@ -124,6 +124,39 @@ class Books extends Component {
             .catch(error => {
                 message.error('Error occured when retrieving payment types.');
             });
+    }
+
+    getLuCredentials = () => {
+        const token = JSON.parse(localStorage.getItem('user')).token;
+        axios.get(`http://localhost:8084/la/secret`, {headers: {'Auth-Token': token}})
+            .then(luCredentials => {
+                console.log(luCredentials.data);
+                this.props.onAddLuCredentials(luCredentials.data.secret, luCredentials.data.password);
+                this.getLuToken(luCredentials.data.secret, luCredentials.data.password);
+            })
+            .catch(error => {
+                console.log('Fail to load lu credentials.');
+            });
+    }
+
+    getLuToken = (secret, password) => {
+        console.log(secret + " - " + password);
+        // this.props.onAddLuToken('eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJzZXAiLCJzdWIiOiIkMnkkMTIkRXVHSkFrd0RoTzdFa0x0cHRndEJkT1VLL0xKdTRFd05lSHNhbHd4Ni5sVzBaYTM0OVhXLksiLCJhdWQiOiJ3ZWIiLCJpYXQiOjE2MTI4Nzk1NjYsImV4cCI6MTYxMjg4MDc2NiwidXNlcm5hbWUiOiIkMnkkMTIkRXVHSkFrd0RoTzdFa0x0cHRndEJkT1VLL0xKdTRFd05lSHNhbHd4Ni5sVzBaYTM0OVhXLksifQ.yOmZY6khlSwoXv_t0-rA1HE1wqjgCHkbHM3UwxNGT1m6A3CHPEvCaPDRcCvp0NvF-CB1xJF72Zyg-5ucZIxJ1g');
+        axios({
+            method: 'put', 
+            url: 'https://localhost:8443/api/auth/login',
+            data: {
+                "secret": secret,
+                "password": password
+            },
+        })
+       .then(response => {
+            console.log(response.data);
+            this.props.onAddLuToken(response.data.token);
+        })
+        .catch(error => {
+            console.log(error);
+        });
     }
 
     clickToMyLibrary = () => {
@@ -212,14 +245,18 @@ const mapStateToProps = state => {
     return {
         books: state.bookCart.books,
         totalPrice: state.bookCart.totalPrice,
-        luId: state.merchant.luId
+        luId: state.merchant.luId,
+        lu_secret: state.merchant.lu_secret,
+        lu_password: state.merchant.lu_password
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
         onAddToCart: (bookEntity, bookPrice) => dispatch(actions.addBook(bookEntity, bookPrice)),
-        onClearCart: () => dispatch(actions.clearCart())
+        onClearCart: () => dispatch(actions.clearCart()),
+        onAddLuCredentials: (secret, password) => dispatch(actions.addLuCredentials(secret, password)),
+        onAddLuToken: (token) => dispatch(actions.addLuToken(token))
     }
 }
 

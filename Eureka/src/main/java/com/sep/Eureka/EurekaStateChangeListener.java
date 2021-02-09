@@ -48,7 +48,8 @@ public class EurekaStateChangeListener {
         InstanceInfo instanceInfo = event.getInstanceInfo();
         if(!instanceInfo.getAppName().equals("EUREKA-SERVICEREGISTRY") &&
                 !instanceInfo.getAppName().equals("ZUUL") &&
-                    !instanceInfo.getAppName().equals("PCC")) {
+                    !instanceInfo.getAppName().equals("AUTH") &&
+                        !instanceInfo.getAppName().equals("PCC")) {
                 System.out.println("NEW SERVICE REGISTERED: " + instanceInfo.getVIPAddress() + ": " + instanceInfo.getPort() + ", " + instanceInfo.getIPAddr());
                 _paymentTypeService.add(instanceInfo.getVIPAddress(), String.valueOf(instanceInfo.getPort()), instanceInfo.getIPAddr());
         }

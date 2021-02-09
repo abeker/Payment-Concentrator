@@ -11,6 +11,7 @@
 
 	<modules>
 <!--		<module>bank-service</module>-->
+		<module>auth-service</module>
 		<module>raiffeisen-service</module>
 		<module>unicredit-service</module>
 		<module>bitcoin-service</module>

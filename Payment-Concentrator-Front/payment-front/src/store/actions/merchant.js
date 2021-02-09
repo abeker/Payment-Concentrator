@@ -14,3 +14,18 @@ export const clearMerchant = () => {
         type: actionTypes.CLEAR_MERCHANT
     };
 };
+
+export const addLuCredentials = (lu_secret, lu_password) => {
+    return {
+        type: actionTypes.ADD_LU_CREDENTIALS,
+        lu_secret: lu_secret,
+        lu_password: lu_password
+    };
+};
+
+export const addLuToken = (lu_token) => {
+    return {
+        type: actionTypes.ADD_LU_TOKEN,
+        lu_token: lu_token
+    };
+};

@@ -21,7 +21,9 @@ const Unicredit = (props) => {
     });
 
     const cancelRequest = (paymentRequestId) => {
-        axios.put(`https://localhost:8443/api/unicredit/${paymentRequestId}/cancel`)
+        const lu_token = props.location.state.lu_token;
+        // console.log(lu_token);
+        axios.put(`https://localhost:8443/api/unicredit/${paymentRequestId}/cancel`, {}, {headers: {'Auth-Token': lu_token}})
             .then(response => {
                 // do nothing
             });
@@ -72,12 +74,12 @@ const Unicredit = (props) => {
     }
     
     const sendRequestBody = (url, method, body, readerPaymentId) => {
-        console.log(url);
-        console.log(body);
+        const lu_token = props.location.state.lu_token;
+        // console.log(lu_token);
         fetch(url, {
             method: method,
             body: JSON.stringify(body),
-            headers: {'Content-Type': 'application/json'}
+            headers: {'Content-Type': 'application/json', 'Auth-Token': lu_token}
         }).then(response => {
             return response.json();
         }).then(responseData => {

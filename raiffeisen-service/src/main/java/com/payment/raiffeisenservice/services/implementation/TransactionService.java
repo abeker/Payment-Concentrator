@@ -106,7 +106,7 @@ public class TransactionService implements ITransactionService {
         SellerAccount sellerAccount = merchantOrder.getSellerAccount();
         Account merchantAccount = _accountRepository.findByAccountNumber(sellerAccount.getAccountNumber());
         if(responsePcc != null &&
-            merchantAccount != null) {
+                merchantAccount != null) {
             merchantAccount.setCurrentAmount(merchantAccount.getCurrentAmount() + paymentRequest.getAmount());
         }
     }
@@ -274,7 +274,7 @@ public class TransactionService implements ITransactionService {
     private PaymentRequest getPaymentRequestFromPaymentId(String paymentId) {
         Optional<PaymentRequest> paymentRequestOptional = _paymentRequestRepository.findById(Integer.parseInt(paymentId));
         if(paymentRequestOptional.isPresent() &&
-            !paymentRequestOptional.get().isDeleted()) {
+                !paymentRequestOptional.get().isDeleted()) {
             return paymentRequestOptional.get();
         }
         return null;
