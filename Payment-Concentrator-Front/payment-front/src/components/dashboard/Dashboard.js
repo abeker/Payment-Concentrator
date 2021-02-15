@@ -1,43 +1,125 @@
 import axios from 'axios';
 import React from 'react';
+import { Component } from 'react';
 import Aux from '../../hoc/Auxiliary';
 import Image from '../images/Image';
 import Subscipe from '../paypal/Subscipe';
+import { connect } from 'react-redux';
 import classes from './dashboard.module.css';
+import { message } from 'antd';
 
-const Dashboard = (props) => {
-    const imageClickHandler = (type) => {
+class Dashboard extends Component {
+    state = {
+        isBankVisible: this.props.location.state.paymentTypes.includes('unicredit') || this.props.location.state.paymentTypes.includes('raiffeisen'),
+        isPaypalVisible: this.props.location.state.paymentTypes.includes('paypal'),
+        isBitcoinVisible: this.props.location.state.paymentTypes.includes('bitcoin')
+    }
+
+    imageClickHandler = (type) => {
+        const body = {
+            merchantId: this.props.merchantId,
+            merchantPassword: this.props.merchantPassword,
+            amount: +this.props.location.state.cartContentPrice
+        }
+
         if(type === 'UNICREDIT') {
-            sendRequestBody('https://localhost:8443/api/bank', 'PUT', {
+            this.sendRequestBody('https://localhost:8443/api/bank', 'PUT', {
                 merchantId: "LMo0aUBivXliLs9rjBijU096ufdv56",
                 merchantPassword: "p62om0FvEhG70wzCjwrW6rsZCYSY9SikETjbpHNIrJ37Ul6odV4GgV025kFLP7Vwa79XJ8WTsAsDB2D3r9jW26G7a3zp78HbW9z",
                 amount: 4200
             });
         } else if(type === 'RAIFFEISEN') {
-            sendRequestBody('https://localhost:8443/api/raiffeisen', 'PUT', {
+            this.sendRequestBody('https://localhost:8443/api/raiffeisen', 'PUT', {
                 merchantId: "3ypomvybMdZlWTZNVH1X9Tm35b4ETD",
                 merchantPassword: "lBMIS5zIk1I2WsDyST3tVmgupt5utGHpFhj84l4ytosQqrv9wiK4XgpWDmTzpoA51FQBh2XmJm8RDhEIyc1F2slCBKFrm0QXdVww",
                 amount: 4200
             });
         } else if(type === 'VISA') {
-            sendRequestBody('https://localhost:8443/api/unicredit', 'PUT', {
-                merchantId: "LMo0aUBivXliLs9rjBijU096ufdv56",
-                merchantPassword: "p62om0FvEhG70wzCjwrW6rsZCYSY9SikETjbpHNIrJ37Ul6odV4GgV025kFLP7Vwa79XJ8WTsAsDB2D3r9jW26G7a3zp78HbW9z",
-                amount: 4200
-            });
+            this.sendRequestBody('https://localhost:8443/api/unicredit', 'PUT', body);
         } else if(type === 'PAYPAL') {
-            axios.get("https://localhost:8443/api/paypal/paypal").then(response => alert(response.data))
-            props.history.push('/paypal');
+            axios.get("https://localhost:8443/api/paypal/paypal").then(response => console.log(response.data))
+            this.sendToPaypal(body.amount);
         } else if(type === 'BITCOIN') {
-            // sendRequest('https://localhost:8443/api/bitcoin/pay');
-            props.history.push('/bitcoin')
+            this.sendToBitcoin(body.amount);
         } else if(type === 'NEW_LU') {
             // sendRequest('https://localhost:8443/api/bitcoin/pay');
-            props.history.push('/create-lu')
+            this.props.history.push('/create-lu')
         }
     }
 
-    const sendRequestBody = (url, method, body) => {
+    sendToPaypal = (price) => {
+        console.log(price);
+        console.log(this.props.lu_token);
+        const currency = "EUR";
+        const method = "paypal";
+        const intent = "SALE";
+        const desc = "Request for book payment.";
+        const json = JSON.stringify({ price,currency,method,intent,description: desc });
+        axios.post("https://localhost:8443/api/paypal/pay",json,{
+            headers: {
+                'Content-Type': 'application/json',
+                "Auth-Token": this.props.lu_token
+            }}).then(res => {
+            console.log(res);
+            if(res.status===200){
+                const readerId = JSON.parse(localStorage.getItem('user')).id;
+                this.sendToLiteraryAssociation('http://localhost:8084/la/reader-pay-request', {
+                    "paymentCounter": -1,
+                    "bankCode": "paypal",
+                    "readerId": readerId,
+                    "bookIds": this.getBookIds()
+                });
+                window.location = res.data;
+            }
+            if(res.status >= 400){
+                alert("Some error occurred, please check your bank account")
+            }
+        })
+    }
+
+    sendToLiteraryAssociation = (url, body) => {
+        const token = JSON.parse(localStorage.getItem('user')).token;
+        axios.post(url, body, {headers: {'Auth-Token': token}})
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error.response);
+                if(error.response.status === 409) {
+                    message.info('Book is not purchased. You have not paid your membership yet.');
+                    this.props.history.push('/error');
+                }
+            });
+    }
+    
+    sendToBitcoin = (price) => {
+        console.log(this.props.lu_token);
+        const title = "Request for book payment.";
+        const priceCurrency = "EUR";
+        const receiveCurrency = "BTC";
+        axios.post("https://localhost:8443/api/bitcoin/order",{
+            title: title,
+            price_amount: parseFloat(price),
+            price_currency: priceCurrency,
+            receive_currency: receiveCurrency
+        },{
+            headers: {'Content-type':"application/json", "Auth-Token": this.props.lu_token}
+        }).then(resp => {
+            console.log(resp.data)
+            const readerId = JSON.parse(localStorage.getItem('user')).id;
+                this.sendToLiteraryAssociation('http://localhost:8084/la/reader-pay-request', {
+                    "paymentCounter": -1,
+                    "bankCode": "bitcoin",
+                    "readerId": readerId,
+                    "bookIds": this.getBookIds()
+                });
+            window.location = resp.data.payment_url
+        }).catch(error => {
+            alert(error)
+        })
+    }
+    
+    sendRequestBody = (url, method, body) => {
         fetch(url, {
             method: method,
             body: JSON.stringify(body),
@@ -45,38 +127,72 @@ const Dashboard = (props) => {
         }).then(response => {
             return response.json();
         }).then(responseData => {
-            console.log(responseData);
-            props.history.push(responseData.paymentUrl+"/"+responseData.paymentId);
+            const readerId = JSON.parse(localStorage.getItem('user')).id;
+            this.props.history.push({
+                pathname: responseData.paymentUrl+"/"+responseData.paymentId,
+                state: { readerId: readerId, bookIds: this.getBookIds(), lu_token: this.props.lu_token }
+            });
         }).catch(error => {
             console.log(error);
         });
     }
+
+    getBookIds = () => {
+        const books = this.createListFromChunk(this.props.location.state.books);
+        const bookIds = [];
+        books.forEach(book => {
+            bookIds.push(book.id);
+        });
+        return bookIds;
+    }
+
+    createListFromChunk = (chunk) => {
+        let retList = [];
+        chunk.forEach(array => {
+            array.forEach(element => {
+                retList.push(element);
+            });
+        });
+        return retList;
+    }
     
-    return (
-        <Aux classes="Background">
-            {/* <Image type="RAIFFEISEN" clicked={ imageClickHandler.bind(this, "RAIFFEISEN") } /> */}
-            {/* <Image type="UNICREDIT" clicked={ imageClickHandler.bind(this, "UNICREDIT") } /> */}
-            <div className={ classes.Images }>
-                <Image type="VISA" clicked={ imageClickHandler.bind(this, "VISA") } />
-                <Image type="PAYPAL" clicked={ imageClickHandler.bind(this, "PAYPAL") } />
-                <Image type="BITCOIN" clicked={ imageClickHandler.bind(this, "BITCOIN") } />
-            </div>
-            <br/>
-            <br/>
-            <br/>
-            <hr/>
-            <span className={ classes.inlineSpan }>
-                <Image type="NEW_LU" clicked={ imageClickHandler.bind(this, "NEW_LU") } />
-            </span>
-            <span className={ classes.inlineSpan }>
-                <div style={{display:'flex', justifyContent: 'center',alignItems: 'center', width: '800'}}>
-                    <h3> Subscribe fast to PayPal</h3>
-                    <br/>
-                    <Subscipe />
+    render() {
+        return (
+            <Aux classes="Background">
+                <div className={ classes.Images }>
+                    { this.state.isBankVisible ? 
+                        <Image type="VISA" clicked={ this.imageClickHandler.bind(this, "VISA") } /> : null }
+                    { this.state.isPaypalVisible ? 
+                        <Image type="PAYPAL" clicked={ this.imageClickHandler.bind(this, "PAYPAL") } />: null }
+                    { this.state.isBitcoinVisible ? 
+                        <Image type="BITCOIN" clicked={ this.imageClickHandler.bind(this, "BITCOIN") } />: null }
                 </div>
-            </span>
-        </Aux>
-    );
+                <br/>
+                <br/>
+                <br/>
+                <hr/>
+                {/* <span className={ classes.inlineSpan }>
+                    <Image type="NEW_LU" clicked={ imageClickHandler.bind(this, "NEW_LU") } />
+                </span> */}
+                <span className={ classes.inlineSpan }>
+                    <div style={{display:'flex', justifyContent: 'center',alignItems: 'center', width: '800'}}>
+                        <h3> Subscribe fast to PayPal</h3>
+                        <br/>
+                        <Subscipe />
+                    </div>
+                </span>
+            </Aux>
+        );
+    }
 }
 
-export default Dashboard;
+const mapStateToProps = state => {
+    return {
+        merchantId: state.merchant.merchantId,
+        merchantPassword: state.merchant.merchantPassword,
+        totalPrice: state.bookCart.totalAmount,
+        lu_token: state.merchant.lu_token
+    };
+};
+
+export default connect(mapStateToProps)(Dashboard);

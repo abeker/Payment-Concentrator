@@ -7,8 +7,8 @@ insert into address (city, country, zip_code, street, number, id) values
 -- accunt_number1: 4894549871600000
 -- accunt_number2: 4894544568500485
 insert into account (id, name, current_amount, account_number, address_id, date_closed, date_opened, bank_code) values
-    ('aa692caa-255e-47b2-9401-28b47ae2a456', 'Pedro Neto', 10000, '$2y$12$8X4W4n0wR8PKnfROTwz6OuwyT.6QjyEyWOLk8ZQSw5cLWkGRyMleW', '6fe69dab-ed15-42cd-9237-06d8728fc788', null, '2020-05-21', '89454'),
-    ('d5a76b76-11d2-4bd7-9771-7c4cecd71eec', 'Jack Grealish', 220000, '$2y$12$U.SI4swi7Z3LiHudbTOxsuAbm6qHUYCATxODuOzR9uON0FnM.FNqu', '8f5389fa-417c-4333-b649-4c13540a29fa', null, '2020-07-21', '89454');
+    ('aa692caa-255e-47b2-9401-28b47ae2a456', 'Pedro Neto', 40, '$2y$12$8X4W4n0wR8PKnfROTwz6OuwyT.6QjyEyWOLk8ZQSw5cLWkGRyMleW', '6fe69dab-ed15-42cd-9237-06d8728fc788', null, '2020-05-21', '89454'),
+    ('d5a76b76-11d2-4bd7-9771-7c4cecd71eec', 'Jack Grealish', 24000, '$2y$12$U.SI4swi7Z3LiHudbTOxsuAbm6qHUYCATxODuOzR9uON0FnM.FNqu', '8f5389fa-417c-4333-b649-4c13540a29fa', null, '2020-07-21', '89454');
 
 -- security_code: 840
 insert into customer_account (security_code, valid_thru, id) values

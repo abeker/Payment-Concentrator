@@ -14,6 +14,7 @@ import org.codehaus.jettison.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -33,11 +34,11 @@ public class BitCoinController {
     @Value("${coingate.authkey}")
     private String authKey;
 
-    //@CrossOrigin(origins = "*")
-    @GetMapping("/pay")
-    public String pay(){
-        return "Successfully paid using bitcoin";
-    }
+//    //@CrossOrigin(origins = "*")
+//    @GetMapping("/pay")
+//    public String pay(){
+//        return "Successfully paid using bitcoin";
+//    }
 
     @GetMapping("/customers")
     public ResponseEntity<List<Customer>>getAllCustomers(){
@@ -47,6 +48,7 @@ public class BitCoinController {
 
    // @CrossOrigin(origins = "*")
     @PostMapping("/order")
+    @PreAuthorize("hasAuthority('PAY_BITCOIN')")
     public ResponseEntity<OrderResponseDto> createOrder(@RequestBody OrderDto orderDto) throws JSONException {
         UUID uuid = UUID.randomUUID();
         orderDto.setOrder_id(uuid.toString());

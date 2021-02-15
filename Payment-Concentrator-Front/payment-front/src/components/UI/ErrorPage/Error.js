@@ -5,7 +5,7 @@ import classes from './errorPage.module.css';
 const Error = () => {
     return (
         <div className={ classes.Background }>
-            <Link to="/" className={ classes.Link }>Go to the main page</Link>
+            <Link to="/books" className={ classes.Link }>Go to the main page</Link>
         </div>
     );
 }

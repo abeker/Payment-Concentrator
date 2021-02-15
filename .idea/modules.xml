@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Eureka/Eureka.iml" filepath="$PROJECT_DIR$/Eureka/Eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/Payment-Microservices.iml" filepath="$PROJECT_DIR$/Payment-Microservices.iml" />
       <module fileurl="file://$PROJECT_DIR$/Zuul/Zuul.iml" filepath="$PROJECT_DIR$/Zuul/Zuul.iml" />
+      <module fileurl="file://$PROJECT_DIR$/auth-service/auth-service.iml" filepath="$PROJECT_DIR$/auth-service/auth-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/bank-service/bank-service.iml" filepath="$PROJECT_DIR$/bank-service/bank-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/bitcoin-service/bitcoin-service.iml" filepath="$PROJECT_DIR$/bitcoin-service/bitcoin-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/paypal-service/paypal-service.iml" filepath="$PROJECT_DIR$/paypal-service/paypal-service.iml" />

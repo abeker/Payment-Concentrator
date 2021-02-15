@@ -4,6 +4,8 @@ import com.sep.Eureka.dto.request.PaymentTypes;
 import com.sep.Eureka.service.definition.ILiteraryAssociationService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/literary-association")
 public class LiteraryAssociationController {
@@ -32,6 +34,11 @@ public class LiteraryAssociationController {
     @GetMapping("/{lu_id}/{payment_type}")
     public boolean hasPaymentType(@PathVariable("lu_id") String luId, @PathVariable("payment_type") String payment_type) {
         return _literaryAssociationService.hasPaymentType(luId, payment_type);
+    }
+
+    @GetMapping("/{lu_id}/payment-list")
+    public List<String> getPaymentTypesForLU(@PathVariable("lu_id") String luId) {
+        return _literaryAssociationService.getPaymentTypes(luId);
     }
 
 }

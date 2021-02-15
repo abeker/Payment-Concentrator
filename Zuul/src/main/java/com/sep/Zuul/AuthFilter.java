@@ -2,24 +2,21 @@ package com.sep.Zuul;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
-import com.sep.Zuul.dto.PaymentTypes;
 import feign.FeignException;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Map;
 
 @SuppressWarnings({"IfStatementWithIdenticalBranches", "SpellCheckingInspection"})
 @Component
 public class AuthFilter extends ZuulFilter {
 
     private final EurekaClient eurekaClient;
+    private final AuthClient authClient;
 
-    public AuthFilter(EurekaClient eurekaClient) {
+    public AuthFilter(EurekaClient eurekaClient, AuthClient authClient) {
         this.eurekaClient = eurekaClient;
+        this.authClient = authClient;
     }
 
     @Override
@@ -54,25 +51,17 @@ public class AuthFilter extends ZuulFilter {
             return null;
         }
 
-        boolean hasPaymentType = eurekaClient.hasPaymentType("1", "BITCOIN");
-        PaymentTypes paymentTypes = new PaymentTypes();
-        List<String> paymentTypeNames = new ArrayList<>();
-        paymentTypeNames.add("BITCOIN");
-        paymentTypes.setPaymentTypeNames(paymentTypeNames);
-        eurekaClient.registerLiteraryAssociation("1", paymentTypes);
-
-//        String token = request.getHeader("Auth-Token");
-//        try {
-//            String username = eurekaClient.verify(token);
-//            if(username != null) {
-//                String permissionList = eurekaClient.getPermission(token);
-//                ctx.addZuulRequestHeader("roles", permissionList);
-//                ctx.addZuulRequestHeader("username", username);
-//            }
-//        } catch (FeignException.NotFound e) {
-//            setFailedRequest("User does not exist!", 403);
-//        }
-
+        String token = request.getHeader("Auth-Token");
+        try {
+            String secret = authClient.verify(token);
+            if(secret != null) {
+                String permissionList = authClient.getPermission(token);
+                ctx.addZuulRequestHeader("roles", permissionList);
+                ctx.addZuulRequestHeader("secret", secret);
+            }
+        } catch (FeignException.NotFound e) {
+            setFailedRequest("User does not exist!", 403);
+        }
 
         return null;
     }

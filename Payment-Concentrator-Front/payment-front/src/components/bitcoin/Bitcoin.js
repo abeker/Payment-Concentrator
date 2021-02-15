@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import {Container, Form, Grid, Button} from 'semantic-ui-react'
-const Bitcoin = () => {
+import { message } from 'antd';
 
-    const [title,setTitle] = useState('')
-    const [price,setPrice] = useState(0.0)
-    const [priceCurrency, setPriceCurrency] = useState('USD')
-    const [receiveCurrency, setReceiveCurrency] = useState('USD')
+const Bitcoin = (props) => {
+    const [title,setTitle] = useState("Request for book payment.");
+    const [price,setPrice] = useState(props.location.state.amount);
+    const [priceCurrency, setPriceCurrency] = useState('EUR');
+    const [receiveCurrency, setReceiveCurrency] = useState('BTC');
     const currencyOptions = ['USD',"EUR","CAD","BTC","ETH"];
     const receiveOptions = ['USD',"EUR","USDT","BTC","ETH","LTC","DO_NOT_CONVERT"];
 
@@ -20,13 +21,31 @@ const Bitcoin = () => {
         },{
             headers: {'Content-type':"application/json"}
         }).then(resp => {
+            // TODO
+            // dodaj tu knjigu u literarnom
             console.log(resp.data)
             window.location = resp.data.payment_url
+            
         }).catch(error => {
             alert(error)
         })
-
     }
+
+    const sendToLiteraryAssociation = (url, body) => {
+        const token = JSON.parse(localStorage.getItem('user')).token;
+        axios.post(url, body, {headers: {'Auth-Token': token}})
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error.response);
+                if(error.response.status === 409) {
+                    message.info('Book is not purchased. You have not paid your membership yet.');
+                    props.history.push('/error');
+                }
+            });
+    }
+
     return (
         <Container>
             <Grid>
