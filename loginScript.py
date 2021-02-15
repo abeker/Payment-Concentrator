@@ -13,13 +13,13 @@ def build_queue():
     uppercase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lowercase_letters = "abcdefghijklmniopqrstuvxyz"
     numbers = "0123456789"
-    special_characters = "?!@#$%^&*()_+-=[];'\{}:|"
+    special_characters = "$@$!%*?&"
 
     for up_letter in uppercase_letters: 
         for low_letter in lowercase_letters:
             for number in numbers:
                 for character in special_characters:
-                    queue.append(f"{up_letter}{number}{low_letter}{character}.....")                
+                    queue.append(f"{up_letter}{number}{low_letter}{character}......")                
     return queue
 
 async def login_amy(async_queue):
